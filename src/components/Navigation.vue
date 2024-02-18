@@ -1,32 +1,40 @@
 <template>
-<header :class="{'products-bg': $route.name === 'products' }">
-  <nav class="nav-wrap" :class="{'products-bg': $route.name === 'products' }">
-
-    <!-- RS logo -->
+<div class="top-most">
+<header>
+  <nav class="nav-wrap">
     <div class="branding">
-      <router-link class="" :to="{name: 'home'}">
-        <img src="" alt="">
+      <router-link @click="scrollToSection('home')" class="" :to="{name: 'home'}">
+        <img src="../assets/fxt_logo.png" alt="fxt logo">
       </router-link>
     </div>
-
-    <!-- nav links -->
     <div class="nav-links">
       <ul v-show="!mobile">
-        <router-link class="link" :class="{ active: isActive('') }" :to="{name: 'products'}">Products</router-link>
-        <router-link class="link" :class="{ active: isActive('') }" :to="{}">Media</router-link>
-        <router-link class="link" :class="{ active: isActive('about') }" :to="{name: 'about'}">About Us</router-link>
-        <router-link class="link" :class="{ active: isActive('') }" :to="{}">Help</router-link>
+               
+        <li @click="scrollToSection('about')">
+          <router-link class="link" :to="{name: 'about'}">Who we are</router-link>
+        </li>
+
+        <li @click="scrollToSection('fxt-store')">
+          <router-link class="link" :to="{ name: 'fxt-store' }">FXT Store</router-link>
+        </li>
+
+        <li @click="scrollToSection('blog')">
+          <router-link class="link" :to="{ name: 'blog' }">Blog</router-link>
+        </li>
+
+        <!-- <li @click="scrollToSection('faq')">
+          <router-link class="link" :to="{ name: 'faq' }">Faq</router-link>
+        </li> -->
+      
+        <!-- <a href="mailto:praiseadebayo218@yahoo.com">
+          <base-button title="contact"/>
+        </a> -->
+        
       </ul>
-    </div>
-    <div class="nav-button" v-show="!mobile">
-      <router-link :to="{name: 'create-account'}">
-        <nav-button>Create Account </nav-button>
-      </router-link>
     </div>
   </nav>
 
-  <!-- mobile nav -->
-
+  <!-- mobile navigation -->
   <fa-icon 
     :icon="['fas', 'bars']" 
     class="menu-icon" 
@@ -34,67 +42,66 @@
     v-show="mobile"
   />
   <transition name="mobile-nav" >
-    <div class="mobile-wrap" v-show="mobileNav" ref="mobileWrap" @click="checkClick">
+    <div v-show="mobileNav" ref="mobileWrap" @click="checkClick" class="mobile-wrap">
       <div class="mobile-nav">
+        <ul>
+          <!-- <router-link  :to="{name: 'about'}" @click="mobileScrollToSection('about')" class="link">Abut</router-link> -->
+          
 
-        <!-- rockshield logo -->
-        <div class="branding">
-          <router-link @click="mobileNavClick" class="" :to="{name: 'home'}">
-            <img src="" alt="">
-          </router-link>
-        </div>
+          <li @click="mobileScrollToSection('home')"  class="link mobile-link">
+            <fa-icon :icon="['fas', 'house']" />
+            <router-link :to="{ name: 'home' }">About</router-link>
+          </li>
 
-        <!-- navigation -->
-        <div class="nav-body">
-          <ul>
-            <router-link @click="mobileNavClick" class="link" :to="{name: 'products'}">Products</router-link>
-            <router-link @click="mobileNavClick" class="link" :to="{}">Media</router-link>
-            <router-link  @click="mobileNavClick" class="link" :to="{name: 'about'}">About Us</router-link>
-            <router-link @click="mobileNavClick" class="link" :to="{}">Help</router-link>
-          </ul>
+          <li @click="mobileScrollToSection('about')"  class="link mobile-link">
+            <fa-icon :icon="['far', 'address-card']" />
+            <router-link :to="{ name: 'about' }">Who we are</router-link>
+          </li>
 
-          <!-- social media -->
-          <div class="socials">
-            <a href="https://www.instagram.com/rockshieldmfb/?igshid=YmMyMTA2M2Y%3D" target="_blank">
-              <fa-icon :icon="['fab', 'instagram']" class="icon" />
-            </a>
-            <a href="https://www.facebook.com/RockshieldMFB" target="_blank">
-              <fa-icon :icon="['fab', 'facebook']" class="icon" />
-            </a>
-            <a href="https://twitter.com/rockshieldmfb" target="_blank">
-              <fa-icon :icon="['fab', 'x-twitter']" class="icon" />
-            </a>
-            <a href="https://www.linkedin.com/in/rockshieldmfb/" target="_blank">
-              <fa-icon :icon="['fab', 'linkedin']" class="icon" />
-            </a>
-          </div>
-        </div> 
-
+          <li @click="mobileScrollToSection('pricing')"  class="link mobile-link">
+            <fa-icon :icon="['fas', 'bars-progress']" />
+            <router-link :to="{ name: 'pricing' }">Pricing</router-link>
+          </li>
         
+          <li class="link mobile-link">
+            <fa-icon :icon="['fas', 'phone']" />
+            <p>Contact</p>
+          </li>
+        </ul>
+
+        <div class="socials">
+          <a href="https://github.com/the-Apr" target="_blank">
+            <fa-icon :icon="['fab', 'github']" class="icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/praise-adebayo-6ab205235/" target="_blank">
+            <fa-icon :icon="['fab', 'linkedin']" class="icon" />
+          </a>
+          <a href="mailto:praiseadebayo218@yahoo.com">
+            <fa-icon :icon="['fas', 'envelope']" class="icon" />
+          </a>
+        </div>
       </div>
     </div>
   </transition>
 </header> 
+</div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue';
-
-const NavButton = defineAsyncComponent(() => import('@/components/UI/BaseButton.vue'));
-
-
+// import { mapMutations, mapActions, mapState } from 'vuex';
+import BaseButton from '@/components/UI/BaseButton.vue'
 export default {
   name: 'navigation',
 
   components: {
-    NavButton,
+    BaseButton,
   },
 
   data() {
     return {
       mobile: null,
       mobileNav: null,
-      windowWidth: null,
+      windowWidth: null
     }
   },
 
@@ -103,18 +110,10 @@ export default {
     this.checkScreen();
   },
 
-  computed : {},
-
   methods: {
-    // check which navigation is active
-    isActive(routeName) {
-      return this.$route.name === routeName;
-    },
-
-
     checkScreen() {
       this.windowWidth = window.innerWidth;
-      if (this.windowWidth <= 980) {
+      if (this.windowWidth <= 850) {
         this.mobile = true;
         return;
       }
@@ -122,6 +121,10 @@ export default {
       this.mobileNav = false;
       return;
     },
+
+    // ...mapMutations(['toggleNav']),
+
+    // ...mapActions([ 'mobileScrollToSection']),
 
     toggleNav() {
       this.mobileNav = !this.mobileNav;
@@ -134,59 +137,103 @@ export default {
       }
     },
 
+    scrollToSection(sectionId) {
+      this.$root.scrollToSection(sectionId);
+    },
+    
+    mobileScrollToSection(sectionId) {
+      this.$root.scrollToSection(sectionId);
+      this.toggleNav();
+    },
+
     checkClick(e) {
       if(e.target === this.$refs.mobileWrap) {
         this.toggleNav();
       }
     },
+  },
 
-    mobileNavClick() {
-      this.toggleNav();
-    }
+  computed : {
+    // ...mapState(['mobileNav'])
   }
-} 
+
+}
 </script>
 
 <style lang="scss" scoped>
+.top-most {
+  @apply sticky top-0 left-0 w-full bg-[#080b41] opacity-90;
+  z-index: 999;
+}
+
 header {
-  @apply fixed w-full;
-  z-index: 99;
-  background: rgba(255, 255, 255, 0.8); 
-  backdrop-filter: blur(10px); 
+  @apply py-3 px-3 text-white ;
+  // border-bottom: 1px solid #4238c9;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) ;
 
+  @screen md {
+    @apply py-1
+  }
+  @screen lg {
+    @apply px-14
+  }
+
   .nav-wrap {
-    @apply flex items-center justify-between px-6 py-3;
+    @apply px-1 mx-4;
 
-    @screen sm{
-      @apply py-6 px-12
-    }
-
-    @screen md{
-      @apply py-6 px-16
+    @screen sm {
+      @apply px-4
     }
   }
+}
+ul{
+  @apply list-none cursor-pointer;
+}
 
-  .products-bg {
-    // background-color: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%) !important
-    @apply bg-transparent;
-    background-color: #ffcdc2;
-    backdrop-filter: blur(10px); 
-  }
+a{
+  @apply no-underline;
 }
 
 .link{
-  @apply font-medium py-0 px-2 no-underline pb-2;
-  // transition: .6s color ease-in;
-  color: #000;
+  @apply font-medium py-2 px-2 ;
+  transition: .3s color ease-in;
+  color: white;
+  // color: #2c3e50;
 
-  &:hover,
-  &.active {
-    // color: #00ABF1;
-    @apply border-b-2 border-b-[#00ABF1] duration-1000 ease-in origin-left transition-transform transform;
+  &:hover {
+    color: #42b983;
+  }
+
+  &.router-link-exact-active {
+    
+    border-bottom: 1px solid #42b983;
   }
 }
 
+nav {
+  @apply flex py-3 h-14;
+
+  @screen md{
+    @apply py-3 h-24;
+  }
+
+  .nav-links {
+    @apply relative flex items-center justify-end flex-1;
+
+    ul {
+    @apply flex gap-6 items-center;
+
+      // .link {
+      //   font-weight: bold;
+      //   color: #2c3e50;
+      // }
+
+      // a.router-link-exact-active {
+      //   color: #42b983;
+      // }
+    }
+  }
+}
 
 
 .branding {
@@ -194,90 +241,65 @@ header {
 
   img {
     @apply object-cover;
-    height: 35px;
+    width: 200px;
+    height: 60px;
 
     @screen md {
-      height: 40px;
-    }
-  }
-}
-.header {
-  @apply font-semibold text-lg text-black
-}
-
-.nav-links {
-  @apply relative flex items-center justify-center flex-1;
-
-  ul {
-    .link {
-      margin-right: 32px
-    }
-    .link:last-child {
-      margin-right: 0;
+      width: 250px;
     }
   }
 }
 
 
 .menu-icon {
-  @apply cursor-pointer absolute top-4 right-12 h-6 w-auto;
+  @apply cursor-pointer absolute top-6 right-10 h-6 w-auto;
 
   @screen sm {
-    @apply top-7 h-7
+    @apply h-8
   }
 
-  @screen md {
-    @apply top-7 right-16 
+  @media (min-width: 768px) {
+    top: 35px;
+    right: 54px;
+
   }
 }
 
 .mobile-wrap {
-  @apply  fixed top-0 left-0 w-full bg-transparent;
-  z-index: 99;
-  height: 100vh;
-  
-
-  .mobile-nav {
-    @apply flex flex-col w-4/6 p-5 gap-y-10;
-    background-color: #303030;
-    max-width: 230px;
-    height: 100%;
-
-    .nav-body{
-      @apply flex flex-col justify-between gap-6 h-full ;
-      ul{
-        @apply  flex flex-col;
-      
-        .link {
-          @apply mb-2 text-white text-left
-        }
-      } 
-
-      .socials {
-        @apply justify-center text-end flex gap-4;
-
-        .icon{
-          @apply h-4 w-4;
-          color: white;
-        }
-      }
-    }
-    
-  }
-
-  
-  
+  @apply fixed top-0 left-0 w-full bg-transparent;
+  height: 100%;
+  z-index: 3;
 }
 
-// .mobile-overlay {
-//   @apply fixed top-0 left-0 w-full bg-transparent;
-//   height: 100%;
-//   z-index: 2;
-//   // background-color: rgba(0, 0, 0, 0.5);
-// }
+.mobile-nav {
+  @apply p-6 w-4/6 flex flex-col justify-between h-full;
+  max-width: 250px;
+  // background-color: #4b4b4f;
+  background-color: #1f1f23;
+  box-shadow: 7px 0px 11px 5px rgba(0, 0, 0, 0.1);
 
+  ul{
+    @apply flex flex-col gap-y-2
+  }
 
+  .link {
+    @apply p-1
+  }
 
+  .mobile-link {
+    @apply flex gap-6 items-center
+  }
+
+  .socials {
+    @apply justify-center flex gap-4;
+
+    &:hover {
+    color: #4238c9;
+  }
+  }
+}
+ 
+// animation
 .mobile-nav-enter-active,
 .mobile-nav-leave-active {
   transition: all 1s ease;

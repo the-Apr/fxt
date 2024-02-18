@@ -1,28 +1,37 @@
 <template>
   <button class="button">
-   <slot> </slot>
+   {{title}}
   </button>
 </template>
+
+<script>
+export default {
+  name: 'BaseButton',
+
+  props: ['title']
+}
+</script>
 
 <style scoped>
 .button {
   position: relative;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
-  background-color: #00ABF1;
+  background-color: #5AEEB9;
   /* background-color: rgb(0 107 179); */
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffff;
+  color: #000;
   font-weight: bold;
-  border: 3px solid #ffffff4d;
+  /* border: 3px solid #ffffff4d; */
   outline: none;
   overflow: hidden;
   font-size: 15px;
+  /* margin-top: 18px */
 }
 
 

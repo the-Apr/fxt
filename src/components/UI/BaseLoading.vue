@@ -1,9 +1,9 @@
 <template>
   <div class="loading">
     <div class="outer-circle">
-      <span class="load">
+      <!-- <span class="load">
         <img class="animate-ping" src="../../assets/rs-fotor-bg-remover-20230704114329.png" alt="" srcset="">
-      </span>
+      </span> -->
     </div>
   </div>
 </template>
@@ -38,17 +38,17 @@ export default {
       transform: rotateZ(360deg);
     }
   }
-  span {
-    // margin-left: 10px; /* Adjust the spacing between text and outer circle */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    @apply absolute;
+  // span {
+  //   // margin-left: 10px; /* Adjust the spacing between text and outer circle */
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   @apply absolute;
 
-    img{
-      @apply h-16 w-16 object-cover
-    }
-  }
+  //   img{
+  //     @apply h-16 w-16 object-cover
+  //   }
+  // }
 }
 
 .outer-circle::before {
