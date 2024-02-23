@@ -38,11 +38,16 @@ export default {
   @apply mx-2 flex flex-row gap-3 flex-wrap;
 
   .service-wrap {
-    @apply   flex flex-row  max-w-[400px] flex-auto gap-6 border  shadow-lg p-3 ;
+    @apply   flex flex-row  max-w-[400px] flex-auto gap-6 border shadow-lg p-3 cursor-default transition-transform duration-500;
+
+    &:hover {
+      @apply transform translate-x-4;
+    }
 
     .menu-icon {
       @apply h-6 w-6;
-      color: #5AEEB9 !important;
+      // color: #5AEEB9 !important;
+       color: #8C0100 !important;
     }
 
     h3 {

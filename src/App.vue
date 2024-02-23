@@ -99,15 +99,16 @@ $green: #5AEEB9;
 .app {
   min-height: 100vh;
   background-color: inherit;
+  overflow-x: hidden;
 }
 
-.section {
-  /* @apply pt-8; */
+/* .section {
+  @apply pt-8;
 
-  /* @screen md {
+   @screen md {
     @apply pt-20
-  } */
-}
+  } 
+} */
 
 .scale-fade-enter-active,
 .scale-fade-leave-active {

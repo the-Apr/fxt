@@ -26,13 +26,13 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  @apply max-h-[568px]  object-cover  pt-6;
+  @apply max-h-[568px] object-cover  pt-6;
   background: url('../assets/display/Frame 227.png') lightgray 50% / cover no-repeat;
   background-position: top center;
   // clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
 
   @screen md {
-    @apply pt-28  h-[1268px];
+    @apply  h-[1268px];
   }
 
   .home-wrap{
@@ -59,7 +59,8 @@ export default {
       }
 
       h3{
-        color: #5AEEB9 !important;
+        // color: #8C0100!important;
+        color: #a33333 !important;
       }
 
       h2{

@@ -4,7 +4,7 @@
   <nav class="nav-wrap">
     <div class="branding">
       <router-link @click="scrollToSection('home')" class="" :to="{name: 'home'}">
-        <img src="../assets/fxt_logo.png" alt="fxt logo">
+        <img src="../assets/logo/fxt_logo.png" alt="fxt logo">
       </router-link>
     </div>
     <div class="nav-links">
@@ -195,18 +195,19 @@ a{
 }
 
 .link{
-  @apply font-medium py-2 px-2 ;
-  transition: .3s color ease-in;
+  @apply font-medium py-2 px-2 transition-transform duration-500;
+  // transition: .3s color ease-in;
   color: white;
   // color: #2c3e50;
 
   &:hover {
-    color: #42b983;
+    // color: #8C0100;;
+    @apply transform translate-x-4  transition-transform duration-500;
   }
 
   &.router-link-exact-active {
     
-    border-bottom: 1px solid #42b983;
+    border-bottom: 1px solid #8C0100;
   }
 }
 
@@ -214,7 +215,7 @@ nav {
   @apply flex py-3 h-14;
 
   @screen md{
-    @apply py-3 h-24;
+    @apply py-3 h-20;
   }
 
   .nav-links {
