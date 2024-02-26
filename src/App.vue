@@ -16,15 +16,19 @@
           <div id="pricing" class="section" ref="pricing">
             <pricing/>
           </div>
+          <div id="fxt-store" class="section" ref="fxt-store">
+            <fxt-store/>
+          </div>
           <div id="blog" class="section" ref="blog">
             <blog/>
           </div>
+          <div id="faq" class="section" ref="faq">
+            <faq/>
+          </div>
         </div>
       </transition>
-      
-      <div id="contact">
-        
-      </div>
+  
+      <foot-note/>
     </div>
   </div>
 </template>
@@ -33,6 +37,7 @@
 import { defineAsyncComponent } from 'vue';
 
 import Navigation from '@/components/Navigation.vue';
+import FootNote from '@/components/Footer.vue';
 
 const About = defineAsyncComponent(() => import('@/views/About.vue'));
 const HomeView = defineAsyncComponent(() => import('@/views/HomeView.vue'));
@@ -40,6 +45,7 @@ const Blog = defineAsyncComponent(() => import('@/views/Blog.vue'));
 const Faq = defineAsyncComponent(() => import('@/views/Faq.vue'));
 const FxtStore = defineAsyncComponent(() => import('@/views/FxtStore.vue'));
 const Pricing = defineAsyncComponent(() => import('@/views/Pricing.vue'));
+// const Footer = defineAsyncComponent(() => import('./components/Footer.vue'));
 
 
 
@@ -53,7 +59,8 @@ export default {
     Blog,
     Faq,
     FxtStore,
-    Pricing
+    Pricing,
+    FootNote
   },
 
   data() {
@@ -67,6 +74,8 @@ export default {
       this.showContent = true;
     }, 1000);
   },
+
+
 
   methods: {
     scrollToSection(sectionId) {
@@ -100,6 +109,15 @@ $green: #5AEEB9;
   min-height: 100vh;
   background-color: inherit;
   overflow-x: hidden;
+}
+
+.active {
+  border-bottom: 1px solid #8C0100;
+}
+
+section:target {
+  /* Add your styles here */
+  border-bottom: 1px solid #8C0100;
 }
 
 /* .section {

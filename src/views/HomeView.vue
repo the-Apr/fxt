@@ -2,10 +2,10 @@
  <div class="home">
     <div class="home-wrap">
       <div class="landing-text">
-        <h3>learn forex with ease</h3>
-        <h2>Simplicity and Profitability at Forex Terminators</h2>
+        <h3>master forex with ease</h3>
+        <h2>Your Gateway To Simplicity and Profitability at Forex Terminators</h2>
         <p>Anyone can master the art of trading with the right guidance and resources. Our academy is here to transform aspiring traders into confident, informed, and successful market participants</p>
-        <base-button :title= " 'Start Now' " class="btn" />
+        <base-button :title= " 'Enrol Now' " class="btn" />
       </div>
     </div>
  </div>
@@ -26,20 +26,27 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  @apply max-h-[568px] object-cover  pt-6;
+  @apply h-[468px] object-cover  pt-6;
   background: url('../assets/display/Frame 227.png') lightgray 50% / cover no-repeat;
   background-position: top center;
   // clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
 
+  @screen sm {
+    @apply h-[520px]
+  }
+
   @screen md {
-    @apply  h-[1268px];
+    @apply  h-[668px];
   }
 
   .home-wrap{
-    @apply flex flex-col my-8 mx-2  h-full py-6;
+    @apply flex flex-col mt-8 mx-2  h-full pt-6;
 
     @screen md {
-      @apply my-14 mx-6
+      @apply mt-14 mx-6
+    }
+    @screen lg {
+      @apply  mx-14 px-10
     }
 
     .landing-text {
@@ -50,7 +57,7 @@ export default {
       }
 
       @screen lg {
-        @apply gap-y-8;
+        @apply gap-y-8 max-w-[1050px];
       }
       
       h2,p {

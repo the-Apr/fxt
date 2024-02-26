@@ -1,90 +1,96 @@
 <template>
-<div class="top-most">
-<header>
-  <nav class="nav-wrap">
-    <div class="branding">
-      <router-link @click="scrollToSection('home')" class="" :to="{name: 'home'}">
-        <img src="../assets/logo/fxt_logo.png" alt="fxt logo">
-      </router-link>
-    </div>
-    <div class="nav-links">
-      <ul v-show="!mobile">
-               
-        <li @click="scrollToSection('about')">
-          <router-link class="link" :to="{name: 'about'}">Who we are</router-link>
-        </li>
-
-        <li @click="scrollToSection('fxt-store')">
-          <router-link class="link" :to="{ name: 'fxt-store' }">FXT Store</router-link>
-        </li>
-
-        <li @click="scrollToSection('blog')">
-          <router-link class="link" :to="{ name: 'blog' }">Blog</router-link>
-        </li>
-
-        <!-- <li @click="scrollToSection('faq')">
-          <router-link class="link" :to="{ name: 'faq' }">Faq</router-link>
-        </li> -->
-      
-        <!-- <a href="mailto:praiseadebayo218@yahoo.com">
-          <base-button title="contact"/>
-        </a> -->
-        
-      </ul>
-    </div>
-  </nav>
-
-  <!-- mobile navigation -->
-  <fa-icon 
-    :icon="['fas', 'bars']" 
-    class="menu-icon" 
-    @click="toggleNav" 
-    v-show="mobile"
-  />
-  <transition name="mobile-nav" >
-    <div v-show="mobileNav" ref="mobileWrap" @click="checkClick" class="mobile-wrap">
-      <div class="mobile-nav">
-        <ul>
-          <!-- <router-link  :to="{name: 'about'}" @click="mobileScrollToSection('about')" class="link">Abut</router-link> -->
-          
-
-          <li @click="mobileScrollToSection('home')"  class="link mobile-link">
-            <fa-icon :icon="['fas', 'house']" />
-            <router-link :to="{ name: 'home' }">About</router-link>
-          </li>
-
-          <li @click="mobileScrollToSection('about')"  class="link mobile-link">
-            <fa-icon :icon="['far', 'address-card']" />
-            <router-link :to="{ name: 'about' }">Who we are</router-link>
-          </li>
-
-          <li @click="mobileScrollToSection('pricing')"  class="link mobile-link">
-            <fa-icon :icon="['fas', 'bars-progress']" />
-            <router-link :to="{ name: 'pricing' }">Pricing</router-link>
-          </li>
-        
-          <li class="link mobile-link">
-            <fa-icon :icon="['fas', 'phone']" />
-            <p>Contact</p>
-          </li>
-        </ul>
-
-        <div class="socials">
-          <a href="https://github.com/the-Apr" target="_blank">
-            <fa-icon :icon="['fab', 'github']" class="icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/praise-adebayo-6ab205235/" target="_blank">
-            <fa-icon :icon="['fab', 'linkedin']" class="icon" />
-          </a>
-          <a href="mailto:praiseadebayo218@yahoo.com">
-            <fa-icon :icon="['fas', 'envelope']" class="icon" />
-          </a>
+  <div class="top-most">
+    <header>
+      <nav class="nav-wrap">
+        <div class="branding">
+          <router-link @click="scrollToSection('home')" class="" :to="{name: 'home'}">
+            <img src="../assets/logo/fxt_logo.png" alt="fxt logo">
+          </router-link>
         </div>
-      </div>
-    </div>
-  </transition>
-</header> 
-</div>
+        <div class="nav-links">
+          <ul v-show="!mobile">
+                  
+            <li @click="scrollToSection('about')">
+              <router-link class="link" :to="{name: 'about'}">Who we are</router-link>
+            </li>
+
+            <li @click="scrollToSection('fxt-store')">
+              <router-link class="link" :to="{ name: 'fxt-store' }">FXT Store</router-link>
+            </li>
+
+            <li @click="scrollToSection('blog')">
+              <router-link class="link" :to="{ name: 'blog' }">Blog</router-link>
+            </li>
+
+            <li @click="scrollToSection('faq')">
+              <router-link class="link" :to="{ name: 'faq' }">Faq</router-link>
+            </li>
+          
+            <!-- <a href="mailto:praiseadebayo218@yahoo.com">
+              <base-button title="contact"/>
+            </a> -->
+            
+          </ul>
+        </div>
+      </nav>
+
+      <!-- mobile navigation -->
+      <fa-icon 
+        :icon="['fas', 'bars']" 
+        class="menu-icon" 
+        @click="toggleNav" 
+        v-show="mobile"
+      />
+
+      <!-- transition for mobile nav -->
+      <transition name="mobile-nav" >
+        <div v-show="mobileNav" ref="mobileWrap" @click="checkClick" class="mobile-wrap">
+          <div class="mobile-nav">
+            <ul>
+              <!-- <router-link  :to="{name: 'about'}" @click="mobileScrollToSection('about')" class="link">Abut</router-link> -->
+              
+
+              <li @click="mobileScrollToSection('home')"  class="link mobile-link">
+                <fa-icon :icon="['fas', 'house']" />
+                <router-link :to="{ name: 'home' }">About</router-link>
+              </li>
+
+              <li @click="mobileScrollToSection('about')"  class="link mobile-link">
+                <fa-icon :icon="['far', 'address-card']" />
+                <router-link :to="{ name: 'about' }">Who we are</router-link>
+              </li>
+
+              <li @click="mobileScrollToSection('pricing')"  class="link mobile-link">
+                <fa-icon :icon="['fas', 'bars-progress']" />
+                <router-link :to="{ name: 'pricing' }">Pricing</router-link>
+              </li>
+            
+              <li class="link mobile-link">
+                <fa-icon :icon="['fas', 'phone']" />
+                <p>Contact</p>
+              </li>
+            </ul>
+
+            <div class="socials">
+              <a href="https://github.com/the-Apr" target="_blank">
+                <fa-icon :icon="['fab', 'github']" class="icon" />
+              </a>
+              <a href="https://www.linkedin.com/in/praise-adebayo-6ab205235/" target="_blank">
+                <fa-icon :icon="['fab', 'linkedin']" class="icon" />
+              </a>
+              <a href="mailto:praiseadebayo218@yahoo.com">
+                <fa-icon :icon="['fas', 'envelope']" class="icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </header> 
+  </div>
+ 
+  <div v-show="showBottomScroll" class="bottom-scroll"  @click="scrollToSection('home')"> 
+    <fa-icon :icon="['fas', 'caret-up']" class="icon" />
+  </div>
 </template>
 
 <script>
@@ -99,6 +105,8 @@ export default {
 
   data() {
     return {
+      showBottomScroll: false,
+      scrollThreshold: 0.3,
       mobile: null,
       mobileNav: null,
       windowWidth: null
@@ -107,7 +115,15 @@ export default {
 
   created() {
     window.addEventListener('resize', this.checkScreen);
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.bottomScroll);
     this.checkScreen();
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkScreen);
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.bottomScroll);
   },
 
   methods: {
@@ -121,10 +137,6 @@ export default {
       this.mobileNav = false;
       return;
     },
-
-    // ...mapMutations(['toggleNav']),
-
-    // ...mapActions([ 'mobileScrollToSection']),
 
     toggleNav() {
       this.mobileNav = !this.mobileNav;
@@ -151,168 +163,217 @@ export default {
         this.toggleNav();
       }
     },
-  },
 
-  computed : {
-    // ...mapState(['mobileNav'])
-  }
+
+    handleScroll() {
+      const navLinks = document.querySelectorAll('.link');
+      navLinks.forEach(navLink => {
+        const href = navLink.getAttribute('href');
+        if (href) {
+          const sectionId = href.substring(1);
+          const section = document.getElementById(sectionId);
+          if (section && this.isElementInViewport(section)) {
+            navLink.classList.add('active');
+          } else {
+            navLink.classList.remove('active');
+          }
+        }
+      });
+    },
+
+    isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      );
+    },
+
+    bottomScroll() {
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+      const totalHeight = document.documentElement.scrollHeight;
+
+      // Calculate the scroll position as a percentage
+      const scrollPosition = scrollY / (totalHeight - windowHeight);
+
+      // Toggle the visibility of the bottom-scroll element
+      this.showBottomScroll = scrollPosition > this.scrollThreshold;
+    },
+
+  },
 
 }
 </script>
 
 <style lang="scss" scoped>
-.top-most {
-  @apply sticky top-0 left-0 w-full bg-[#080b41] opacity-90;
-  z-index: 999;
-}
+  .bottom-scroll {
+    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-2 py-4 right-10 bottom-8 text-center;
 
-header {
-  @apply py-3 px-3 text-white ;
-  // border-bottom: 1px solid #4238c9;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) ;
-
-  @screen md {
-    @apply py-1
-  }
-  @screen lg {
-    @apply px-14
-  }
-
-  .nav-wrap {
-    @apply px-1 mx-4;
-
-    @screen sm {
-      @apply px-4
+    .icon {
+      @apply text-white  w-9 m-2;
+      // bg-[#5AEEB9]
+      
     }
   }
-}
-ul{
-  @apply list-none cursor-pointer;
-}
 
-a{
-  @apply no-underline;
-}
-
-.link{
-  @apply font-medium py-2 px-2 transition-transform duration-500;
-  // transition: .3s color ease-in;
-  color: white;
-  // color: #2c3e50;
-
-  &:hover {
-    // color: #8C0100;;
-    @apply transform translate-x-4  transition-transform duration-500;
-  }
-
-  &.router-link-exact-active {
-    
+  .active {
     border-bottom: 1px solid #8C0100;
   }
-}
 
-nav {
-  @apply flex py-3 h-14;
-
-  @screen md{
-    @apply py-3 h-20;
+  .top-most {
+    @apply sticky top-0 left-0 w-full bg-[#080b41] opacity-90;
+    z-index: 999;
   }
 
-  .nav-links {
-    @apply relative flex items-center justify-end flex-1;
-
-    ul {
-    @apply flex gap-6 items-center;
-
-      // .link {
-      //   font-weight: bold;
-      //   color: #2c3e50;
-      // }
-
-      // a.router-link-exact-active {
-      //   color: #42b983;
-      // }
-    }
-  }
-}
-
-
-.branding {
-  @apply flex items-center;
-
-  img {
-    @apply object-cover;
-    width: 200px;
-    height: 60px;
+  header {
+    @apply py-3 px-3 text-white ;
+    // border-bottom: 1px solid #4238c9;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) ;
 
     @screen md {
-      width: 250px;
+      @apply py-1
+    }
+    @screen lg {
+      @apply px-14
+    }
+
+    .nav-wrap {
+      @apply px-1 mx-4;
+
+      @screen sm {
+        @apply px-4
+      }
     }
   }
-}
-
-
-.menu-icon {
-  @apply cursor-pointer absolute top-6 right-10 h-6 w-auto;
-
-  @screen sm {
-    @apply h-8
-  }
-
-  @media (min-width: 768px) {
-    top: 35px;
-    right: 54px;
-
-  }
-}
-
-.mobile-wrap {
-  @apply fixed top-0 left-0 w-full bg-transparent;
-  height: 100%;
-  z-index: 3;
-}
-
-.mobile-nav {
-  @apply p-6 w-4/6 flex flex-col justify-between h-full;
-  max-width: 250px;
-  // background-color: #4b4b4f;
-  background-color: #1f1f23;
-  box-shadow: 7px 0px 11px 5px rgba(0, 0, 0, 0.1);
-
   ul{
-    @apply flex flex-col gap-y-2
+    @apply list-none cursor-pointer;
   }
 
-  .link {
-    @apply p-1
+  a{
+    @apply no-underline;
   }
 
-  .mobile-link {
-    @apply flex gap-6 items-center
-  }
-
-  .socials {
-    @apply justify-center flex gap-4;
+  .link{
+    @apply font-medium py-2 px-2 transition-transform duration-500;
+    // transition: .3s color ease-in;
+    color: white;
+    // color: #2c3e50;
 
     &:hover {
-    color: #4238c9;
-  }
-  }
-}
- 
-// animation
-.mobile-nav-enter-active,
-.mobile-nav-leave-active {
-  transition: all 1s ease;
-}
+      // color: #8C0100;;
+      @apply transform transition-transform duration-500;
+      border-bottom: 1px solid #8C0100;
+    }
 
-.mobile-nav-enter-from {
-  transform: translateX(-250px);
-}
-.mobile-nav-enter-to {
-  transform: translateX(0);
-}
-.mobile-nav-leave-to {
-  transform: translateX(-250px);
-}
+    &.router-link-exact-active {
+      
+      border-bottom: 1px solid #8C0100;
+    }
+  }
+
+  nav {
+    @apply flex py-3 h-14;
+
+    @screen md{
+      @apply py-3 h-20;
+    }
+
+    .nav-links {
+      @apply relative flex items-center justify-end flex-1;
+
+      ul {
+      @apply flex gap-6 items-center;
+
+        // .link {
+        //   font-weight: bold;
+        //   color: #2c3e50;
+        // }
+
+        // a.router-link-exact-active {
+        //   color: #42b983;
+        // }
+      }
+    }
+  }
+
+
+  .branding {
+    @apply flex items-center;
+
+    img {
+      @apply object-cover;
+      width: 200px;
+      height: 60px;
+
+      @screen md {
+        width: 250px;
+      }
+    }
+  }
+
+
+  .menu-icon {
+    @apply cursor-pointer absolute top-6 right-10 h-6 w-auto;
+
+    @screen sm {
+      @apply h-8
+    }
+
+    @media (min-width: 768px) {
+      top: 35px;
+      right: 54px;
+
+    }
+  }
+
+  .mobile-wrap {
+    @apply fixed top-0 left-0 w-full bg-transparent;
+    height: 100%;
+    z-index: 3;
+  }
+
+  .mobile-nav {
+    @apply p-6 w-4/6 flex flex-col justify-between h-full;
+    max-width: 250px;
+    // background-color: #4b4b4f;
+    background-color: #1f1f23;
+    box-shadow: 7px 0px 11px 5px rgba(0, 0, 0, 0.1);
+
+    ul{
+      @apply flex flex-col gap-y-2
+    }
+
+    .link {
+      @apply p-1
+    }
+
+    .mobile-link {
+      @apply flex gap-6 items-center
+    }
+
+    .socials {
+      @apply justify-center flex gap-4;
+
+      &:hover {
+      color: #4238c9;
+    }
+    }
+  }
+ 
+  // animation
+  .mobile-nav-enter-active,
+  .mobile-nav-leave-active {
+    transition: all 1s ease;
+  }
+
+  .mobile-nav-enter-from {
+    transform: translateX(-250px);
+  }
+  .mobile-nav-enter-to {
+    transform: translateX(0);
+  }
+  .mobile-nav-leave-to {
+    transform: translateX(-250px);
+  }
 </style>

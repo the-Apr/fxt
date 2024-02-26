@@ -17,7 +17,7 @@
               </div>
               
             </div>
-            <base-button :title="'Get started'"/>
+            <base-button :title="'Get started'" :link= "plan.link"/>
           </div>
         </div>
       </div>
@@ -37,6 +37,7 @@ export default {
         {
           plan: 'Beginner Course',
           price: '$24',
+          link: 'https://paystack.com/buy/fxt-beginners-crash-course-attcbj ',
           packages: [
             'Recorded beginers crash course',
             'One of FXT setup',
@@ -49,7 +50,8 @@ export default {
 
         {
           plan: 'Advanced Course',
-          price: '$24',
+          price: '$50',
+          link: 'https://paystack.com/buy/fxt-advanced-crash-course-thmfpr ',
           packages: [
             'Recorded beginers crash course',
             'One of FXT setup',
@@ -67,7 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 .pricing {
-  @apply mx-1;
+  @apply mx-2;
 
   @screen md {
     @apply mx-4;
@@ -115,7 +117,7 @@ export default {
         }
 
         .plan {
-          @apply px-6 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl;
+          @apply px-4 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl;
           box-shadow: 8px 9px 25px 2px rgba(0, 0, 0, 0.15);
 
           @screen md {

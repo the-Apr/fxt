@@ -21,6 +21,12 @@
           <h2>FXT Review</h2>
           <p>See what people have to say about us</p>
         </div>
+        <div class="review-card">
+          <review-card></review-card>
+          <review-card></review-card>
+          <review-card></review-card>
+          <review-card></review-card>
+        </div>
       </div>
     </div>  
   </div>
@@ -31,12 +37,14 @@
 import { defineAsyncComponent } from 'vue';
 
 const BlogVideo = defineAsyncComponent(() => import('@/components/BlogVideo.vue'));
+const ReviewCard = defineAsyncComponent(() => import('@/components/ReviewCard.vue'));
 
 export default {
   name: "blog",
 
   components: {
-    BlogVideo
+    BlogVideo,
+    ReviewCard
   }
 
 }
@@ -49,7 +57,7 @@ export default {
   @screen md {
     @apply  px-6 mt-20;
   }
-  @screen lg {
+  @screen xl {
     @apply mx-20;
   }
 
@@ -75,20 +83,33 @@ export default {
       }
 
       p{
-        @apply text-left text-sm font-normal leading-[22px] mb-2 ;
+        @apply text-center text-sm font-medium leading-[22px] mb-2 ;
 
         @screen md {
-          @apply leading-[30px] tracking-wider;
+          @apply text-base leading-[30px] tracking-wide text-left
         }
 
         @screen lg {
-          @apply  text-base font-normal
+          @apply font-normal
         }
       }
     }
 
-    .our-blog {
-      @apply flex flex-col gap-8;
+    .our-blog,
+    .fxt-review {
+      @apply flex flex-col gap-8 my-8;
+    }
+
+    .review-card {
+      @apply grid grid-cols-1 gap-3;
+
+      @screen md {
+        @apply grid-cols-2 gap-6;
+      }
+
+      @screen lg{
+        @apply p-10
+      }
     }
   }
 }

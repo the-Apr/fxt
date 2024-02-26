@@ -26,6 +26,7 @@ export default {
           title: "Make 2M in a week",
           caption: ""
         },
+
         {
           link: "https://youtu.be/mn3-pv5hXYY?si=QFfHIxcROY7J_P3u",
           title: "Make 2M in a week",
@@ -44,7 +45,22 @@ export default {
 
 <style lang="scss" scoped>
 .blog-video {
-  @apply flex flex-row gap-8;
+  @apply grid grid-cols-1 gap-8 mx-1 grid-flow-dense;
 
+  @screen md {
+    @apply grid-cols-2 mx-14 gap-12;
+  }
+  @screen lg {
+    @apply grid-cols-3 mx-14;
+  }
+
+  // .video-card {
+  //   @screen md {
+  //     &:nth-child(2) {
+  //       @apply col-span-2;
+  //     }
+  //   }
+  // }
+  
 }
 </style>

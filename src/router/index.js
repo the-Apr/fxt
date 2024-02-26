@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+const FaqList = () => import ('../components/FaqList.vue');
 
 const routes = [
   {
@@ -18,7 +19,7 @@ const routes = [
     
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
-      title: 'Products'
+      title: 'About'
     }
   },
 
@@ -59,7 +60,13 @@ const routes = [
     component: () => import( /* webpackChunkName: "faq" */ '../views/Faq.vue'),
     meta: {
       title: 'Faq'
-    }
+    },
+    props: true, 
+    children: [
+      {
+        path: '/:id', name: 'Que', component: FaqList 
+      }
+    ]
   },
 ]
 
@@ -69,8 +76,17 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  // Set the document title based on the route meta title
   document.title = `${to.meta.title} | FXT`;
-  next();
-})
+
+  // Check if the page is being refreshed
+  if (from.name && !to.name) {
+    // Redirect to the home page
+    next('/about');
+  } else {
+    // Continue with the navigation
+    next();
+  }
+});
 
 export default router

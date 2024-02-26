@@ -209,6 +209,7 @@ $fxt-red-2: #8C0100;
       @screen lg {
         @apply px-20 py-14;
       }
+     
 
       h2{
         @apply text-xl font-semibold leading-[normal] uppercase;
@@ -322,6 +323,9 @@ $fxt-red-2: #8C0100;
 
       @screen md {
         @apply py-10;
+      }
+      @screen lg {
+        @apply px-32 ;
       }
 
       .quote-wrap{

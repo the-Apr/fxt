@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
 import VueLazyLoad from 'vue3-lazyload'
 
@@ -28,5 +29,7 @@ app.component('base-button', BaseButton);
 app.use(VueLazyLoad, {
   // options...
 })
+
+app.use(store);
 app.use(router);
 app.mount('#app')

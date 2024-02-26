@@ -5,19 +5,29 @@
         <path d="M464 384.39a32 32 0 01-13-2.77 15.77 15.77 0 01-2.71-1.54l-82.71-58.22A32 32 0 01352 295.7v-79.4a32 32 0 0113.58-26.16l82.71-58.22a15.77 15.77 0 012.71-1.54 32 32 0 0145 29.24v192.76a32 32 0 01-32 32zM268 400H84a68.07 68.07 0 01-68-68V180a68.07 68.07 0 0168-68h184.48A67.6 67.6 0 01336 179.52V332a68.07 68.07 0 01-68 68z"></path>
       </svg>
     </div>
+
     <p class="card-title">{{video.title}}</p>
-    <p class="card-des">
+
+    <!-- <p class="card-des">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam
       inventore natus modi repellendus dolorem unde odio sequi! Porro, cum
       maiores tempore suscipit laudantium perspiciatis, illo sunt,
       reprehenderit quae est blanditiis.
-    </p>
+    </p> -->
+
+    <!-- play button -->
+    <a :href="video.link" target="_blank">
     <div class="card-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 384 512" stroke-width="0" fill="currentColor" stroke="currentColor">
         <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path>
       </svg>
-      <span class="card-btn-text">Watch Video</span>
+  
+      <a class="card-btn-text">
+        <span >Watch Video</span>
+      </a>
+      
     </div>
+    </a>
   </div>
 </template>
 
@@ -29,10 +39,14 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  
   display: flex;
+  // justify-content: center;
+  // align-items: center;
+  gap: 10px;
   flex-direction: column;
-  width: 270px;
-  height: 300px;
+  width: 300px;
+  height: 330px;
   max-height: 330px;
   background-color: var(--white);
   border-radius: 10px;
@@ -42,7 +56,11 @@ export default {
   transition: all 0.3s;
   cursor: pointer;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 12px;
+
+  @screen md {
+    @apply max-w-[390px] h-[400px] max-h-[600px] flex-1;
+  }
 }
 
 .card:hover {
@@ -74,7 +92,7 @@ export default {
   /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
   // font-weight: 600;
-  color:  #8C0100;
+  // color:  #8C0100;
   /* color: #1797b8; */
   cursor: default;
   -webkit-box-orient: vertical;
@@ -91,28 +109,28 @@ export default {
 }
 
 
-  p{
-    @apply text-base font-semibold uppercase leading-normal;
-    
+p{
+  @apply text-base font-semibold uppercase leading-normal;
+  
 
-    @screen md {
-      @apply text-[20px];
-    }
+  @screen md {
+    @apply text-[20px];
   }
-
-.card-des {
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  margin: 0;
-  font-size: 10px;
-  // font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-  //         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color:  #8C0100;
-  cursor: default;
 }
+
+// .card-des {
+//   -webkit-box-orient: vertical;
+//   overflow: hidden;
+//   display: -webkit-box;
+//   -webkit-line-clamp: 1;
+//   line-clamp: 1;
+//   margin: 0;
+//   font-size: 10px;
+//   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+//           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+//   color:  #8C0100;
+//   cursor: default;
+// }
 
 .card-btn {
   font-size: 15px;

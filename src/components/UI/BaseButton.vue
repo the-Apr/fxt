@@ -1,14 +1,16 @@
 <template>
-  <button class="button">
-   {{title}}
-  </button>
+  <a :href="link" target="_blank">
+    <button class="button">
+      {{title}}
+    </button>
+  </a>
 </template>
 
 <script>
 export default {
   name: 'BaseButton',
 
-  props: ['title']
+  props: ['title', 'link']
 }
 </script>
 
