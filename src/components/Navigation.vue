@@ -208,7 +208,7 @@ export default {
 
 <style lang="scss" scoped>
   .bottom-scroll {
-    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-2 py-4 right-10 bottom-8 text-center;
+    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-2 py-4 right-20 bottom-16 text-center z-50;
 
     .icon {
       @apply text-white  w-9 m-2;
