@@ -12,7 +12,9 @@
       </div>
 
       <div class=" col-start-2 col-span-10 grid justify-items-start">
-        <h1 class="font-semibold leading-8 tracking-wider text-sm md:text-lg text-left">{{title}}</h1>
+        <router-link :to="faqLink"> 
+          <h1 class="font-semibold leading-8 tracking-wider text-sm md:text-lg text-left" @click="toggleDropdown">{{title}}</h1>
+        </router-link>
       </div>
     </div>
 

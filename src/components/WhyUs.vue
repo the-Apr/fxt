@@ -55,7 +55,7 @@ export default {
     }
 
     .right {
-      @apply flex flex-col gap-2 text-start justify-center;
+      @apply flex flex-col gap-2 text-start justify-center items-center;
 
       @screen md {
         @apply gap-4;
@@ -70,7 +70,7 @@ export default {
       }
     
       p{
-      @apply  text-left text-sm font-normal leading-[22px] mb-2 tracking-[0.035px] ;
+      @apply   text-sm font-normal leading-[22px] text-justify mb-2 tracking-[0.035px] ;
 
       @screen md {
         @apply leading-[24px] tracking-wider text-base;

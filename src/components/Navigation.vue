@@ -36,7 +36,7 @@
 
       <!-- mobile navigation -->
       <fa-icon 
-        :icon="['fas', 'bars']" 
+        :icon="['fas', 'bars-staggered']" 
         class="menu-icon" 
         @click="toggleNav" 
         v-show="mobile"
@@ -46,13 +46,17 @@
       <transition name="mobile-nav" >
         <div v-show="mobileNav" ref="mobileWrap" @click="checkClick" class="mobile-wrap">
           <div class="mobile-nav">
+
             <ul>
-              <!-- <router-link  :to="{name: 'about'}" @click="mobileScrollToSection('about')" class="link">Abut</router-link> -->
-              
+              <div class="branding">
+                <router-link @click="mobileScrollToSection('home')" class="" :to="{name: 'home'}">
+                  <img src="../assets/logo/fxt_logo.png" alt="fxt logo">
+                </router-link>
+              </div>
 
               <li @click="mobileScrollToSection('home')"  class="link mobile-link">
                 <fa-icon :icon="['fas', 'house']" />
-                <router-link :to="{ name: 'home' }">About</router-link>
+                <router-link :to="{ name: 'home' }">Home</router-link>
               </li>
 
               <li @click="mobileScrollToSection('about')"  class="link mobile-link">
@@ -60,26 +64,40 @@
                 <router-link :to="{ name: 'about' }">Who we are</router-link>
               </li>
 
-              <li @click="mobileScrollToSection('pricing')"  class="link mobile-link">
-                <fa-icon :icon="['fas', 'bars-progress']" />
-                <router-link :to="{ name: 'pricing' }">Pricing</router-link>
+              <li @click="mobileScrollToSection('blog')"  class="link mobile-link">
+                <fa-icon :icon="['fas', 'newspaper']" />
+                <router-link :to="{ name: 'blog' }">Blog</router-link>
+              </li>
+
+              <li @click="mobileScrollToSection('faq')"  class="link mobile-link">
+                <fa-icon :icon="['fas', 'circle-question']" />
+                <router-link :to="{ name: 'faq' }">FAQs</router-link>
               </li>
             
-              <li class="link mobile-link">
-                <fa-icon :icon="['fas', 'phone']" />
-                <p>Contact</p>
-              </li>
+            
             </ul>
 
             <div class="socials">
-              <a href="https://github.com/the-Apr" target="_blank">
-                <fa-icon :icon="['fab', 'github']" class="icon" />
+              <a href="https://www.instagram.com/i_am_ken_jay?igsh=OTZkMnl3ZGE2azhi&utm_source=qr" target="_blank">
+                <fa-icon :icon="['fab', 'instagram']" class="icon" />
               </a>
-              <a href="https://www.linkedin.com/in/praise-adebayo-6ab205235/" target="_blank">
-                <fa-icon :icon="['fab', 'linkedin']" class="icon" />
+              <a href="https://www.facebook.com/Ken.J1111?mibextid=LQQJ4d" target="_blank">
+                <fa-icon :icon="['fab', 'facebook']" class="icon" />
               </a>
-              <a href="mailto:praiseadebayo218@yahoo.com">
+              <a href="https://x.com/fxterminators?s=21&t=-50ebEruvZMKl8etFJINrA" target="_blank">
+                <fa-icon :icon="['fab', 'x-twitter']" class="icon" />
+              </a>
+              <a href="https://youtube.com/@ForexTerminators?si=8vRpGCe38W4NjsBj" target="_blank">
+                <fa-icon :icon="['fab', 'youtube']" class="icon" />
+              </a>
+              <a href="https://wa.me/message/C2CB6JTTCQUNE1" target="_blank">
+                <fa-icon :icon="['fab', 'whatsapp']" class="icon" />
+              </a>
+              <a href="mailto:support@forexterminators.com " target="_blank">
                 <fa-icon :icon="['fas', 'envelope']" class="icon" />
+              </a>
+              <a href="tel:09019443735 " target="_blank">
+                <fa-icon :icon="['fas', 'phone']" class="icon" />
               </a>
             </div>
           </div>
@@ -208,10 +226,14 @@ export default {
 
 <style lang="scss" scoped>
   .bottom-scroll {
-    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-2 py-4 right-20 bottom-16 text-center z-50;
+    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-1 py-3 right-10 bottom-52 text-center z-50;
+
+    @screen sm {
+      @apply px-2 py-4 right-20 bottom-16;
+    }
 
     .icon {
-      @apply text-white  w-9 m-2;
+      @apply text-white  w-9 m-1;
       // bg-[#5AEEB9]
       
     }
@@ -222,12 +244,12 @@ export default {
   }
 
   .top-most {
-    @apply sticky top-0 left-0 w-full bg-[#080b41] opacity-90;
+    @apply sticky top-0 left-0 w-full bg-[#d19999] opacity-80;
     z-index: 999;
   }
 
   header {
-    @apply py-3 px-3 text-white ;
+    @apply py-3 px-3 text-black ;
     // border-bottom: 1px solid #4238c9;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) ;
 
@@ -257,7 +279,7 @@ export default {
   .link{
     @apply font-medium py-2 px-2 transition-transform duration-500;
     // transition: .3s color ease-in;
-    color: white;
+    color: black;
     // color: #2c3e50;
 
     &:hover {
@@ -353,7 +375,7 @@ export default {
     }
 
     .socials {
-      @apply justify-center flex gap-4;
+      @apply justify-center flex gap-x-6 gap-y-3 px-6 flex-wrap;
 
       &:hover {
       color: #4238c9;

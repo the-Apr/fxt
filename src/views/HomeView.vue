@@ -5,7 +5,7 @@
         <h3>master forex with ease</h3>
         <h2>Your Gateway To Simplicity and Profitability at Forex Terminators</h2>
         <p>Anyone can master the art of trading with the right guidance and resources. Our academy is here to transform aspiring traders into confident, informed, and successful market participants</p>
-        <base-button :title= " 'Enrol Now' " class="btn" />
+        <base-button :title= " 'Enrol Now' " class="btn" @click="scrollToSection('pricing')"/>
       </div>
     </div>
  </div>
@@ -17,8 +17,13 @@
 export default {
   name: 'HomeView',
   components: {
-    
   },
+
+  methods: {
+    scrollToSection(sectionId) {
+      this.$root.scrollToSection(sectionId);
+    },
+  }
 
 
 }
@@ -26,34 +31,39 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  @apply h-[468px] object-cover  pt-6;
-  background: url('../assets/display/Frame 227.png') lightgray 50% / cover no-repeat;
+  @apply min-h-[468px] object-cover  pt-6;
+  // background: url('../assets/display/Frame 227.png') lightgray 50% / cover no-repeat;
+  background: #f6ecec;
   background-position: top center;
   // clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
 
   @screen sm {
-    @apply h-[520px]
+    @apply min-h-[520px]
   }
 
   @screen md {
-    @apply  h-[668px];
+    @apply  min-h-[668px];
   }
 
   .home-wrap{
     @apply flex flex-col mt-8 mx-2  h-full pt-6;
 
     @screen md {
-      @apply mt-14 mx-6
+      @apply mt-14 mx-6;
     }
+
     @screen lg {
-      @apply  mx-14 px-10
+      @apply  mx-8 px-10
+    }
+    @screen xl {
+      @apply mx-52
     }
 
     .landing-text {
       @apply max-w-[900px] flex flex-col justify-center text-left px-4 gap-y-4;
 
       @screen md {
-        @apply gap-y-6 px-12
+        @apply gap-y-6 px-10
       }
 
       @screen lg {
@@ -61,7 +71,7 @@ export default {
       }
       
       h2,p {
-        color: white !important;
+        color: black !important;
         
       }
 

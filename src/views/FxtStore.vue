@@ -8,13 +8,10 @@
 
       <div class="store-card">
         <div class="card">
-          <img src="../assets/display/comingsoon.jpeg" alt="coming soon">
+          <img src="../assets/display/coming-soon.webp" alt="coming soon">
         </div>
         <div class="card">
-          <img src="../assets/display/comingsoon.jpeg" alt="coming soon">
-        </div>
-        <div class="card">
-          <img src="../assets/display/comingsoon.jpeg" alt="coming soon">
+          <img src="../assets/display/coming-soon.webp" alt="coming soon">
         </div>
       </div>
     </div>
@@ -93,8 +90,8 @@ export default {
       @apply gap-y-14 px-20;
     }
 
-    @screen xl {
-      @apply px-36
+    @screen lg {
+      @apply px-52
     }
 
     .store-card {

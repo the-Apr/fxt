@@ -13,14 +13,14 @@
     :modules="modules"
     class="mySwiper"
   >
-    <!-- <swiper-slide  v-for="(quote,index) in quotes" :key="index">
-      <p>{{quote}}</p>
-    </swiper-slide> -->
+    <swiper-slide  v-for="(quote,index) in quotes" :key="index">
+      <p class="slider-text">"{{quote}}"</p>
+    </swiper-slide>
 
-    <swiper-slide>Slide 1</swiper-slide>
+    <!-- <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide> -->
   </swiper>
 </template>
 
@@ -64,7 +64,7 @@ p{
   @apply text-center text-base font-medium leading-[22px] italic;
 
   @screen md {
-    @apply leading-[30px] text-lg tracking-wide;
+    @apply leading-[30px] text-xl tracking-wide;
   }
 }
 
@@ -82,5 +82,9 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.slider-text {
+  @apply mb-8
 }
 </style>

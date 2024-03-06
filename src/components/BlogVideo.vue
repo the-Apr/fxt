@@ -23,19 +23,19 @@ export default {
       videos: [
         {
           link: "https://youtu.be/mn3-pv5hXYY?si=QFfHIxcROY7J_P3u",
-          title: "Make 2M in a week",
-          caption: ""
+          title: "How I made over $100",
+          frame: "https://www.youtube.com/embed/mn3-pv5hXYY?si=fvAdaTjmFEtas4fU"
         },
 
         {
           link: "https://youtu.be/mn3-pv5hXYY?si=QFfHIxcROY7J_P3u",
-          title: "Make 2M in a week",
-          caption: ""
+          title: "I made over 71,000 in 7hrs",
+          frame: "https://www.youtube.com/embed/b7YUw9GbdCU?si=y5DCb_9axPnofDYg"
         },
         {
           link: "https://youtu.be/mn3-pv5hXYY?si=QFfHIxcROY7J_P3u",
-          title: "Make 2M in a week",
-          caption: ""
+          title: "How to import an MT5 chart template",
+          frame: "https://www.youtube.com/embed/ygei91elOvU?si=k4wSIMn2gP1MvDrO"
         }
       ]
     }
@@ -51,16 +51,18 @@ export default {
     @apply grid-cols-2 mx-14 gap-12;
   }
   @screen lg {
-    @apply grid-cols-3 mx-14;
+    @apply grid-cols-2 mx-6;
   }
 
-  // .video-card {
-  //   @screen md {
-  //     &:nth-child(2) {
-  //       @apply col-span-2;
-  //     }
-  //   }
-  // }
+  .vdeo-card{
+    @apply w-full;
+  }
+  
+  .video-card:first-child {
+    @screen md {
+      @apply col-span-1;
+    }
+  }
   
 }
 </style>

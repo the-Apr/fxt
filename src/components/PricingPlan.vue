@@ -98,7 +98,7 @@ export default {
       @apply flex flex-col gap-14 justify-center items-center;
 
       .para{
-        @apply text-center text-sm font-normal leading-[22px] mb-2 ;
+        @apply text-center text-sm font-normal w-[90%] leading-[22px] mb-2 ;
 
         @screen md {
           @apply leading-[30px] text-lg tracking-wide w-4/5;

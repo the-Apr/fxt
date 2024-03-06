@@ -27,9 +27,21 @@ app.component('loading', BaseLoading);
 app.component('base-button', BaseButton);
 
 app.use(VueLazyLoad, {
-  // options...
+  loading: '',
+  error: '',
+  lifecycle: {
+    loading: (el) => {
+      console.log('loading', el)
+    },
+    error: (el) => {
+      console.log('error', el)
+    },
+    loaded: (el) => {
+      console.log('loaded', el)
+    }
+  }
 })
 
 app.use(store);
 app.use(router);
-app.mount('#app')
+app.mount('#app');

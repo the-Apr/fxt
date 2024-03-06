@@ -2,28 +2,69 @@
   <div class="review">
     <div class="review-card">
       <div class="text">
-        <p>Forex Terminators has been a revelation for my trading journey. The academy's structured courses and expert guidance have transformed my understanding of the markets. I now feel more confident and equipped to make informed decisions. Highly recommend it!</p>
+        <p>”{{ review.story }}”</p>
       </div>
-      <div class="name">
-        <p>Chijioke Njoku</p>
+      <div class="details-wrap">
+        <img :src="review.pic" alt="" />
+        <div class="details">
+          <p class="name">{{ review.name }}</p>
+          <p class="status">{{review.status}}</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.review-card{
-  @apply px-8 py-12 flex flex-col gap-y-6 bg-[#ecd6d6] rounded-2xl;
 
-  p{
-    @apply text-left text-sm font-medium leading-[22px] mb-2 ;
+<script>
+export default {
+  name: "review-card",
+
+  props: ["review"],
+};
+</script>
+
+<style lang="scss" scoped>
+.review-card {
+  @apply px-4 py-8 flex flex-col gap-y-6 bg-[#ecd6d6] justify-between rounded-2xl min-h-[200px];
+
+  @screen md {
+    @apply px-8 py-12;
+  }
+
+  p {
+    @apply text-left text-sm font-normal leading-[22px];
 
     @screen md {
       @apply leading-[30px] tracking-wider;
     }
 
     @screen lg {
-      @apply  text-base font-normal
+      @apply text-base font-normal;
+    }
+  }
+
+  .details-wrap {
+    @apply flex flex-row gap-8 justify-start items-center;
+
+    img {
+      @apply rounded-full h-10 w-10;
+
+      @screen md{
+        @apply rounded-full h-14 w-14
+      }
+    }
+
+    .details {
+      @apply flex flex-col gap-1 justify-center;
+
+      .name {
+        @apply font-semibold;
+      }
+
+      .status{
+        color: #4b4b4b;
+      }
     }
   }
 }

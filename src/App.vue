@@ -37,7 +37,7 @@
 import { defineAsyncComponent } from 'vue';
 
 import Navigation from '@/components/Navigation.vue';
-import FootNote from '@/components/Footer.vue';
+import FootNote from '@/components/FooterNote.vue';
 
 const About = defineAsyncComponent(() => import('@/views/About.vue'));
 const HomeView = defineAsyncComponent(() => import('@/views/HomeView.vue'));
@@ -45,8 +45,6 @@ const Blog = defineAsyncComponent(() => import('@/views/Blog.vue'));
 const Faq = defineAsyncComponent(() => import('@/views/Faq.vue'));
 const FxtStore = defineAsyncComponent(() => import('@/views/FxtStore.vue'));
 const Pricing = defineAsyncComponent(() => import('@/views/Pricing.vue'));
-// const Footer = defineAsyncComponent(() => import('./components/Footer.vue'));
-
 
 
 export default {

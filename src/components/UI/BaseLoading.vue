@@ -2,7 +2,7 @@
   <div class="loading">
     <div class="outer-circle">
       <span class="load">
-        <img class="animate-ping" src="../../assets/logo/X.png" alt="" srcset="">
+        <img class="" src="../../assets/logo/X.png" alt="" srcset="">
       </span>
     </div>
   </div>
@@ -32,6 +32,7 @@ export default {
 .outer-circle {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   @keyframes spin {
     to {
@@ -46,20 +47,28 @@ export default {
     @apply absolute;
 
     img{
-      @apply h-20 w-20 object-cover
+      @apply h-20 w-20 object-cover;
+
+      @screen md {
+        @apply h-32 w-32;
+      }
     }
   }
 }
 
 .outer-circle::before {
   content: "";
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border: 3px solid transparent;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
   animation: spin ease 1000ms infinite;
+
+  @screen md {
+    @apply w-[150px] h-[150px];
+  }
 }
 
 

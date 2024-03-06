@@ -5,7 +5,7 @@
       <!-- who we are -->
       <div class="about-us">
         <div class="left">
-          <img src="../assets/display/live_trade.png" alt="live forex trade">
+          <img src="../assets/display/live_trade.webp" alt="live forex trade">
         </div>
         <div class="right">
           <h3>About us</h3>
@@ -94,7 +94,7 @@ export default {
 
         paraThree: `He is the CEO of forex terminators, forex terminators is a community which is focused on creating fearless and brave traders who is capable of terminating the forex market they believe the own the market and they are the Forex terminators`,
 
-        srcPath: require('../assets/display/founder.png'),
+        srcPath: require('../assets/display/ken.jpeg'),
         loadingPath: require('../assets/display/loading.jpg'),
         errorPath: require('../assets/display/loading.jpg'),
       }
@@ -131,7 +131,11 @@ $fxt-red-2: #8C0100;
         @apply flex-row gap-2 px-6;;
       }
       @screen lg {
-        @apply gap-12 mx-20;
+        @apply gap-12 mx-16;
+      }
+
+      @screen xl {
+        @apply mx-52
       }
 
       .left {
@@ -207,7 +211,11 @@ $fxt-red-2: #8C0100;
       }
 
       @screen lg {
-        @apply px-20 py-14;
+        @apply px-16 py-14;
+      }
+
+      @screen xl {
+        @apply px-60
       }
      
 
@@ -325,14 +333,17 @@ $fxt-red-2: #8C0100;
         @apply py-10;
       }
       @screen lg {
-        @apply px-32 ;
+        @apply px-32;
+      }
+      @screen xl {
+        @apply px-52
       }
 
       .quote-wrap{
-        @apply flex flex-col gap-8 justify-center items-center px-4  border-y-[1px] border-[#a33333] py-8;
+        @apply flex flex-col gap-2 justify-center items-center px-1  border-y-[1px] border-[#a33333] py-8 h-[280px];
 
         @screen md {
-         @apply px-8 py-12;
+         @apply px-8 py-12 gap-8 h-[350px];
         }
 
         h2{
@@ -361,7 +372,10 @@ $fxt-red-2: #8C0100;
         @apply flex-row px-6;;
       }
       @screen lg {
-        @apply mx-20;
+        @apply mx-16;
+      }
+      @screen xl {
+        @apply mx-52;
       }
 
       .founder-img {
