@@ -117,7 +117,7 @@ export default {
         }
 
         .plan {
-          @apply px-4 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl;
+          @apply px-4 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl bg-[#191919] text-white;
           box-shadow: 8px 9px 25px 2px rgba(0, 0, 0, 0.15);
 
           @screen md {
@@ -133,7 +133,8 @@ export default {
           }
 
           h2{
-            @apply text-3xl font-bold leading-[normal] text-[#a33333] uppercase;
+            @apply text-3xl font-bold leading-[normal]  uppercase;
+            // text-[#a33333]
 
             @screen md {
               @apply text-4xl;
@@ -164,8 +165,10 @@ export default {
               }
 
               .icon {
-                @apply text-[#a33333] bg-[#dcb2b2] rounded-full bg-opacity-15 p-2;
+                @apply text-black bg-white rounded-full bg-opacity-85 p-2;
                 // bg-[#5AEEB9]
+                // bg-[#dcb2b2] 
+                // text-[#a33333]
                 
               }
             }

@@ -51,9 +51,9 @@
           "Trading decisions doesn't just end on chart, it's reflect on your personality",
           "Trade what you see and not what you think.",
           "Liquidation doesn't define your weakness but prepares you for your success",
-          // "Generational wealth starts with one risk taker",
-          // "The greatest mistake a trader can make is to have high expectation on strategy learnt or developed without consideration of the risk behind",
-          // "Trade with precision, Profit with intention"
+          "Generational wealth starts with one risk taker",
+          "The greatest mistake a trader can make is to have high expectation on strategy learnt or developed without consideration of the risk behind",
+          "Trade with precision, Profit with intention"
         ]
       };
     },

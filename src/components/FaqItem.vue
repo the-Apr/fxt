@@ -66,6 +66,7 @@ export default {
 
 <style scoped>
 .bg-bkup-blue {
-  @apply bg-[#ecd6d6];
+  @apply bg-[#b2b2b2];
+  /* bg-[#ecd6d6] */
 }
 </style>

@@ -26,17 +26,17 @@
             <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
           </div>
           <div class="two card">
-            <h3>empowerment</h3>
-            <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
+            <h3>Education for all</h3>
+            <p>We aim to make quality trading education accessible to everyone. Whether you're a beginner or an experienced trader, our diverse range of courses ensures that there's something for every level of expertise </p>
           </div>
           <div class="three card">
-            <h3>empowerment</h3>
-            <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
+            <h3>community growth</h3>
+            <p>Foster a community where traders support and uplift each other. We strive to create an environment where shared knowledge and experiences contribute to the collective growth of our community members</p>
           </div>
         </div>
       </div>
 
-       <!-- our-founder-->
+      <!-- our-founder-->
       <div class="our-founder">
         <div class="founder-img">
           <img v-lazy="{ src: ourFounder.srcPath, loading: ourFounder.loadingPath, error: ourFounder.errorPath }">
@@ -48,6 +48,7 @@
             <p>{{ourFounder.paraOne}}</p>
 
             <p>{{ourFounder.paraTwo}}</p>
+            <p>{{ourFounder.paraThree}}</p>
           </div>
         </div>
       </div>
@@ -88,13 +89,13 @@ export default {
       },
 
       ourFounder: {
-        paraOne: 'Kenenna Onyechi, who is popularly known as Ken Jay is a financial trader who was born and brought up in Lagos state, Nigeria. Ken Jay is a from Anambra state and is a graduate of Crawford University. His passion for forex trading began in the year 2020, where  he was inspired from all hundreds of dollars made through copytrading.',
+        paraOne: 'Meet Ken Jay, a 6 figure funded trader who is the founder of Forex terminators. Forex Terminators is a community which is focused on creating  brave and fearless traders who are capable of terminating the financial market',
 
-        paraTwo: `He took a bold step of learning how to trade all by himself Rather than copying peoples trade and paying for signal groups. Ken Jay is a self taught trader who believes.`,
+        paraTwo: `His passion for forex trading began in the year 2020, where he was inspired by all hundreds of dollars made through copytrading`,
 
-        paraThree: `He is the CEO of forex terminators, forex terminators is a community which is focused on creating fearless and brave traders who is capable of terminating the forex market they believe the own the market and they are the Forex terminators`,
+        paraThree: `He took a bold step of learning how to trade all by himself rather than copying peoples trade and paying for trading signals. He has achieved a whole lot of things during this passed years of his trading career. Such as developing a proven trading strategy with an 80% win rate which works well on all financial market `,
 
-        srcPath: require('../assets/display/ken.jpeg'),
+        srcPath: require('../assets/display/our-founder.webp'),
         loadingPath: require('../assets/display/loading.jpg'),
         errorPath: require('../assets/display/loading.jpg'),
       }
@@ -135,7 +136,7 @@ $fxt-red-2: #8C0100;
       }
 
       @screen xl {
-        @apply mx-52
+        @apply mx-44
       }
 
       .left {
@@ -202,9 +203,10 @@ $fxt-red-2: #8C0100;
     }
 
     .our-goals {
-      @apply flex flex-col gap-8 px-2 py-12 bg-[#f6ecec]  justify-center items-center w-full;
+      @apply flex flex-col gap-8 px-2 py-12 bg-[#f2f2f2] justify-center items-center w-full;
       // bg-[#F5FCF9] 
       // bg-[#f3e5e5]
+      // bg-[#f6ecec]  
 
       @screen md {
         @apply  gap-14 px-16 py-20;
@@ -215,18 +217,18 @@ $fxt-red-2: #8C0100;
       }
 
       @screen xl {
-        @apply px-60
+        @apply px-44
       }
      
 
       h2{
-        @apply text-xl font-semibold leading-[normal] uppercase;
+        @apply text-xl text-black font-semibold leading-[normal] uppercase;
 
         @screen md {
           @apply text-2xl;
         }
 
-        @screen lg {
+        @screen lg{
           @apply  text-[35px];
         }
       }
@@ -254,7 +256,7 @@ $fxt-red-2: #8C0100;
         }
 
         p{
-          @apply text-left text-sm font-normal leading-[25px] mb-2 ;
+          @apply text-left text-[#333333] text-sm font-normal leading-[25px] mb-2 ;
 
           @screen md {
             @apply leading-[30px] tracking-normal;
@@ -266,7 +268,8 @@ $fxt-red-2: #8C0100;
         }
 
         .one {
-          @apply bg-[#DEFCF1];
+          @apply bg-white;
+          // bg-[#DEFCF1]
 
           @screen lg {
             @apply mb-16;
@@ -283,7 +286,7 @@ $fxt-red-2: #8C0100;
         }
 
         .two {
-          @apply  bg-[#e3c1c1];
+          @apply  bg-[#e5e5e5];
           // @apply  bg-[#F8E7EE];
 
           @screen lg {
@@ -303,7 +306,7 @@ $fxt-red-2: #8C0100;
         }
 
         .three {
-          @apply  bg-[#DDEAF0];
+          @apply  bg-[#191919];
 
           @screen md {
             @apply col-span-2
@@ -319,8 +322,12 @@ $fxt-red-2: #8C0100;
           }
 
           h3{
-            @apply text-[#2B8481];
+            @apply text-white;
           }
+          p{
+            @apply text-[#f2f2f2]
+          }
+
         }
       }
     }
@@ -340,7 +347,7 @@ $fxt-red-2: #8C0100;
       }
 
       .quote-wrap{
-        @apply flex flex-col gap-2 justify-center items-center px-1  border-y-[1px] border-[#a33333] py-8 h-[280px];
+        @apply flex flex-col gap-2 justify-center items-center px-1  border-y-[1px] border-black py-8 h-[280px];
 
         @screen md {
          @apply px-8 py-12 gap-8 h-[350px];
@@ -366,7 +373,7 @@ $fxt-red-2: #8C0100;
     }
 
     .our-founder {
-      @apply flex flex-col mx-2 px-2 ;
+      @apply flex flex-col mx-2 px-2;
 
       @screen md {
         @apply flex-row px-6;;
@@ -375,7 +382,7 @@ $fxt-red-2: #8C0100;
         @apply mx-16;
       }
       @screen xl {
-        @apply mx-52;
+        @apply mx-44;
       }
 
       .founder-img {
@@ -411,7 +418,7 @@ $fxt-red-2: #8C0100;
           }
 
           @screen lg {
-            @apply  text-[30px];
+            @apply  text-[32px];
           }
         }
 

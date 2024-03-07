@@ -8,11 +8,9 @@
 
       <div class="store-card">
         <div class="card">
-          <img src="../assets/display/coming-soon.webp" alt="coming soon">
+          <img src="../assets/display/csn.png" alt="coming soon">
         </div>
-        <div class="card">
-          <img src="../assets/display/coming-soon.webp" alt="coming soon">
-        </div>
+       
       </div>
     </div>
 
@@ -23,11 +21,11 @@
       </div>
 
       <div class="stat-data">
-        <div class="figures">
+        <div class="figures right-rule">
           <h3>1500+</h3>
           <p>Traders completed training</p>
         </div>
-        <div class="figures">
+        <div class="figures right-rule">
           <h3>72% </h3>
           <p>Success Rate</p>
         </div>
@@ -53,7 +51,7 @@ export default {
   @apply  flex flex-col gap-6 mt-10;
 
   @screen md {
-    @apply mt-20 gap-8;
+    @apply mt-20 gap-4;
   }
 
   .heading {
@@ -74,7 +72,7 @@ export default {
       @apply text-center text-sm font-medium leading-[22px] mb-2;
 
       @screen md {
-        @apply text-base leading-[30px] tracking-wide text-left
+        @apply text-lg leading-[30px] tracking-wide text-left
       }
 
       @screen lg {
@@ -97,32 +95,32 @@ export default {
     .store-card {
       @apply grid grid-cols-1 gap-2;
 
-      @screen md {
-        @apply grid-cols-2 gap-4;
-      }
+      // @screen md {
+      //   @apply grid-cols-2 gap-4;
+      // }
 
-      .card {
-        @apply border border-gray-400 p-1;
-      }
+      // .card {
+      //   @apply border border-gray-400 p-1;
+      // }
     }
   }
 
   .stat {
-    @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8;
+    @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8 mb-4;
 
     @screen md {
       @apply gap-y-16 py-14;
     }
 
     .stat-data{
-      @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2;
+      @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2 border-[#191919] border-t ;
 
       @screen md {
         @apply px-8 flex-row gap-x-20;
       }
 
       .figures {
-        @apply flex flex-col gap-y-2 items-center justify-center;
+        @apply flex flex-col gap-y-2 items-center justify-center pr-8 pt-8;
 
         @screen md {
           @apply flex-col gap-y-4
@@ -132,10 +130,14 @@ export default {
           color: #033549
         }
         p {
-          @apply text-sm font-semibold;
+          @apply text-base font-semibold;
           color: #a33333;
           letter-spacing: 0.09px;
         }
+      }
+
+      .right-rule{
+        @apply border-r border-[#191919];
       }
     }
   }

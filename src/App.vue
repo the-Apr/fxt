@@ -89,7 +89,8 @@ export default {
 </script>
 
 <style lang= "scss">
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat:wght@400;500&display=swap'); */
 
 $green: #5AEEB9;
 
@@ -99,7 +100,7 @@ $green: #5AEEB9;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Goudy Bookletter 1911", serif;
   /* color: black; */
 }
 
@@ -119,11 +120,7 @@ section:target {
 }
 
 /* .section {
-  @apply pt-8;
-
-   @screen md {
-    @apply pt-20
-  } 
+  border-bottom: 1px solid #191919;
 } */
 
 .scale-fade-enter-active,

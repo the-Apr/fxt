@@ -33,9 +33,9 @@ export default {
           frame: "https://www.youtube.com/embed/b7YUw9GbdCU?si=y5DCb_9axPnofDYg"
         },
         {
-          link: "https://youtu.be/mn3-pv5hXYY?si=QFfHIxcROY7J_P3u",
-          title: "How to import an MT5 chart template",
-          frame: "https://www.youtube.com/embed/ygei91elOvU?si=k4wSIMn2gP1MvDrO"
+          link: "https://www.youtube.com/watch?v=_ouMTv9-XsI",
+          title: "How I made $300 in a day",
+          frame: "https://www.youtube.com/embed/_ouMTv9-XsI?si=rODOayGjHOzqwCEQ"
         }
       ]
     }

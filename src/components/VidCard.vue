@@ -40,7 +40,7 @@ export default {
   // align-items: center;
   gap: 10px;
   flex-direction: column;
-  min-width: 220px;
+  max-width: 420px;
   height: 330px;
   max-height: 330px;
   background-color: var(--white);
@@ -54,7 +54,7 @@ export default {
   padding: 12px;
 
   @screen md {
-    @apply min-w-[250px] h-[400px] max-h-[600px] flex-1;
+    @apply  h-[400px] max-h-[600px] flex-1;
   }
 }
 

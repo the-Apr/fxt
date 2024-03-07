@@ -21,14 +21,15 @@ export default {
   /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
-  background-color: #8C0100;
+  background-color: white;
+  /* background-color: #8C0100; */
   /* background-color: #5AEEB9; */
   /* background-color: rgb(0 107 179); */
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: black;
   font-weight: 500;
   /* border: 3px solid #ffffff4d; */
   outline: none;
@@ -40,7 +41,8 @@ export default {
 
 .button:hover {
   transform: scale(1.05);
-  border-color: #fff9;
+  border-color: #4c4c4c;
+  /* #fff9 */
 }
 
 .button:hover::before {
