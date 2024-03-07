@@ -11,9 +11,9 @@
         </router-link>
       </div>
 
-      <div class=" col-start-2 col-span-10 grid justify-items-start">
+      <div class=" col-start-2 col-span-10 grid justify-items-start" @click="toggleDropdown">
         <router-link :to="faqLink"> 
-          <h1 class="font-semibold leading-8 tracking-wider text-sm md:text-lg text-left" @click="toggleDropdown">{{title}}</h1>
+          <h1 class="font-semibold leading-8 tracking-wider text-base md:text-xl text-left" >{{title}}</h1>
         </router-link>
       </div>
     </div>
@@ -22,7 +22,7 @@
     :class="{ 'my-4':isActive,}" 
     v-if="isActive" >
       <router-view v-for="graph in graphs" :key="graph">
-        <p class="font-normal text-sm md:text-base text-start mb-2 tracking-[0.035px] leading-[22px]">{{ graph }}</p>
+        <p class="font-normal text-base md:text-xl text-start mb-2 tracking-[0.035px] leading-[22px]">{{ graph }}</p>
       </router-view>
     
     </div>

@@ -40,7 +40,9 @@
 <style lang="scss" scoped>
 
 .footer {
-  @apply px-4 py-12 mt-10 bg-[#f6ecec] text-[#8C0100];
+  @apply px-4 py-12 mt-10 bg-[#191919] text-white;
+  // bg-[#f6ecec]
+  // text-[#8C0100]
 
   @screen md {
     @apply px-10 py-5 mt-12;
@@ -78,14 +80,14 @@
     }
 
     p{
-      @apply text-center text-sm font-normal leading-[22px] mb-2;
+      @apply text-center text-base font-normal leading-[22px] mb-2;
 
       @screen md {
-        @apply leading-[30px] tracking-wider text-base;
+        @apply leading-[30px] tracking-wider text-xl;
       }
 
       @screen lg {
-        @apply  text-base font-normal
+        @apply   font-normal
       }
     }
 
@@ -98,7 +100,7 @@
       
 
       .icon{
-        @apply h-4 bg-[#8C0100] text-white p-2 rounded-full cursor-pointer transition-transform duration-500;
+        @apply h-4 bg-white opacity-85 text-black p-2 rounded-full cursor-pointer transition-transform duration-500;
 
         @screen md{
           @apply  h-5 p-3;

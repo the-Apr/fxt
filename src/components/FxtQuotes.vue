@@ -64,7 +64,7 @@ p{
   @apply text-center text-base font-medium leading-[22px] italic;
 
   @screen md {
-    @apply leading-[30px] text-xl tracking-wide;
+    @apply leading-[30px] text-2xl tracking-wide;
   }
 }
 

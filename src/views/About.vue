@@ -8,7 +8,7 @@
           <img src="../assets/display/live_trade.webp" alt="live forex trade">
         </div>
         <div class="right">
-          <h3>About us</h3>
+          <!-- <h3>About us</h3> -->
           <h2>Who we are</h2>
           <p>{{welcomeNote.paraOne}} <br> {{welcomeNote.paraTwo}}</p>
           <div class="cards">
@@ -185,14 +185,14 @@ $fxt-red-2: #8C0100;
         }
 
         p{
-          @apply text-left text-sm font-normal leading-[22px] mb-2 ;
+          @apply text-left text-base font-normal leading-[22px] mb-2 ;
 
           @screen md {
-            @apply leading-[30px] tracking-wider;
+            @apply leading-[30px] tracking-wider text-xl;
           }
 
           @screen lg {
-            @apply  text-base font-normal
+            @apply  text-2xl font-normal
           }
         }
 
@@ -251,19 +251,19 @@ $fxt-red-2: #8C0100;
           @apply text-base font-semibold uppercase leading-normal;
 
           @screen md {
-            @apply text-[20px];
+            @apply text-[25px];
           }
         }
 
         p{
-          @apply text-left text-[#333333] text-sm font-normal leading-[25px] mb-2 ;
+          @apply text-left text-[#333333] text-base font-normal leading-[25px] mb-2 ;
 
           @screen md {
-            @apply leading-[30px] tracking-normal;
+            @apply leading-[30px] text-xl tracking-normal;
           }
 
           @screen lg {
-            @apply  text-base font-normal
+            @apply  text-2xl;
           }
         }
 
@@ -427,14 +427,14 @@ $fxt-red-2: #8C0100;
         }
 
         p{
-          @apply text-left text-sm font-normal leading-[22px] mb-2 ;
+          @apply text-left text-base font-normal leading-[22px] mb-2 ;
 
           @screen md {
-            @apply leading-[30px] tracking-wider;
+            @apply leading-[30px] text-xl tracking-wider;
           }
 
           @screen lg {
-            @apply  text-base font-normal
+            @apply  text-2xl font-normal
           }
         }
       }

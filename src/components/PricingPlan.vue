@@ -98,14 +98,14 @@ export default {
       @apply flex flex-col gap-14 justify-center items-center;
 
       .para{
-        @apply text-center text-sm font-normal w-[90%] leading-[22px] mb-2 ;
+        @apply text-center text-base font-normal w-[90%] leading-[22px] mb-2 ;
 
         @screen md {
-          @apply leading-[30px] text-lg tracking-wide w-4/5;
+          @apply leading-[30px] text-xl tracking-wide w-4/5;
         }
 
         @screen lg {
-          @apply  text-base 
+          @apply  text-2xl
         }
       }
 
@@ -125,10 +125,10 @@ export default {
           }
 
           h3{
-            @apply text-base font-semibold uppercase leading-normal;
+            @apply text-lg font-semibold uppercase leading-normal;
 
             @screen md {
-              @apply text-[19px];
+              @apply text-[24px];
             }
           }
 
@@ -156,10 +156,10 @@ export default {
               }
 
               p{
-                @apply text-sm text-start font-medium;
+                @apply text-base text-start font-medium;
 
                 @screen md {
-                  @apply text-base;
+                  @apply text-lg tracking-wider;
                 }
 
               }

@@ -34,14 +34,14 @@ export default {
   }
 
   p {
-    @apply text-left text-sm font-normal leading-[22px];
+    @apply text-left text-base font-normal leading-[22px];
 
     @screen md {
-      @apply leading-[30px] tracking-wider;
+      @apply leading-[30px] tracking-wider text-xl;
     }
 
     @screen lg {
-      @apply text-base font-normal;
+      @apply font-normal;
     }
   }
 

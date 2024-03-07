@@ -120,14 +120,14 @@ export default {
       }
 
       p{
-        @apply text-center text-sm font-medium leading-[22px] mb-2 ;
+        @apply text-center text-base font-medium leading-[22px] mb-2 ;
 
         @screen md {
-          @apply text-base leading-[30px] tracking-wide text-left
+          @apply text-xl leading-[30px] tracking-wide text-left
         }
 
         @screen lg {
-          @apply font-normal
+          @apply font-normal text-2xl;
         }
       }
     }

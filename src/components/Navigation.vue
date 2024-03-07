@@ -277,7 +277,7 @@ export default {
   }
 
   .link{
-    @apply font-medium py-2 px-2 transition-transform duration-500;
+    @apply  py-2 px-2 text-xl font-semibold tracking-wider;
     // transition: .3s color ease-in;
     // color: #2c3e50;
 

@@ -62,22 +62,26 @@ export default {
       }
 
       h2{
-        @apply text-xl font-medium leading-8;
+        @apply text-xl font-semibold leading-8;
 
         @screen sm {
           @apply text-2xl 
         }
+
+        @screen md {
+          @apply text-3xl
+        }
       }
     
       p{
-      @apply   text-sm font-normal leading-[22px] text-justify mb-2 tracking-[0.035px] ;
+      @apply   text-base font-normal leading-[22px] text-justify mb-2 tracking-[0.035px] ;
 
       @screen md {
-        @apply leading-[24px] tracking-wider text-base;
+        @apply leading-[24px] tracking-wider text-xl;
       }
 
       @screen lg {
-        @apply  text-base font-normal
+        @apply  text-2xl font-normal
       }
     }
 

@@ -20,7 +20,7 @@
         <p>Let the stat tell our story</p>
       </div>
 
-      <div class="stat-data">
+      <div class="stat-data rule-top">
         <div class="figures right-rule">
           <h3>1500+</h3>
           <p>Traders completed training</p>
@@ -69,14 +69,14 @@ export default {
     }
 
     p{
-      @apply text-center text-sm font-medium leading-[22px] mb-2;
+      @apply text-center text-base font-medium leading-[22px] mb-2;
 
       @screen md {
-        @apply text-lg leading-[30px] tracking-wide text-left
+        @apply text-xl leading-[30px] tracking-wide text-left
       }
 
       @screen lg {
-        @apply font-normal;
+        @apply font-normal text-2xl;
       }
     }
   }
@@ -106,18 +106,23 @@ export default {
   }
 
   .stat {
-    @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8 mb-4;
+    @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8 mb-4 items-center;
 
     @screen md {
       @apply gap-y-16 py-14;
     }
 
+    .rule-top{
+      @apply border-[#191919] border-t w-3/5
+    }
+
     .stat-data{
-      @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2 border-[#191919] border-t ;
+      @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2  ;
 
       @screen md {
         @apply px-8 flex-row gap-x-20;
       }
+      
 
       .figures {
         @apply flex flex-col gap-y-2 items-center justify-center pr-8 pt-8;
@@ -126,11 +131,11 @@ export default {
           @apply flex-col gap-y-4
         }
         h3 {
-          @apply text-xl font-semibold;
+          @apply text-3xl font-semibold;
           color: #033549
         }
         p {
-          @apply text-base font-semibold;
+          @apply text-xl font-semibold;
           color: #a33333;
           letter-spacing: 0.09px;
         }
@@ -139,6 +144,7 @@ export default {
       .right-rule{
         @apply border-r border-[#191919];
       }
+      
     }
   }
 }  

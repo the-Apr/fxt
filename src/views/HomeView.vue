@@ -47,14 +47,14 @@ export default {
   // clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
 
   .home-wrap{
-    @apply flex  mt-8 mx-2 w-full h-full pt-6 z-40 relative;
+    @apply  mt-8 mx-2  h-full pt-6 z-40 relative;
 
     @screen md {
       @apply mt-14 mx-6;
     }
 
     @screen lg {
-      @apply  mx-8 px-10 flex-row;
+      @apply  mx-8 px-10 flex flex-row;
     }
     @screen xl {
       @apply mx-32
@@ -68,7 +68,7 @@ export default {
       }
 
       @screen lg {
-        @apply gap-y-8 w-3/5;
+        @apply gap-y-8 px-4 w-3/5;
         
       }
       
@@ -114,10 +114,14 @@ export default {
       }
 
       p{
-        @apply text-sm font-normal leading-[22px] break-words tracking-wide;
+        @apply text-base font-normal leading-[22px] break-words tracking-wide;
 
         @screen sm {
-          @apply text-base leading-8;
+          @apply text-lg leading-8;
+        }
+
+        @screen md{
+          @apply text-2xl;
         }
     
       }
@@ -136,10 +140,10 @@ export default {
     }
 
     .bulb{
-      @apply hidden w-2/5;
+      @apply hidden ;
 
       @screen lg{
-        @apply block;
+        @apply block w-2/5;
       }
 
       img{

@@ -90,14 +90,14 @@ export default {
   -webkit-line-clamp: 1;
   line-clamp: 1;
 
-  @apply text-left text-sm uppercase font-semibold leading-[22px] mb-2 ;
+  @apply text-left text-base uppercase font-semibold leading-[22px] mb-2 ;
 
   @screen md {
-    @apply leading-[30px] tracking-wider;
+    @apply leading-[30px] tracking-wider text-xl;
   }
 
   @screen lg {
-    @apply  text-base;
+    @apply  text-2xl;
   }
 
   &:hover {
