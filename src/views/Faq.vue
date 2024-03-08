@@ -44,16 +44,16 @@ export default {
           image: require("../assets/icon/community.png"),
           body: "Join a community of like-minded traders who share your passion. At Forex Terminators, we foster an environment where traders support each other. Connect, exchange ideas, and grow together as you embark on your trading journey"
         },
-        {
-          title : "Cutting-Edge Resources",
-          image: require("../assets/icon/cube.png"),
-          body: "Stay ahead of the curve with our cutting-edge resources. From market analysis to exclusive tools, we provide everything you need for a successful trading experience. It's not just education; it's empowerment through innovation"
-        },
-        {
-          title : "Empowering Your Trading Lifestyle",
-          image: require("../assets/icon/money.png"),
-          body: "Forex Terminators is more than an academy; it's a lifestyle. Explore our store for stylish merchandise and practical tools designed to complement your trading journey. Experience success with a touch of sophistication"
-        },
+        // {
+        //   title : "Cutting-Edge Resources",
+        //   image: require("../assets/icon/cube.png"),
+        //   body: "Stay ahead of the curve with our cutting-edge resources. From market analysis to exclusive tools, we provide everything you need for a successful trading experience. It's not just education; it's empowerment through innovation"
+        // },
+        // {
+        //   title : "Empowering Your Trading Lifestyle",
+        //   image: require("../assets/icon/money.png"),
+        //   body: "Forex Terminators is more than an academy; it's a lifestyle. Explore our store for stylish merchandise and practical tools designed to complement your trading journey. Experience success with a touch of sophistication"
+        // },
         {
           title : "Tailored for All Skill Levels",
           image: require("../assets/icon/tailor.png"),

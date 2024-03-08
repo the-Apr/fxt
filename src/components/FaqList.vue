@@ -11,6 +11,15 @@
     >
     </faq-item>
   </div>
+
+  <div class="contact-us">
+    <h2>Still have Questions?</h2>
+    <p>Need assistance or have questions? Our support team is here to help.  Contact us today, and let's navigate the markets together.</p>
+    <a href="mailto:support@forexterminators.com " target="_blank">
+      <button class="btn">Contact us</button>
+    </a>
+    
+  </div>
 </div>
 </template>
 
@@ -28,16 +37,6 @@ export default {
     }
   },
   
-  methods: {
-    // closeOtherDropdowns(currentId) {
-    //   // Iterate through items and close other dropdowns
-    //   this.faqDocs.forEach(faqDoc => {
-    //     if (faqDoc.id !== currentId) {
-    //       faqDoc.isDropdownOpen = false;
-    //     }
-    //   });
-    // },
-  }
 }
 </script>
 
@@ -51,6 +50,46 @@ export default {
 
   .faq-list {
     @apply w-full
+  }
+
+  .contact-us {
+    @apply flex flex-col gap-6 justify-center items-center mt-4;
+
+    h2{
+     @apply text-xl text-black font-semibold leading-[normal];
+
+      @screen md {
+        @apply text-2xl;
+      }
+
+      @screen lg{
+        @apply  text-[35px];
+      }
+    }
+
+    p{
+      @apply text-center text-base font-normal leading-[22px] mb-2 ;
+
+      @screen md {
+        @apply leading-[30px] tracking-wide text-xl;
+      }
+
+      @screen lg {
+        @apply  text-2xl font-normal
+      }
+    }
+
+    .btn{
+      @apply max-w-full my-6 text-white bg-[#8C0100] py-4  px-8 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium tracking-wide;
+
+      @screen md {
+        @apply max-w-[250px] text-2xl font-semibold;
+      }
+
+      &:hover{
+        @apply bg-white text-black border border-[#8C0100];
+        }
+      }
   }
 }
 </style>

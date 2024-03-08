@@ -22,9 +22,7 @@ export default {
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
   background-color: white;
-  /* background-color: #8C0100; */
-  /* background-color: #5AEEB9; */
-  /* background-color: rgb(0 107 179); */
+  width: 100%;
   border-radius: 9999px;
   display: flex;
   align-items: center;
@@ -34,7 +32,7 @@ export default {
   /* border: 3px solid #ffffff4d; */
   outline: none;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 22px;
   /* margin-top: 18px */
 }
 

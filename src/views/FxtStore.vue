@@ -8,13 +8,13 @@
 
       <div class="store-card">
         <div class="card">
-          <img src="../assets/display/csn.png" alt="coming soon">
+          <img src="../assets/display/coming soon.png" alt="coming soon">
         </div>
        
       </div>
     </div>
 
-    <div class="stat">
+    <!-- <div class="stat">
       <div class="heading">
         <h2>Do not take our word for it</h2>
         <p>Let the stat tell our story</p>
@@ -36,7 +36,7 @@
         
 
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

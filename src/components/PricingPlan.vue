@@ -10,6 +10,7 @@
           <div class="plan" v-for="(plan, index) in pricingPlan" :key="index">
             <h3> {{plan.plan}}</h3>
             <h2>{{plan.price}}</h2>
+            <base-button :title="'Get started'" :link= "plan.link" class="b-btn"/>
             <div class="pros">
               <div class="pro-wrap" v-for="(pro, index) in plan.packages" :key="index">
                 <fa-icon :icon="['fas', 'arrow-right']" size="2xs" class="icon"/>
@@ -17,7 +18,7 @@
               </div>
               
             </div>
-            <base-button :title="'Get started'" :link= "plan.link"/>
+            
           </div>
         </div>
       </div>
@@ -35,8 +36,8 @@ export default {
     return {
       pricingPlan: [
         {
-          plan: 'Beginner Course',
-          price: '$24',
+          plan: 'FXT Beginner Course',
+          price: '$50',
           link: 'https://paystack.com/buy/fxt-beginners-crash-course-attcbj ',
           packages: [
             'Recorded beginers crash course',
@@ -49,8 +50,8 @@ export default {
         },
 
         {
-          plan: 'Advanced Course',
-          price: '$50',
+          plan: 'FXT Advanced Course',
+          price: '$200',
           link: 'https://paystack.com/buy/fxt-advanced-crash-course-thmfpr ',
           packages: [
             'Recorded beginers crash course',
@@ -143,6 +144,10 @@ export default {
             @screen lg {
               @apply  text-[43px];
             }
+          }
+
+          .b-btn {
+            @apply w-full
           }
 
           .pros{

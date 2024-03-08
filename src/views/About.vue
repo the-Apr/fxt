@@ -4,17 +4,12 @@
 
       <!-- who we are -->
       <div class="about-us">
-        <div class="left">
-          <img src="../assets/display/live_trade.webp" alt="live forex trade">
-        </div>
-        <div class="right">
-          <!-- <h3>About us</h3> -->
-          <h2>Who we are</h2>
-          <p>{{welcomeNote.paraOne}} <br> {{welcomeNote.paraTwo}}</p>
+        
+       
           <div class="cards">
             <service-card> </service-card>
           </div>
-        </div>
+       
       </div>
 
       <!-- our goals -->
@@ -139,71 +134,15 @@ $fxt-red-2: #8C0100;
         @apply mx-44
       }
 
-      .left {
-        @apply rounded-2xl ;
-
-        @screen md {
-          @apply  border border-[#bfbfbf] p-2 w-1/2; 
-        }
-
-        img{
-          @apply object-cover h-full w-full  rounded-2xl;
-        }
+    
+      .cards {
+        @apply px-1 py-4
       }
-
-      .right {
-        @apply space-y-2 p-4 text-left;
-
-        @screen md {
-          @apply space-y-4 p-6 w-1/2;
-        }
-
-        h3{
-          @apply text-base font-semibold uppercase leading-normal;
-          color: $fxt-red-1;
-
-          @screen md {
-            @apply text-[20px];
-          }
-
-          // @screen lg {
-          //   @apply  text-[35px];
-          // }
-
-        }
-
-        h2{
-          @apply text-xl font-semibold leading-[normal] uppercase;
-
-          @screen md {
-            @apply text-2xl;
-          }
-
-          @screen lg {
-            @apply  text-[35px];
-          }
-        }
-
-        p{
-          @apply text-left text-base font-normal leading-[22px] mb-2 ;
-
-          @screen md {
-            @apply leading-[30px] tracking-wider text-xl;
-          }
-
-          @screen lg {
-            @apply  text-2xl font-normal
-          }
-        }
-
-        .cards {
-          @apply px-1 py-4
-        }
-      }
+     
     }
 
     .our-goals {
-      @apply flex flex-col gap-8 px-2 py-12 bg-[#f2f2f2] justify-center items-center w-full;
+      @apply flex flex-col gap-8 px-2 py-12 bg-[#fafafa] justify-center items-center w-full;
       // bg-[#F5FCF9] 
       // bg-[#f3e5e5]
       // bg-[#f6ecec]  
@@ -268,7 +207,7 @@ $fxt-red-2: #8C0100;
         }
 
         .one {
-          @apply bg-white;
+          @apply bg-white border;
           // bg-[#DEFCF1]
 
           @screen lg {
@@ -286,7 +225,7 @@ $fxt-red-2: #8C0100;
         }
 
         .two {
-          @apply  bg-[#e5e5e5];
+          @apply  bg-[#e5e5e5] border;
           // @apply  bg-[#F8E7EE];
 
           @screen lg {
@@ -379,10 +318,10 @@ $fxt-red-2: #8C0100;
         @apply flex-row px-6;;
       }
       @screen lg {
-        @apply mx-16;
+        @apply mx-12;
       }
       @screen xl {
-        @apply mx-44;
+        @apply mx-40;
       }
 
       .founder-img {
@@ -402,7 +341,7 @@ $fxt-red-2: #8C0100;
       }
 
       .founder-bio {
-        @apply w-full px-8 py-10 bg-[#ecd6d6] flex flex-col gap-4 rounded-b-3xl;
+        @apply w-full px-8 py-10 bg-[#191919] text-white flex flex-col gap-4 rounded-b-3xl;
         // bg-[#DEFCF1]
        
 

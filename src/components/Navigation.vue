@@ -14,6 +14,10 @@
               <router-link class="link" :to="{name: 'about'}">Who we are</router-link>
             </li>
 
+            <li @click="scrollToSection('pricing')">
+              <router-link class="link" :to="{name: 'pricing'}">Pricing</router-link>
+            </li>
+
             <li @click="scrollToSection('fxt-store')">
               <router-link class="link" :to="{ name: 'fxt-store' }">FXT Store</router-link>
             </li>

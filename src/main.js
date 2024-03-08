@@ -15,7 +15,7 @@ import './assets/tailwind.css'
 //global component
 
 import BaseLoading from './components/UI/BaseLoading.vue';
-import BaseButton from '@/components/UI/BaseButton.vue'
+import BaseButton from '@/components/UI/BaseButton.vue';
 
 
 library.add(fas, far, fab)

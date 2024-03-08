@@ -23,7 +23,7 @@ export default {
       videos: [
         {
           link: "https://youtu.be/mn3-pv5hXYY?si=QFfHIxcROY7J_P3u",
-          title: "How I made over $100",
+          title: "How I Made Over $100+ Trading NFP LIVE Using this Simple Fundamental Strategy",
           frame: "https://www.youtube.com/embed/mn3-pv5hXYY?si=fvAdaTjmFEtas4fU"
         },
 
@@ -34,7 +34,7 @@ export default {
         },
         {
           link: "https://www.youtube.com/watch?v=_ouMTv9-XsI",
-          title: "How I made $300 in a day",
+          title: "$300 trading day using simple strategy on XAUUSD",
           frame: "https://www.youtube.com/embed/_ouMTv9-XsI?si=rODOayGjHOzqwCEQ"
         }
       ]

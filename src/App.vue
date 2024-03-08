@@ -3,10 +3,12 @@
     <loading v-if="!showContent"/>
     <div class="app">
       
-      <navigation />
+     
 
       <transition name="scale-fade" mode="out-in" >
         <div v-if="showContent">
+          <navigation />
+
           <div id="home" class="section" ref="home">
             <home-view/>
           </div>
@@ -25,10 +27,12 @@
           <div id="faq" class="section" ref="faq">
             <faq/>
           </div>
+
+          <foot-note/>
         </div>
       </transition>
   
-      <foot-note/>
+     
     </div>
   </div>
 </template>

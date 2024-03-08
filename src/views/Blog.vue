@@ -1,5 +1,6 @@
 <template>
   <div class="blog">
+    <!-- <base-modal content="sucessfully submitted" :show= "isSuccessful" @close="close"></base-modal> -->
     <div class="blog-wrap">
 
       <!-- our blog -->
@@ -13,7 +14,14 @@
       </div>
       
       <!-- news-letter -->
-      <div class="news-letter"></div>
+      <div class="news-letter">
+        <h3>Stay up to date With us on what is happening in the market and get premium discount code mailed to you by subscribing to our newsletter</h3>
+
+        <div class="mail-box">
+          <input v-model="email" type="email" name="" id="newEmail" placeholder="yourmail@abc.com">
+          <button class="btn" @click="subscribe">Subscribe</button>
+        </div>
+      </div>
 
       <!-- fxt review -->
       <div class="fxt-review">
@@ -29,6 +37,7 @@
         </div>
       </div>
     </div>  
+
   </div>
 </template>
 
@@ -38,18 +47,23 @@ import { defineAsyncComponent } from 'vue';
 
 const BlogVideo = defineAsyncComponent(() => import('@/components/BlogVideo.vue'));
 const ReviewCard = defineAsyncComponent(() => import('@/components/ReviewCard.vue'));
+const BaseModal= defineAsyncComponent(() => import('@/components/UI/BaseModal.vue'));
 
 export default {
   name: "blog",
 
   components: {
     BlogVideo,
-    ReviewCard
+    ReviewCard,
+    BaseModal
   },
 
 
   data() {
     return {
+      email: "",
+      isSuccessful: "",
+
       reviews: [
         {
           story: "This is the best forex community I've been in so far, I love how the founder is been sincere with all of us in the community and his strategies has so far helped me profit so well in the forex market ",
@@ -78,6 +92,27 @@ export default {
         },
 
       ]
+    }
+  },
+
+  methods: {
+
+    close() {
+      this.isSuccessful = null;
+    },
+
+    subscribe() {
+
+      if(this.email === '') {
+        window.alert("Error! Enter a valid email");
+      }
+
+      else{
+        var subject = 'FXT News Letter Subscription';
+        var body = `Kindly subscribe me to your newsletter. My email is: ${this.email}`;
+        window.location.href = 'mailto:support@forexterminators.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        window.alert('Sent successfully');
+      }
     }
   }
 
@@ -133,8 +168,53 @@ export default {
     }
 
     .our-blog,
-    .fxt-review {
-      @apply flex flex-col gap-8 my-8;
+    .fxt-review,
+    .news-letter {
+      @apply flex flex-col gap-8 my-8 justify-center items-center;
+    }
+
+    .news-letter{
+      h3{
+        @apply text-xl font-normal leading-[normal] text-center italic;
+
+        @screen md {
+          @apply text-2xl tracking-wide;
+        }
+
+        @screen lg {
+          @apply  text-[35px];
+        }
+      }
+
+      .mail-box{
+        @apply flex flex-row;
+
+        input{
+          @apply py-4 px-6 bg-[#e8e8e8] text-lg text-start border-none outline-none w-[400px];
+
+          &:focus{
+            @apply ring-2 ring-inset transition ease-in-out duration-500 ring-[#8C0100];
+          }
+        }  
+
+        input::placeholder {
+          font-size: 20px;
+          text-align: left; 
+          font-weight: 600;
+        }
+
+       .btn{
+          @apply max-w-full  text-white bg-[#8C0100] py-4  px-8 transition-colors duration-500 ease-in-out text-lg font-medium tracking-wide;
+
+          @screen md {
+            @apply max-w-[250px] text-2xl font-semibold;
+          }
+
+          &:hover{
+            @apply bg-white text-black border border-[#8C0100];
+            }
+        }
+      }
     }
 
     .reviews-card {
