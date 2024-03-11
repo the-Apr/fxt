@@ -53,6 +53,9 @@ export default {
   @screen lg {
     @apply grid-cols-2 mx-6;
   }
+  @screen xl{
+    @apply grid-cols-3
+  }
 
   .vdeo-card{
     @apply w-full;

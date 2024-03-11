@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+// import VueScreen from 'vue-screen'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -41,6 +42,8 @@ app.use(VueLazyLoad, {
     }
   }
 })
+
+// Vue.use(VueScreen, 'tailwind')
 
 app.use(store);
 app.use(router);

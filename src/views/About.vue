@@ -4,8 +4,6 @@
 
       <!-- who we are -->
       <div class="about-us">
-        
-       
           <div class="cards">
             <service-card> </service-card>
           </div>
@@ -43,13 +41,14 @@
             <p>{{ourFounder.paraOne}}</p>
 
             <p>{{ourFounder.paraTwo}}</p>
-            <p>{{ourFounder.paraThree}}</p>
+            <p v-if="showParaThree">{{ ourFounder.paraThree }}</p>
+
+            <button @click="toggleParaThree" class="btn">Read More</button>
           </div>
         </div>
       </div>
 
       <!-- fxt quotes -->
-     
       <div class="fxt-quotes">
         <div class="quote-wrap">
           <h2>Fxt quotes</h2>
@@ -78,6 +77,8 @@ export default {
 
   data () {
     return {
+      showParaThree: false,
+
       welcomeNote:{
         paraOne: 'Welcome to Forex Terminators, where education meets empowerment in the dynamic realm of forex trading.',
         paraTwo: 'At Forex Terminators, we believe that anyone can master the art of trading with the right guidance and resources. Our academy is not just about teaching; it\'s about transforming aspiring traders into confident, informed, and successful market participants.'
@@ -91,9 +92,15 @@ export default {
         paraThree: `He took a bold step of learning how to trade all by himself rather than copying peoples trade and paying for trading signals. He has achieved a whole lot of things during this passed years of his trading career. Such as developing a proven trading strategy with an 80% win rate which works well on all financial market `,
 
         srcPath: require('../assets/display/our-founder.webp'),
-        loadingPath: require('../assets/display/loading.jpg'),
-        errorPath: require('../assets/display/loading.jpg'),
+        loadingPath: require('../assets/display/load.jpg'),
+        errorPath: require('../assets/display/load.jpg'),
       }
+    }
+  },
+
+  methods: {
+    toggleParaThree() {
+      this.showParaThree = !this.showParaThree;
     }
   }
 }
@@ -320,8 +327,11 @@ $fxt-red-2: #8C0100;
       @screen lg {
         @apply mx-12;
       }
-      @screen xl {
+      @screen xl{
         @apply mx-40;
+      }
+      @screen 2xl {
+        @apply max-h-[550px]
       }
 
       .founder-img {
@@ -366,14 +376,26 @@ $fxt-red-2: #8C0100;
         }
 
         p{
-          @apply text-left text-base font-normal leading-[22px] mb-2 ;
+          @apply text-left text-base font-normal leading-[28px] mb-2 ;
 
           @screen md {
-            @apply leading-[30px] text-xl tracking-wider;
+            @apply leading-[34px] text-xl tracking-wider;
           }
 
           @screen lg {
             @apply  text-2xl font-normal
+          }
+        }
+
+        .btn{
+          @apply max-w-full my-6 bg-white text-black  px-4 py-1 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium;
+
+          @screen md {
+            @apply max-w-[250px] text-lg font-medium;
+          }
+
+          &:hover{
+            @apply  text-white bg-[#8C0100];
           }
         }
       }

@@ -15,7 +15,7 @@
       
       <!-- news-letter -->
       <div class="news-letter">
-        <h3>Stay up to date With us on what is happening in the market and get premium discount code mailed to you by subscribing to our newsletter</h3>
+        <h3>Stay up to date with us on what is happening in the market and get premium discount code mailed to you by subscribing to our newsletter</h3>
 
         <div class="mail-box">
           <input v-model="email" type="email" name="" id="newEmail" placeholder="yourmail@abc.com">
@@ -66,22 +66,22 @@ export default {
 
       reviews: [
         {
-          story: "This is the best forex community I've been in so far, I love how the founder is been sincere with all of us in the community and his strategies has so far helped me profit so well in the forex market ",
+          story: "This is the best forex community I've been in so far. Our tutor's strategies has helped me profit so well in the forex market",
           pic:require('../assets/display/ Olaseni Omoare.jpeg') ,
           name: "Olaseni Omoare",
-          status: "Beginner"
+          status: "FXT Beginner Trader"
         },
         {
           story: "It has been an awesome journey. I have been able to understand different concepts in the forex market",
           pic: require('../assets/display/okafor.jpeg'),
           name: "Okafor Alex",
-          status: "Advanced"
+          status: "FXT Advanced Trader"
         },
         {
           story: "A Lively community geared and driven by a Motivated Leader. He knows what he is doing and I love it",
           pic: require('../assets/display/elisha damilola.jpeg') ,
           name: "Elisha Okegbeni",
-          status: "Beginner"
+          status: "FXT Beginner Trader"
         },
         
         {
@@ -101,9 +101,15 @@ export default {
       this.isSuccessful = null;
     },
 
+    validateEmail(email) {
+      // Regular expression for email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    },
+
     subscribe() {
 
-      if(this.email === '') {
+      if(this.email === '' || !this.validateEmail(this.email)) {
         window.alert("Error! Enter a valid email");
       }
 
@@ -175,14 +181,14 @@ export default {
 
     .news-letter{
       h3{
-        @apply text-xl font-normal leading-[normal] text-center italic;
+        @apply text-xl font-normal leading-[normal] text-center italic mb-4;
 
         @screen md {
           @apply text-2xl tracking-wide;
         }
 
         @screen lg {
-          @apply  text-[35px];
+          @apply  text-[27px];
         }
       }
 
@@ -225,7 +231,7 @@ export default {
       }
 
       @screen lg{
-        @apply p-10
+        @apply p-10;
       }
     }
 

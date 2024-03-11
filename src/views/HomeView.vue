@@ -14,7 +14,9 @@
       </div>
     </div>
 
-    <p class="b-now">Journey in mastering Forex Begins Now!</p>
+    <div class="border-b">
+      <p class="b-now">Journey in Mastering Forex Begins Now!</p>
+    </div>
     
 
     <div class="dollar">
@@ -43,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  @apply  pt-6 flex flex-col justify-center items-center;
+  @apply  pt-6 flex flex-col justify-center items-center w-full;
   background-position: top center;
   
   .home-wrap{
@@ -96,7 +98,6 @@ export default {
         @screen md {
           @apply text-[35px];
           letter-spacing: 2.32px;
-          line-height: 67px;
         }
 
         @screen xl {
@@ -133,7 +134,25 @@ export default {
   }
 
   .b-now{
-    @apply text-base font-normal text-center border-b pb-4 leading-[22px] break-words tracking-wide w-2/3 flex justify-center items-center;
+    @apply text-base font-normal text-center py-8 leading-[22px] break-words tracking-wide w-full flex justify-center items-center overflow-hidden whitespace-nowrap;
+    animation: 
+      typing 12s ,
+      cursor .4s step-end infinite alternate;
+
+        // cursor blinking
+        @keyframes cursor {
+          50% {border-color: transparent}
+        }
+
+        // typing effect
+       @keyframes typing {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
 
     @screen sm {
       @apply text-lg leading-8;

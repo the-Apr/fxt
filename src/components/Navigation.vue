@@ -2,7 +2,7 @@
   <div class="top-most">
     <header>
       <nav class="nav-wrap">
-        <div class="branding">
+        <div class="branding"  @click="reload">
           <router-link @click="scrollToSection('home')" class="" :to="{name: 'home'}">
             <img src="../assets/logo/FXT LOGO 1.png" alt="fxt logo">
           </router-link>
@@ -27,7 +27,7 @@
             </li>
 
             <li @click="scrollToSection('faq')">
-              <router-link class="link" :to="{ name: 'faq' }">Faq</router-link>
+              <router-link class="link" :to="{ name: 'faq' }">Faqs</router-link>
             </li>
           
             <!-- <a href="mailto:praiseadebayo218@yahoo.com">
@@ -149,6 +149,10 @@ export default {
   },
 
   methods: {
+    reload (){
+      window.location.reload();
+    },
+
     checkScreen() {
       this.windowWidth = window.innerWidth;
       if (this.windowWidth <= 850) {
@@ -269,6 +273,9 @@ export default {
 
       @screen sm {
         @apply px-4
+      }
+      @screen lg{
+        @apply mr-20;
       }
     }
   }

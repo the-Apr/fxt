@@ -26,6 +26,10 @@ export default {
           text: "Access to Fxt Community",
           icon: 'people-group'
         },
+        {
+          text: "24/7 Support",
+          icon: 'headset'
+        },
 
       ] 
     }
@@ -41,7 +45,7 @@ export default {
     @apply   flex flex-row  max-w-[400px] flex-auto gap-6 border shadow-lg p-3 cursor-default transition-transform duration-500;
 
     &:hover {
-      @apply transform translate-x-4;
+      @apply transform scale-75;
     }
 
     .menu-icon {

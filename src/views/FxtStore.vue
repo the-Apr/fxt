@@ -10,6 +10,9 @@
         <div class="card">
           <img src="../assets/display/coming soon.png" alt="coming soon">
         </div>
+        <div class="card hidden md:block">
+          <img src="../assets/display/coming soon.png" alt="coming soon">
+        </div>
        
       </div>
     </div>
@@ -95,57 +98,57 @@ export default {
     .store-card {
       @apply grid grid-cols-1 gap-2;
 
-      // @screen md {
-      //   @apply grid-cols-2 gap-4;
-      // }
-
-      // .card {
-      //   @apply border border-gray-400 p-1;
-      // }
-    }
-  }
-
-  .stat {
-    @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8 mb-4 items-center;
-
-    @screen md {
-      @apply gap-y-16 py-14;
-    }
-
-    .rule-top{
-      @apply border-[#191919] border-t w-3/5
-    }
-
-    .stat-data{
-      @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2  ;
-
       @screen md {
-        @apply px-8 flex-row gap-x-20;
-      }
-      
-
-      .figures {
-        @apply flex flex-col gap-y-2 items-center justify-center pr-8 pt-8;
-
-        @screen md {
-          @apply flex-col gap-y-4
-        }
-        h3 {
-          @apply text-3xl font-semibold;
-          color: #033549
-        }
-        p {
-          @apply text-xl font-semibold;
-          color: #a33333;
-          letter-spacing: 0.09px;
-        }
+        @apply grid-cols-2 gap-4;
       }
 
-      .right-rule{
-        @apply border-r border-[#191919];
+      .card {
+        @apply border p-1;
       }
-      
     }
   }
+
+  // .stat {
+  //   @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8 mb-4 items-center;
+
+  //   @screen md {
+  //     @apply gap-y-16 py-14;
+  //   }
+
+  //   .rule-top{
+  //     @apply border-[#191919] border-t w-3/5
+  //   }
+
+  //   .stat-data{
+  //     @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2  ;
+
+  //     @screen md {
+  //       @apply px-8 flex-row gap-x-20;
+  //     }
+      
+
+  //     .figures {
+  //       @apply flex flex-col gap-y-2 items-center justify-center pr-8 pt-8;
+
+  //       @screen md {
+  //         @apply flex-col gap-y-4
+  //       }
+  //       h3 {
+  //         @apply text-3xl font-semibold;
+  //         color: #033549
+  //       }
+  //       p {
+  //         @apply text-xl font-semibold;
+  //         color: #a33333;
+  //         letter-spacing: 0.09px;
+  //       }
+  //     }
+
+  //     .right-rule{
+  //       @apply border-r border-[#191919];
+  //     }
+      
+  //   }
+  // }
 }  
 </style>

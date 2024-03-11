@@ -64,7 +64,7 @@ const routes = [
     props: true, 
     children: [
       {
-        path: '/:id', name: 'Que', component: FaqList 
+        path: ':id', name: 'Que', component: FaqList 
       }
     ]
   },

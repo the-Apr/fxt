@@ -36,7 +36,7 @@ export default {
     return {
       pricingPlan: [
         {
-          plan: 'FXT Beginner Course',
+          plan: 'FXT Beginners Course',
           price: '$50',
           link: 'https://paystack.com/buy/fxt-beginners-crash-course-attcbj ',
           packages: [
@@ -85,6 +85,7 @@ export default {
 
     h2{
       @apply text-xl font-semibold leading-[normal] uppercase;
+      
 
       @screen md {
         @apply text-2xl;
@@ -118,7 +119,7 @@ export default {
         }
 
         .plan {
-          @apply px-4 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl bg-[#191919] text-white;
+          @apply px-10 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl bg-[#191919] text-white min-w-[400px];
           box-shadow: 8px 9px 25px 2px rgba(0, 0, 0, 0.15);
 
           @screen md {
@@ -134,7 +135,8 @@ export default {
           }
 
           h2{
-            @apply text-3xl font-bold leading-[normal]  uppercase;
+            @apply text-4xl font-bold leading-[normal] tracking-wider  uppercase;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular';
             // text-[#a33333]
 
             @screen md {
@@ -151,7 +153,7 @@ export default {
           }
 
           .pros{
-            @apply space-y-2;
+            @apply space-y-2 w-full;
 
             .pro-wrap {
               @apply flex flex-row items-center gap-2;
