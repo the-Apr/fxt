@@ -19,7 +19,27 @@
 
         <div class="mail-box">
           <input v-model="email" type="email" name="" id="newEmail" placeholder="yourmail@abc.com">
-          <button class="btn" @click="subscribe">Subscribe</button>
+
+          <button class="btn" @click="subscribe">
+            <span v-if="loading">
+              <fa-icon :icon="['fas', 'spinner']" class="animate-spin" />
+            </span>
+            <span v-else-if="isSuccess">
+              <fa-icon :icon="['fas', 'check']" />
+            </span>
+            <span v-else>
+              Subscribe
+            </span>
+          </button>
+        </div>
+
+        <div class="error-msg" v-if="error || isSuccessful" >
+          <fa-icon 
+            :icon="['fas', 'circle-exclamation']"   
+            :class="getMessageColor()"  
+            
+          />
+          <p :class="getMessageClass()">{{ getErrorMessage() }}</p>
         </div>
       </div>
 
@@ -44,6 +64,8 @@
 <script>
 
 import { defineAsyncComponent } from 'vue';
+import emailjs from 'emailjs-com';
+
 
 const BlogVideo = defineAsyncComponent(() => import('@/components/BlogVideo.vue'));
 const ReviewCard = defineAsyncComponent(() => import('@/components/ReviewCard.vue'));
@@ -62,7 +84,10 @@ export default {
   data() {
     return {
       email: "",
+      isSuccess: "",
       isSuccessful: "",
+      loading: null,
+      error: null,
 
       reviews: [
         {
@@ -88,7 +113,7 @@ export default {
           story: "I am currently taking the beginners course which contains about 43 lessons. The tutor broke the complex concepts to manageable bites and now Forex doesn't seem as insurmountable as it formally was to me",
           pic: require('../assets/display/_Favour Attah.webp') ,
           name: "Favor Attah-Ohiemi",
-          status: "Beginner"
+          status: "FXT Beginner Trader"
         },
 
       ]
@@ -97,8 +122,24 @@ export default {
 
   methods: {
 
-    close() {
-      this.isSuccessful = null;
+    getErrorMessage() {
+      if (this.error) {
+        return "Kindly enter a valid email.";
+      } else if (this.isSuccessful && !this.error ) {
+        return "You have subscribed sucessfully!";
+      } 
+    },
+
+    getMessageClass() {
+      if (this.error) {
+        return "text-red-700";
+      } else if (this.isSuccessful && !this.error ) {
+        return "text-green-700";
+      } 
+    },
+
+    getMessageColor() {
+      return this.isSuccessful ? "text-green-700" : "text-red-700"; // Green for success, red for error
     },
 
     validateEmail(email) {
@@ -107,17 +148,45 @@ export default {
       return emailRegex.test(email);
     },
 
-    subscribe() {
+    // subsciption function
+    async subscribe() {
+     
 
       if(this.email === '' || !this.validateEmail(this.email)) {
-        window.alert("Error! Enter a valid email");
+        // window.alert("Error! Enter a valid email");
+        this.error = true;
       }
 
-      else{
-        var subject = 'FXT News Letter Subscription';
-        var body = `Kindly subscribe me to your newsletter. My email is: ${this.email}`;
-        window.location.href = 'mailto:support@forexterminators.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        window.alert('Sent successfully');
+      else {
+        this.loading = true;
+        try{
+           
+          await emailjs.send(process.env.EMAIL_SERVICE_ID, process.env.EMAIL_TEMPLATE_ID, {
+          from_name: "New Subscriber",
+          email_id: this.email,
+          message: "Kindly subscribe me to FXT newsletter",
+          }, process.env.EMAIL_USER_ID)
+          
+         
+          
+          this.isSuccessful = true;
+          this.isSuccess = true;
+
+          setTimeout(() => {
+            this.isSuccessful = false; // Hide success message after 20 seconds
+          }, 20000);
+          
+        }
+        catch(error) {
+          window.alert('Error sending email');
+          
+        }
+        finally {
+          this.loading = false;
+          this.error = false;
+          this.email = "";
+        };
+
       }
     }
   }
@@ -180,23 +249,32 @@ export default {
     }
 
     .news-letter{
+      
       h3{
-        @apply text-xl font-normal leading-[normal] text-center italic mb-4;
+        @apply text-lg font-normal leading-[normal] text-center italic mb-4;
 
         @screen md {
           @apply text-2xl tracking-wide;
         }
 
-        @screen lg {
+        @screen xl {
           @apply  text-[27px];
         }
       }
 
       .mail-box{
-        @apply flex flex-row;
+        @apply flex flex-row w-full justify-center;
 
         input{
-          @apply py-4 px-6 bg-[#e8e8e8] text-lg text-start border-none outline-none w-[400px];
+          @apply py-3 px-4 bg-[#e8e8e8] text-lg text-start border-none outline-none max-w-[500px] rounded-l-3xl;
+
+           @screen sm {
+            @apply py-4 px-8;
+          }
+
+          @screen md {
+            @apply  min-w-[400px] max-w-[800px]
+          }
 
           &:focus{
             @apply ring-2 ring-inset transition ease-in-out duration-500 ring-[#8C0100];
@@ -204,13 +282,17 @@ export default {
         }  
 
         input::placeholder {
-          font-size: 20px;
+          font-size: 18px;
           text-align: left; 
-          font-weight: 600;
+          font-weight: 500;
         }
 
        .btn{
-          @apply max-w-full  text-white bg-[#8C0100] py-4  px-8 transition-colors duration-500 ease-in-out text-lg font-medium tracking-wide;
+          @apply  text-white bg-[#8C0100] py-3  px-4 transition-colors duration-500 ease-in-out text-lg font-medium tracking-wide rounded-r-3xl;
+
+          @screen sm {
+            @apply py-4 px-6;
+          }
 
           @screen md {
             @apply max-w-[250px] text-2xl font-semibold;
@@ -219,6 +301,18 @@ export default {
           &:hover{
             @apply bg-white text-black border border-[#8C0100];
             }
+        }
+      }
+
+      .error-msg {
+        @apply flex gap-3 items-center;
+
+        p{
+          @apply text-base;
+
+          @screen md{
+            @apply text-lg
+          }
         }
       }
     }

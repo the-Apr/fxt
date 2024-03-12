@@ -16,6 +16,7 @@
 
   </div>
 
+  <!-- contact us -->
   <div class="contact-us">
     <h2>Still have Questions?</h2>
     <p>Need assistance or have questions? Our support team is here to help.  Contact us today, and let's navigate the markets together.</p>

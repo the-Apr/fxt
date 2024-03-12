@@ -68,15 +68,15 @@
     }
 
     h2{
-        @apply text-xl font-semibold leading-[normal] uppercase;
+      @apply text-xl font-semibold leading-[normal] uppercase;
 
-        @screen md {
-          @apply text-[30px];
-        }
+      @screen md {
+        @apply text-[30px];
+      }
 
-        @screen lg {
-          @apply  text-[35px];
-        }
+      @screen lg {
+        @apply  text-[35px];
+      }
     }
 
     p{
@@ -92,7 +92,11 @@
     }
 
     .socials {
-      @apply flex gap-4 flex-1 justify-end;
+      @apply flex gap-3 flex-1 justify-end;
+
+      @screen sm {
+        @apply gap-4;
+      }
 
       @screen md {
         @apply gap-6;

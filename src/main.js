@@ -30,17 +30,17 @@ app.component('base-button', BaseButton);
 app.use(VueLazyLoad, {
   loading: '',
   error: '',
-  lifecycle: {
-    loading: (el) => {
-      console.log('loading', el)
-    },
-    error: (el) => {
-      console.log('error', el)
-    },
-    loaded: (el) => {
-      console.log('loaded', el)
-    }
-  }
+  // lifecycle: {
+  //   loading: (el) => {
+  //     console.log('loading', el)
+  //   },
+  //   error: (el) => {
+  //     console.log('error', el)
+  //   },
+  //   loaded: (el) => {
+  //     console.log('loaded', el)
+  //   }
+  // }
 })
 
 // Vue.use(VueScreen, 'tailwind')

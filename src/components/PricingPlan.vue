@@ -119,7 +119,7 @@ export default {
         }
 
         .plan {
-          @apply px-10 py-8 flex flex-col items-center justify-center gap-6 rounded-2xl bg-[#191919] text-white min-w-[400px];
+          @apply px-10 py-8 flex flex-col items-center justify-center gap-6 rounded-3xl bg-[#191919] text-white min-w-[300px];
           box-shadow: 8px 9px 25px 2px rgba(0, 0, 0, 0.15);
 
           @screen md {
@@ -143,7 +143,7 @@ export default {
               @apply text-4xl;
             }
 
-            @screen lg {
+            @screen xl {
               @apply  text-[43px];
             }
           }

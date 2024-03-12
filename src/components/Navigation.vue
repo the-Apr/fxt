@@ -58,24 +58,24 @@
                 </router-link>
               </div>
 
-              <li @click="mobileScrollToSection('home')"  class="link mobile-link">
+              <li @click="mobileScrollToSection('home')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'house']" />
-                <router-link :to="{ name: 'home' }">Home</router-link>
+                <router-link class="link-text" :to="{ name: 'home' }">Home</router-link>
               </li>
 
-              <li @click="mobileScrollToSection('about')"  class="link mobile-link">
+              <li @click="mobileScrollToSection('about')"  class="mobile-link">
                 <fa-icon :icon="['far', 'address-card']" />
-                <router-link :to="{ name: 'about' }">Who we are</router-link>
+                <router-link class="link-text" :to="{ name: 'about' }">Who we are</router-link>
               </li>
 
-              <li @click="mobileScrollToSection('blog')"  class="link mobile-link">
+              <li @click="mobileScrollToSection('blog')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'newspaper']" />
-                <router-link :to="{ name: 'blog' }">Blog</router-link>
+                <router-link class="link-text" :to="{ name: 'blog' }">Blog</router-link>
               </li>
 
-              <li @click="mobileScrollToSection('faq')"  class="link mobile-link">
+              <li @click="mobileScrollToSection('faq')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'circle-question']" />
-                <router-link :to="{ name: 'faq' }">FAQs</router-link>
+                <router-link class="link-text" :to="{ name: 'faq' }">FAQs</router-link>
               </li>
             
             
@@ -234,7 +234,7 @@ export default {
 
 <style lang="scss" scoped>
   .bottom-scroll {
-    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-1 py-3 right-10 bottom-52 text-center z-50;
+    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-1 py-3 right-10 bottom-10 text-center z-50;
 
     @screen sm {
       @apply px-2 py-4 right-20 bottom-16;
@@ -274,11 +274,12 @@ export default {
       @screen sm {
         @apply px-4
       }
-      @screen lg{
+      @screen xl{
         @apply mr-20;
       }
     }
   }
+  
   ul{
     @apply list-none cursor-pointer;
   }
@@ -288,9 +289,13 @@ export default {
   }
 
   .link{
-    @apply  py-2 px-2 text-xl font-semibold tracking-wider;
+    @apply  py-2 px-2 text-lg font-semibold tracking-wider;
     // transition: .3s color ease-in;
     // color: #2c3e50;
+
+    @screen xl{
+      @apply text-xl;
+    }
 
     &:hover {
       // color: #8C0100;;
@@ -376,12 +381,12 @@ export default {
       @apply flex flex-col gap-y-2
     }
 
-    .link {
-      @apply p-1
+    .link-text {
+      @apply text-base font-medium;
     }
 
     .mobile-link {
-      @apply flex gap-6 items-center
+      @apply flex gap-4 items-center;
     }
 
     .socials {

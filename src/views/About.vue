@@ -4,9 +4,9 @@
 
       <!-- who we are -->
       <div class="about-us">
-          <div class="cards">
-            <service-card> </service-card>
-          </div>
+        <div class="cards">
+          <service-card> </service-card>
+        </div>
        
       </div>
 
@@ -42,9 +42,8 @@
 
             <p>{{ourFounder.paraTwo}}</p>
             <p v-if="showParaThree">{{ ourFounder.paraThree }}</p>
-
-            <button @click="toggleParaThree" class="btn">Read More</button>
           </div>
+          <button @click="toggleParaThree" class="btn">{{ buttonText }}</button>
         </div>
       </div>
 
@@ -78,6 +77,7 @@ export default {
   data () {
     return {
       showParaThree: false,
+      buttonText: 'Read More',
 
       welcomeNote:{
         paraOne: 'Welcome to Forex Terminators, where education meets empowerment in the dynamic realm of forex trading.',
@@ -101,6 +101,7 @@ export default {
   methods: {
     toggleParaThree() {
       this.showParaThree = !this.showParaThree;
+      this.buttonText = this.showParaThree ? 'Hide' : 'Read More';
     }
   }
 }
@@ -190,13 +191,16 @@ $fxt-red-2: #8C0100;
         }
 
         .card{
-          @apply px-6 py-10 space-y-3 rounded-xl
+          @apply px-6 py-10 space-y-3 rounded-xl;
         }
 
         h3{
           @apply text-base font-semibold uppercase leading-normal;
 
-          @screen md {
+          @screen lg {
+            @apply text-[19px];
+          }
+          @screen xl {
             @apply text-[25px];
           }
         }
@@ -208,7 +212,7 @@ $fxt-red-2: #8C0100;
             @apply leading-[30px] text-xl tracking-normal;
           }
 
-          @screen lg {
+          @screen xl {
             @apply  text-2xl;
           }
         }
@@ -330,9 +334,9 @@ $fxt-red-2: #8C0100;
       @screen xl{
         @apply mx-40;
       }
-      @screen 2xl {
-        @apply max-h-[550px]
-      }
+      // @screen 2xl {
+      //   @apply max-h-[590px]
+      // }
 
       .founder-img {
         @apply w-full;
@@ -342,10 +346,10 @@ $fxt-red-2: #8C0100;
         }
 
          img{
-          @apply object-cover h-full w-full  rounded-t-3xl;
+          @apply object-cover  w-full h-full  rounded-t-3xl;
 
           @screen md {
-            @apply rounded-l-3xl rounded-tr-none
+            @apply rounded-l-3xl rounded-tr-none;
           }
         }
       }
@@ -367,7 +371,10 @@ $fxt-red-2: #8C0100;
           }
 
           @screen lg {
-            @apply  text-[32px];
+            @apply  text-[25px];
+          }
+          @screen xl {
+            @apply  text-[30px];
           }
         }
 
@@ -382,13 +389,13 @@ $fxt-red-2: #8C0100;
             @apply leading-[34px] text-xl tracking-wider;
           }
 
-          @screen lg {
+          @screen xl {
             @apply  text-2xl font-normal
           }
         }
 
         .btn{
-          @apply max-w-full my-6 bg-white text-black  px-4 py-1 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium;
+          @apply max-w-full bg-white text-black  px-4 py-1 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium;
 
           @screen md {
             @apply max-w-[250px] text-lg font-medium;

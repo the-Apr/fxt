@@ -95,7 +95,7 @@ export default {
           line-height: 57px;
         }
 
-        @screen md {
+        @screen  md{
           @apply text-[35px];
           letter-spacing: 2.32px;
         }
@@ -136,7 +136,7 @@ export default {
   .b-now{
     @apply text-base font-normal text-center py-8 leading-[22px] break-words tracking-wide w-full flex justify-center items-center overflow-hidden whitespace-nowrap;
     animation: 
-      typing 12s ,
+      typing 9s ,
       cursor .4s step-end infinite alternate;
 
         // cursor blinking

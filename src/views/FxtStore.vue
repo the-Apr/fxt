@@ -3,7 +3,7 @@
     <div class="store-wrap">
       <div class="heading">
         <h2>FXT Store</h2>
-        <p>Get the FXT Merch directly fromn our store</p>
+        <p>Get the FXT Merch directly from our store</p>
       </div>
 
       <div class="store-card">

@@ -12,8 +12,6 @@ export default createStore({
           title: 'How experienced are the instructors at Forex Terminators?',
           graphs: [
             'At FXT community, we have got a top trader known as Ken Jay who is very well experienced in the financial market with more than 3 years experience. With his experience, he has been able to impact positively on other traders life, both beginners traders and advanced traders.',
-
-            'Phishing attempts often come with urgent requests, such as claiming your account is compromised or offering attractive deals to lure you in.'
           ]
         },
 
@@ -29,7 +27,7 @@ export default createStore({
           id: uid(6),
           title: 'Is Forex Terminators suitable for someone with no prior trading experience?',
           graphs: [
-            'Yes! the course is also available for beginners trader with no prior knowledge/ esperience.'
+            'Yes! the course is also available for beginners trader with no prior knowledge/ experience.'
           ]
         },
 
@@ -53,11 +51,13 @@ export default createStore({
       ]
     }
   },
+
   getters: {
     phishingDocs(state){
       return state.phishingDocs
     }
   },
+  
   mutations: {
     setActiveDropdown(state, id) {
       state.activeDropdownId = id;
