@@ -43,7 +43,7 @@
             <p>{{ourFounder.paraTwo}}</p>
             <p v-if="showParaThree">{{ ourFounder.paraThree }}</p>
           </div>
-          <button @click="toggleParaThree" class="btn">{{ buttonText }}</button>
+          <button @click="toggleParaThree" class="btn" v-if="!showParaThree">{{ buttonText }}</button>
         </div>
       </div>
 
@@ -98,11 +98,24 @@ export default {
     }
   },
 
+  mounted() {
+    this.updateShowParaThree();
+    window.addEventListener('resize', this.updateShowParaThree); // Listen for window resize events
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateShowParaThree); // Remove event listener to prevent memory leaks
+  },
+
   methods: {
     toggleParaThree() {
       this.showParaThree = !this.showParaThree;
       this.buttonText = this.showParaThree ? 'Hide' : 'Read More';
-    }
+    },
+
+    updateShowParaThree() {
+      // Check if the window width matches the xl breakpoint
+      this.showParaThree = window.innerWidth >= 1390; // Adjust the value as per your xl breakpoint
+    },
   }
 }
 </script>

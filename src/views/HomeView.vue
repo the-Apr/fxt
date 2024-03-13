@@ -59,6 +59,9 @@ export default {
       @apply  mx-8 px-10 flex flex-row;
     }
     @screen xl {
+      @apply mx-20;
+    }
+    @screen xll {
       @apply mx-32
     }
 

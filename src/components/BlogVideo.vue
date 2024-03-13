@@ -45,10 +45,10 @@ export default {
 
 <style lang="scss" scoped>
 .blog-video {
-  @apply grid grid-cols-1 gap-8 mx-1 grid-flow-dense;
+  @apply grid grid-cols-1 gap-4 mx-1 grid-flow-dense;
 
   @screen md {
-    @apply grid-cols-2 mx-14 gap-12;
+    @apply grid-cols-2 mx-14 gap-6;
   }
   @screen lg {
     @apply grid-cols-2 mx-6;

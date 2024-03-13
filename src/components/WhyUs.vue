@@ -2,7 +2,7 @@
   <div class="drives-card">
     <div class="card" v-for="(card,index) in cardDetails" :key="index">
       <div class="left md:block hidden">
-        <img :src= "card.image" alt="">
+        <img :src= "card.pic" alt="">
       </div>
       <div class="right">
         <h2>{{card.title}}</h2>
@@ -62,14 +62,14 @@ export default {
       }
 
       h2{
-        @apply text-xl font-semibold leading-8;
+        @apply text-lg font-semibold leading-8;
 
         @screen sm {
-          @apply text-2xl 
+          @apply text-xl 
         }
 
         @screen md {
-          @apply text-3xl
+          @apply text-2xl
         }
       }
     
@@ -77,11 +77,11 @@ export default {
       @apply   text-base font-normal leading-[22px] text-justify mb-2 tracking-[0.035px] ;
 
       @screen md {
-        @apply leading-[24px] tracking-wider text-xl;
+        @apply leading-[24px] tracking-wide text-lg;
       }
 
       @screen lg {
-        @apply  text-2xl font-normal
+        @apply  text-xl font-normal
       }
     }
 

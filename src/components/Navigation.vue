@@ -277,6 +277,9 @@ export default {
       @screen xl{
         @apply mr-20;
       }
+      @screen xll{
+        @apply mx-20;
+      }
     }
   }
   

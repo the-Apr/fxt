@@ -31,17 +31,17 @@ export default {
       cardDetails: [
         {
           title : "Expert Lead Education",
-          image: require("../assets/icon/Vector.png"),
+          pic: require("../assets/icon/Vector.png"),
           body: " At Forex Terminators, our courses are crafted by seasoned traders and financial experts. Benefit from their wealth of experience as they guide you through the intricacies of the forex market. Your journey is in expert hands."
         },
         {
           title : "Simplified Learning Experience",
-          image: require("../assets/icon/book.png"),
+          pic: require("../assets/icon/book.png"),
           body: "We believe in breaking down complex concepts into digestible, easy-to-understand modules. Our user-friendly platform ensures that learning about forex is not just insightful but also an enjoyable experience. Master the markets with simplicity"
         },
         {
           title : "Community Support",
-          image: require("../assets/icon/community.png"),
+          pic: require("../assets/icon/community.png"),
           body: "Join a community of like-minded traders who share your passion. At Forex Terminators, we foster an environment where traders support each other. Connect, exchange ideas, and grow together as you embark on your trading journey"
         },
         // {
@@ -56,7 +56,7 @@ export default {
         // },
         {
           title : "Tailored for All Skill Levels",
-          image: require("../assets/icon/tailor.png"),
+          pic: require("../assets/icon/tailor.png"),
           body: "Whether you're a beginner or an experienced trader, Forex Terminators caters to all skill levels. Our courses are structured to meet you where you are, providing a customized learning path that suits your individual needs and goals"
         },
       ]

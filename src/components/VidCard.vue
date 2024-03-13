@@ -93,13 +93,8 @@ export default {
   @apply text-left text-base uppercase font-semibold leading-[22px] mb-2 ;
 
   @screen md {
-    @apply leading-[30px] tracking-wider text-xl;
+    @apply leading-[30px] tracking-wider;
   }
-
-  @screen lg {
-    @apply  text-2xl;
-  }
-
   &:hover {
     white-space: normal; 
     overflow: visible; 
