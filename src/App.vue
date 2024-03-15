@@ -9,9 +9,12 @@
         <div v-if="showContent">
           <navigation />
 
+          
           <div id="home" class="section" ref="home">
             <home-view/>
           </div>
+          
+
           <div id="about" class="section" ref="about">
             <about/>
           </div>
@@ -41,7 +44,7 @@
 import { defineAsyncComponent } from 'vue';
 
 import Navigation from '@/components/Navigation.vue';
-import FootNote from '@/components/FooterNote.vue';
+import FootNote from '@/components/FootNote.vue';
 
 const About = defineAsyncComponent(() => import('@/views/About.vue'));
 const HomeView = defineAsyncComponent(() => import('@/views/HomeView.vue'));
@@ -68,6 +71,8 @@ export default {
   data() {
     return {
       showContent: false,
+      currentSection: null,
+      observer: null
     }
   },
 
@@ -75,6 +80,14 @@ export default {
     setTimeout(() => {
       this.showContent = true;
     }, 1000);
+
+    // Initialize IntersectionObserver
+    this.observer = new IntersectionObserver(this.handleIntersection, { threshold: 0.5 });
+    
+    // Observe each section
+    Object.values(this.$refs).forEach(ref => {
+      this.observer.observe(ref);
+    });
   },
 
 
@@ -87,7 +100,16 @@ export default {
       }
     },
 
-    // ...mapActions(['scrollToSection']),
+    handleIntersection(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Set the current section based on the intersection
+          this.currentSection = entry.target.id;
+          console.log(entry.target.id)
+        }
+      });
+    },
+
   },
 }
 </script>
@@ -114,27 +136,45 @@ $green: #5AEEB9;
   overflow-x: hidden;
 }
 
-.active {
+/* .active {
   border-bottom: 1px solid #8C0100;
-}
+} */
 
-section:target {
-  /* Add your styles here */
-  border-bottom: 1px solid #8C0100;
-}
+
 
 /* .section {
   border-bottom: 1px solid #191919;
 } */
 
+/* .section {
+  transition: transform 0.5s;
+  transform: translateX(-100%);
+}
+
+.active {
+  transform: translateX(0);
+
+} */
+
 .scale-fade-enter-active,
 .scale-fade-leave-active {
   transition: transform 1s ease, opacity 1s ease;
-}
+} 
 
 .scale-fade-enter-from {
-  /* transform: scale(0.8); */
+  transform: scale(0.8);
   transform: translateY(20px);
   opacity: 0;
 }
+
+/* .slide-from-left-enter-active,
+.slide-from-left-leave-active {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.slide-from-left-enter-from
+{
+  transform: translateX(20px);
+  opacity: 0;
+} */
 </style>

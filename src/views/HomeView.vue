@@ -88,9 +88,10 @@ export default {
       }
 
       h2{
-        @apply text-[22px] font-bold;
+        @apply text-[22px] font-bold transition-transform duration-500;
         word-wrap: break-word;
         letter-spacing: 0.5px;
+
 
         @screen sm {
           @apply text-[30px];

@@ -19,7 +19,7 @@ import BaseLoading from './components/UI/BaseLoading.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 
-library.add(fas, far, fab)
+library.add(fas, far, fab )
 
 const app = createApp(App);
 

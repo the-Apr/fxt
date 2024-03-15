@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkfxt"]=self["webpackChunkfxt"]||[]).push([[47],{7028:function(n,c,t){t.r(c),t.d(c,{default:function(){return p}});var r=t(6768);const e={class:"pricing-plan"};function i(n,c,t,i,s,a){const u=(0,r.g2)("pricing-plan");return(0,r.uX)(),(0,r.CE)("div",e,[(0,r.bF)(u)])}const s=(0,r.$V)((()=>t.e(995).then(t.bind(t,7995))));var a={name:"pricing",components:{PricingPlan:s}},u=t(1241);const o=(0,u.A)(a,[["render",i]]);var p=o}}]);
-//# sourceMappingURL=pricing.26cc2fe4.js.map
