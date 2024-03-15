@@ -45,7 +45,7 @@ export default {
             'Weekly Webinars',
             'Access to FXT community',
             '20% discount on advanced course',
-            'Lifetime Membership'
+            'Lifetime Mentorship'
           ]
         },
 
@@ -59,7 +59,7 @@ export default {
             'Live trading with Ken Jay',
             'Access to FXT community',
             'One of FXT Merch',
-            'Lifetime Membership'
+            'Lifetime Mentorship'
           ]
         }
       ]
@@ -112,24 +112,27 @@ export default {
       }
 
       .price-cards{
-        @apply flex flex-col  gap-8;
+        @apply flex flex-col  gap-6;
 
         @screen md {
-          @apply flex-row gap-12;
+          @apply flex-row gap-8;
         }
 
         .plan {
-          @apply px-10 py-8 flex flex-col items-center justify-center gap-6 rounded-3xl bg-[#191919] text-white min-w-[300px];
+          @apply p-8 flex flex-col items-center justify-start gap-6 rounded-3xl bg-[#191919] text-white min-w-[350px] max-w-[400px];
           box-shadow: 8px 9px 25px 2px rgba(0, 0, 0, 0.15);
 
-          @screen md {
-            @apply py-16 px-12 gap-10
+          @screen md{
+            @apply py-16 px-10 gap-10
           }
 
           h3{
-            @apply text-lg font-semibold uppercase leading-normal;
+            @apply text-[18px] font-semibold uppercase text-center leading-normal;
 
             @screen md {
+              @apply text-[22px];
+            }
+            @screen lg {
               @apply text-[24px];
             }
           }
