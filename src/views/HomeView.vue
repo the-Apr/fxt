@@ -10,7 +10,7 @@
       </div>
 
       <div class="bulb">
-        <img src="../assets/display/bulb.png" alt="">
+        <img src="../assets/display/bulb.webp" alt="">
       </div>
     </div>
 
@@ -20,7 +20,7 @@
     
 
     <div class="dollar">
-      <img src="../assets/display/dollar.png" alt="">
+      <img src="../assets/display/dollar.webp" alt="">
     </div>
  </div>
 </template>

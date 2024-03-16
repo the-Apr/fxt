@@ -92,8 +92,8 @@ export default {
         paraThree: `He took a bold step of learning how to trade all by himself rather than copying peoples trade and paying for trading signals. He has achieved a whole lot of things during this passed years of his trading career. Such as developing a proven trading strategy with an 80% win rate which works well on all financial market `,
 
         srcPath: require('../assets/display/our-founder.webp'),
-        loadingPath: require('../assets/display/load.jpg'),
-        errorPath: require('../assets/display/load.jpg'),
+        loadingPath: require('../assets/display/load.webp'),
+        errorPath: require('../assets/display/load.webp'),
       }
     }
   },

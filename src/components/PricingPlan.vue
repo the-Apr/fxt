@@ -54,7 +54,7 @@ export default {
           price: '$200',
           link: 'https://paystack.com/buy/fxt-advanced-crash-course-thmfpr ',
           packages: [
-            'Recorded beginners/advanced crash course',
+            'Recorded crash courses',
             'All of FXT setup',
             'Live trading with Ken Jay',
             'Access to FXT community',

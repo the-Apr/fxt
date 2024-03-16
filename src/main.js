@@ -8,9 +8,9 @@ import VueLazyLoad from 'vue3-lazyload'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDesc, faChartLine, faGlobe, faPeopleGroup, faHeadset } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faXTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import './assets/tailwind.css'
 
 //global component
@@ -19,7 +19,9 @@ import BaseLoading from './components/UI/BaseLoading.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 
-library.add(fas, far, fab )
+library.add(faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDesc, faChartLine, faGlobe, faPeopleGroup, faHeadset,
+   far,  
+   faXTwitter, faFacebook, faInstagram, faYoutube )
 
 const app = createApp(App);
 

@@ -92,19 +92,19 @@ export default {
       reviews: [
         {
           story: "This is the best forex community I've been in so far. Our tutor's strategies has helped me profit so well in the forex market",
-          pic:require('../assets/display/ Olaseni Omoare.jpeg') ,
+          pic:require('../assets/display/Olaseni.webp') ,
           name: "Olaseni Omoare",
           status: "FXT Beginner Trader"
         },
         {
           story: "It has been an awesome journey. I have been able to understand different concepts in the forex market",
-          pic: require('../assets/display/okafor.jpeg'),
+          pic: require('../assets/display/okafor.webp'),
           name: "Okafor Alex",
           status: "FXT Advanced Trader"
         },
         {
           story: "A Lively community geared and driven by a Motivated Leader. He knows what he is doing and I love it",
-          pic: require('../assets/display/elisha damilola.jpeg') ,
+          pic: require('../assets/display/elisha damilola.webp'),
           name: "Elisha Okegbeni",
           status: "FXT Beginner Trader"
         },

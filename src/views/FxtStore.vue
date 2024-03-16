@@ -8,10 +8,10 @@
 
       <div class="store-card">
         <div class="card">
-          <img src="../assets/display/coming soon.png" alt="coming soon">
+          <img src="../assets/display/coming soon.webp" alt="coming soon">
         </div>
         <div class="card hidden md:block">
-          <img src="../assets/display/coming soon.png" alt="coming soon">
+          <img src="../assets/display/coming soon.webp" alt="coming soon">
         </div>
        
       </div>
