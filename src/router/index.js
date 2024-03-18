@@ -4,6 +4,11 @@ const FaqList = () => import ('../components/FaqList.vue');
 
 const routes = [
   {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
+  },
+
+  {
     path: '/',
     name: 'home',
     component: HomeView,
@@ -80,13 +85,15 @@ router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title} | FXT`;
 
   // Check if the page is being refreshed
-  if (from.name && !to.name) {
+  if (from.name && !to.name && to.name !== 'home') {
     // Redirect to the home page
-    next('/about');
+    router.push({name: 'home'});
   } else {
     // Continue with the navigation
     next();
   }
 });
+
+
 
 export default router

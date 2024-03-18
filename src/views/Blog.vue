@@ -1,6 +1,6 @@
 <template>
   <div class="blog">
-    <!-- <base-modal content="sucessfully submitted" :show= "isSuccessful" @close="close"></base-modal> -->
+   
     <div class="blog-wrap">
 
       <!-- our blog -->
@@ -69,7 +69,7 @@ import emailjs from 'emailjs-com';
 
 const BlogVideo = defineAsyncComponent(() => import('@/components/BlogVideo.vue'));
 const ReviewCard = defineAsyncComponent(() => import('@/components/ReviewCard.vue'));
-const BaseModal= defineAsyncComponent(() => import('@/components/UI/BaseModal.vue'));
+
 
 export default {
   name: "blog",
@@ -77,7 +77,6 @@ export default {
   components: {
     BlogVideo,
     ReviewCard,
-    BaseModal
   },
 
 

@@ -16,30 +16,6 @@
        
       </div>
     </div>
-
-    <!-- <div class="stat">
-      <div class="heading">
-        <h2>Do not take our word for it</h2>
-        <p>Let the stat tell our story</p>
-      </div>
-
-      <div class="stat-data rule-top">
-        <div class="figures right-rule">
-          <h3>1500+</h3>
-          <p>Traders completed training</p>
-        </div>
-        <div class="figures right-rule">
-          <h3>72% </h3>
-          <p>Success Rate</p>
-        </div>
-        <div class="figures">
-          <h3>900+ </h3>
-          <p>Live Traders</p>
-        </div>
-        
-
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -107,48 +83,5 @@ export default {
       }
     }
   }
-
-  // .stat {
-  //   @apply flex flex-col gap-y-4 bg-[#f6ecec] px-4 py-8 mb-4 items-center;
-
-  //   @screen md {
-  //     @apply gap-y-16 py-14;
-  //   }
-
-  //   .rule-top{
-  //     @apply border-[#191919] border-t w-3/5
-  //   }
-
-  //   .stat-data{
-  //     @apply flex flex-col gap-y-4 flex-wrap items-center justify-center px-2  ;
-
-  //     @screen md {
-  //       @apply px-8 flex-row gap-x-20;
-  //     }
-      
-
-  //     .figures {
-  //       @apply flex flex-col gap-y-2 items-center justify-center pr-8 pt-8;
-
-  //       @screen md {
-  //         @apply flex-col gap-y-4
-  //       }
-  //       h3 {
-  //         @apply text-3xl font-semibold;
-  //         color: #033549
-  //       }
-  //       p {
-  //         @apply text-xl font-semibold;
-  //         color: #a33333;
-  //         letter-spacing: 0.09px;
-  //       }
-  //     }
-
-  //     .right-rule{
-  //       @apply border-r border-[#191919];
-  //     }
-      
-  //   }
-  // }
 }  
 </style>

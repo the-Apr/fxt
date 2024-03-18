@@ -3,7 +3,7 @@
     <div class="home-wrap">
       <div class="landing-text">
         <h2>Master Forex with Ease: Your Gateway To Simplicity and Profitability at Forex Terminators</h2>
-        <button class="btn" @click="scrollToSection('pricing')">
+        <button class="btn1" @click="scrollToSection('pricing')">
           Become an FXT Trader
         </button>
        
@@ -111,7 +111,7 @@ export default {
 
       
 
-      .btn{
+      .btn1{
         @apply max-w-full my-6 bg-white text-black border border-[#8C0100] p-4 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium;
 
         @screen md {

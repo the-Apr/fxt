@@ -16,11 +16,6 @@
     <swiper-slide  v-for="(quote,index) in quotes" :key="index">
       <p class="slider-text">"{{quote}}"</p>
     </swiper-slide>
-
-    <!-- <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide> -->
   </swiper>
 </template>
 
@@ -30,12 +25,7 @@
 
   // Import Swiper styles
   import 'swiper/css';
-
   import 'swiper/css/pagination';
-
-  // import './style.css';
-
-  // import required modules
   import { Autoplay, Pagination, Navigation} from 'swiper/modules';
 
   export default {
@@ -43,6 +33,7 @@
       Swiper,
       SwiperSlide,
     },
+
     data() {
       return {
         modules: [Autoplay, Pagination, Navigation],
@@ -59,6 +50,7 @@
     },
   };
 </script>
+
 <style lang="scss" scoped>
 p{
   @apply text-center text-base font-medium leading-[22px] italic;

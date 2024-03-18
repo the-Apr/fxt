@@ -92,18 +92,6 @@ export default {
         @apply  text-2xl font-normal max-w-[1000px];
       }
     }
-
-    .btn{
-      @apply max-w-full my-2 text-white bg-[#8C0100] py-4  px-8 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium tracking-wide;
-
-      @screen md {
-        @apply max-w-[250px] text-2xl font-semibold;
-      }
-
-      &:hover{
-        @apply bg-white text-black border border-[#8C0100];
-        }
-      }
   }
 }
 </style>

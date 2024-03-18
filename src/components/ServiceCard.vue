@@ -50,8 +50,7 @@ export default {
 
     .menu-icon {
       @apply h-6 w-6;
-      // color: #5AEEB9 !important;
-       color: #8C0100 !important;
+      color: #8C0100 !important;
     }
 
     h3 {

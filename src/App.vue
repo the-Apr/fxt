@@ -2,8 +2,6 @@
   <div>
     <loading v-if="!showContent"/>
     <div class="app">
-      
-     
 
       <transition name="scale-fade" mode="out-in" >
         <div v-if="showContent">
@@ -35,7 +33,7 @@
         </div>
       </transition>
   
-     
+      <cookie></cookie>
     </div>
   </div>
 </template>
@@ -45,6 +43,7 @@ import { defineAsyncComponent } from 'vue';
 
 import Navigation from '@/components/Navigation.vue';
 import FootNote from '@/components/FootNote.vue';
+import Cookie from './components/Cookie.vue';
 
 const About = defineAsyncComponent(() => import('@/views/About.vue'));
 const HomeView = defineAsyncComponent(() => import('@/views/HomeView.vue'));
@@ -65,7 +64,8 @@ export default {
     Faq,
     FxtStore,
     Pricing,
-    FootNote
+    FootNote,
+    Cookie
   },
 
   data() {
@@ -116,7 +116,6 @@ export default {
 
 <style lang= "scss">
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat:wght@400;500&display=swap'); */
 
 $green: #5AEEB9;
 
@@ -136,25 +135,17 @@ $green: #5AEEB9;
   overflow-x: hidden;
 }
 
-/* .active {
-  border-bottom: 1px solid #8C0100;
-} */
+.btn{
+  @apply max-w-full my-2 text-white bg-[#8C0100] py-2  px-6 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-normal tracking-wide;
 
+  @screen md {
+    @apply max-w-[250px] text-2xl font-medium py-4  px-8;
+  }
 
-
-/* .section {
-  border-bottom: 1px solid #191919;
-} */
-
-/* .section {
-  transition: transform 0.5s;
-  transform: translateX(-100%);
+  &:hover{
+    @apply bg-white text-black border border-[#8C0100];
+  }
 }
-
-.active {
-  transform: translateX(0);
-
-} */
 
 .scale-fade-enter-active,
 .scale-fade-leave-active {
@@ -167,14 +158,4 @@ $green: #5AEEB9;
   opacity: 0;
 }
 
-/* .slide-from-left-enter-active,
-.slide-from-left-leave-active {
-  transition: transform 1s ease, opacity 1s ease;
-}
-
-.slide-from-left-enter-from
-{
-  transform: translateX(20px);
-  opacity: 0;
-} */
 </style>

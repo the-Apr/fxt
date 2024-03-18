@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-// import VueScreen from 'vue-screen'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -8,9 +7,9 @@ import VueLazyLoad from 'vue3-lazyload'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDesc, faChartLine, faGlobe, faPeopleGroup, faHeadset } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDesc, faChartLine, faGlobe, faPeopleGroup, faHeadset, faCircleQuestion, faNewspaper,faHouse } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
-import { faXTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faXTwitter, faFacebook, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import './assets/tailwind.css'
 
 //global component
@@ -19,34 +18,21 @@ import BaseLoading from './components/UI/BaseLoading.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 
-library.add(faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDesc, faChartLine, faGlobe, faPeopleGroup, faHeadset,
+library.add(faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDesc, faChartLine, faGlobe, faPeopleGroup, faHeadset, faCircleQuestion, faNewspaper,faHouse ,
    far,  
-   faXTwitter, faFacebook, faInstagram, faYoutube )
+   faXTwitter, faFacebook, faInstagram, faYoutube, faWhatsapp )
 
-const app = createApp(App);
+const vueApp = createApp(App);
 
-app.component('fa-icon', FontAwesomeIcon);
-app.component('loading', BaseLoading);
-app.component('base-button', BaseButton);
+vueApp.component('fa-icon', FontAwesomeIcon);
+vueApp.component('loading', BaseLoading);
+vueApp.component('base-button', BaseButton);
 
-app.use(VueLazyLoad, {
+vueApp.use(VueLazyLoad, {
   loading: '',
   error: '',
-  // lifecycle: {
-  //   loading: (el) => {
-  //     console.log('loading', el)
-  //   },
-  //   error: (el) => {
-  //     console.log('error', el)
-  //   },
-  //   loaded: (el) => {
-  //     console.log('loaded', el)
-  //   }
-  // }
 })
 
-// Vue.use(VueScreen, 'tailwind')
-
-app.use(store);
-app.use(router);
-app.mount('#app');
+vueApp.use(store);
+vueApp.use(router);
+vueApp.mount('#app');

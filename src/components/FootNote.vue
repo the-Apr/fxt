@@ -42,8 +42,7 @@
 
 .footer {
   @apply px-4 py-12 mt-10 bg-[#191919] text-white;
-  // bg-[#f6ecec]
-  // text-[#8C0100]
+  
 
   @screen md {
     @apply px-10 py-5 mt-12;
@@ -122,6 +121,6 @@
 
 <script>
 export default {
-  name: 'footer',
+  name: 'footnote',
 }
 </script>

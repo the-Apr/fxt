@@ -5,6 +5,7 @@ export default createStore({
   state() {
     return{
       activeDropdownId: null,
+      cookieConsentAccepted: false,
 
       phishingDocs: [
         {
@@ -55,13 +56,21 @@ export default createStore({
   getters: {
     phishingDocs(state){
       return state.phishingDocs
+    },
+    cookieConsentAccepted(state) {
+      return state.cookieConsentAccepted
     }
   },
   
   mutations: {
+    setCookieConsent(state, consent) {
+      state.cookieConsentAccepted = consent;
+    },
+
     setActiveDropdown(state, id) {
       state.activeDropdownId = id;
     },
+    
     clearActiveDropdown(state) {
       state.activeDropdownId = null;
     },

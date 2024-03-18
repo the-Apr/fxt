@@ -151,6 +151,7 @@ export default {
   methods: {
     reload (){
       window.location.reload();
+      router.push({name: 'home'});
     },
 
     checkScreen() {
