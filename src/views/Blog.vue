@@ -152,7 +152,6 @@ export default {
      
 
       if(this.email === '' || !this.validateEmail(this.email)) {
-        // window.alert("Error! Enter a valid email");
         this.error = true;
       }
 
@@ -164,9 +163,7 @@ export default {
           from_name: "New Subscriber",
           email_id: this.email,
           message: "Kindly subscribe me to FXT newsletter",
-          }, process.env.EMAIL_USER_ID)
-          
-         
+          }, process.env.EMAIL_USER_ID) 
           
           this.isSuccessful = true;
           this.isSuccess = true;

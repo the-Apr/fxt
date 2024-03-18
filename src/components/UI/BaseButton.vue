@@ -18,7 +18,6 @@ export default {
 .button {
   position: relative;
   transition: all 0.3s ease-in-out;
-  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
   background-color: white;
@@ -29,18 +28,15 @@ export default {
   justify-content: center;
   color: black;
   font-weight: 500;
-  /* border: 3px solid #ffffff4d; */
   outline: none;
   overflow: hidden;
   font-size: 22px;
-  /* margin-top: 18px */
 }
 
 
 .button:hover {
   transform: scale(1.05);
   border-color: #4c4c4c;
-  /* #fff9 */
 }
 
 .button:hover::before {

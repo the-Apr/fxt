@@ -116,7 +116,6 @@
 </template>
 
 <script>
-// import { mapMutations, mapActions, mapState } from 'vuex';
 import BaseButton from '@/components/UI/BaseButton.vue'
 export default {
   name: 'navigation',

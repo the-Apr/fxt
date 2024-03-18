@@ -139,9 +139,8 @@ export default {
 
           h2{
             @apply text-4xl font-bold leading-[normal] tracking-wider  uppercase;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular';
-            // text-[#a33333]
-
+            font-family: 'Lucida Sans', 'serif';
+            
             @screen md {
               @apply text-4xl;
             }

@@ -36,8 +36,6 @@ export default {
 .card {
   
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   gap: 10px;
   flex-direction: column;
   max-width: 420px;

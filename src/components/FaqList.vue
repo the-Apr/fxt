@@ -6,12 +6,14 @@
     </div>
 
     <div class="faq-list">
-      <faq-item v-for="faqDoc in faqDocs" :key="faqDoc.id"
-      :id="faqDoc.id"
-      :title="faqDoc.title"
-      :graphs="faqDoc.graphs"
-      >
-      </faq-item>
+      <ul>
+        <faq-item v-for="faqDoc in faqDocs" :key="faqDoc.id"
+        :id="faqDoc.id"
+        :title="faqDoc.title"
+        :graphs="faqDoc.graphs"
+        >
+        </faq-item>
+      </ul>
     </div>
 
   </div>

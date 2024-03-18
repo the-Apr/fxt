@@ -45,7 +45,6 @@ export default {
       @apply  p-1;
       border-radius: 50%;
       border: 1px solid #a33333;
-      // background: #91DBF9;
 
       img{
         @apply w-16 p-2 bg-[#8C0100];

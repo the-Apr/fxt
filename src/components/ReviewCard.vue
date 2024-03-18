@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .review-card {
   @apply px-4 py-8 flex flex-col gap-y-6 bg-[#191919] justify-between rounded-2xl min-h-[200px] text-white;
-  // bg-[#ecd6d6]
+  
 
   @screen md {
     @apply px-8 py-12;
@@ -67,10 +67,6 @@ export default {
       .name {
         @apply font-semibold;
       }
-
-      // .status{
-      //   color: #4b4b4b;
-      // }
     }
   }
 }

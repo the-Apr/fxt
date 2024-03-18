@@ -113,7 +113,7 @@ export default {
     },
 
     updateShowParaThree() {
-      // Check if the window width matches the xl breakpoint
+
       this.showParaThree = window.innerWidth >= 1390; // Adjust the value as per your xl breakpoint
     },
   }
@@ -163,10 +163,7 @@ $fxt-red-2: #8C0100;
     }
 
     .our-goals {
-      @apply flex flex-col gap-8 px-2 py-12 bg-[#fafafa] justify-center items-center w-full;
-      // bg-[#F5FCF9] 
-      // bg-[#f3e5e5]
-      // bg-[#f6ecec]  
+      @apply flex flex-col gap-8 px-2 py-12 bg-[#fafafa] justify-center items-center w-full; 
 
       @screen md {
         @apply  gap-14 px-16 py-20;
@@ -232,7 +229,7 @@ $fxt-red-2: #8C0100;
 
         .one {
           @apply bg-white border;
-          // bg-[#DEFCF1]
+         
 
           @screen lg {
             @apply mb-16;
@@ -250,7 +247,6 @@ $fxt-red-2: #8C0100;
 
         .two {
           @apply  bg-[#e5e5e5] border;
-          // @apply  bg-[#F8E7EE];
 
           @screen lg {
             @apply my-8;
@@ -263,7 +259,6 @@ $fxt-red-2: #8C0100;
 
           h3{
             @apply text-[#a33333];
-            // @apply text-[#FF3008];
           }
 
         }
@@ -297,7 +292,6 @@ $fxt-red-2: #8C0100;
 
     .fxt-quotes {
       @apply px-12 py-8  w-full;
-      //  border-y-[1px] border-[#a33333]
 
       @screen md {
         @apply py-10;
@@ -329,10 +323,6 @@ $fxt-red-2: #8C0100;
         }
       }
 
-    }
-
-    .pricing-plan {
-      
     }
 
     .our-founder {

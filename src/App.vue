@@ -126,7 +126,7 @@ $green: #5AEEB9;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Goudy Bookletter 1911", serif;
-  /* color: black; */
+  
 }
 
 .app {
