@@ -135,17 +135,7 @@ $green: #5AEEB9;
   overflow-x: hidden;
 }
 
-.btn{
-  @apply max-w-full my-2 text-white bg-[#8C0100] py-2  px-6 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-normal tracking-wide;
 
-  @screen md {
-    @apply max-w-[250px] text-2xl font-medium py-4  px-8;
-  }
-
-  &:hover{
-    @apply bg-white text-black border border-[#8C0100];
-  }
-}
 
 .scale-fade-enter-active,
 .scale-fade-leave-active {

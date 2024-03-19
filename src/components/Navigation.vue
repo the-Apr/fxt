@@ -10,13 +10,21 @@
         <div class="nav-links">
           <ul v-show="!mobile">
                   
-            <li @click="scrollToSection('about')">
+            <!-- <li @click="scrollToSection('about')">
               <router-link class="link" :to="{name: 'about'}">Who we are</router-link>
+            </li> -->
+
+            <li @click="scrollToSection('about')">
+              <a href="#about" class="link"> Who we are</a>
             </li>
 
             <li @click="scrollToSection('pricing')">
-              <router-link class="link" :to="{name: 'pricing'}">Pricing</router-link>
+              <p class="link"> Pricing</p>
             </li>
+
+            <!-- <li @click="scrollToSection('pricing')">
+              <router-link class="link" :to="{name: 'pricing'}">Pricing</router-link>
+            </li> -->
 
             <li @click="scrollToSection('fxt-store')">
               <router-link class="link" :to="{ name: 'fxt-store' }">FXT Store</router-link>

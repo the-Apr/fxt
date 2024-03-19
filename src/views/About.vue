@@ -85,7 +85,7 @@ export default {
       },
 
       ourFounder: {
-        paraOne: 'Meet Ken Jay, a 6 figure funded trader who is the founder of Forex terminators. Forex Terminators is a community which is focused on creating  brave and fearless traders who are capable of terminating the financial market',
+        paraOne: 'Meet Ken Jay, a 5 figure funded trader who is the founder of Forex terminators. Forex Terminators is a community which is focused on creating  brave and fearless traders who are capable of terminating the financial market',
 
         paraTwo: `His passion for forex trading began in the year 2020, where he was inspired by all hundreds of dollars made through copytrading`,
 

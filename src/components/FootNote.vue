@@ -15,7 +15,6 @@
         </a>
         <a href="https://x.com/fxterminators?s=21&t=-50ebEruvZMKl8etFJINrA" target="_blank">
           <fa-icon :icon="['fab', 'x-twitter']" class="icon" />
-          <!-- <fa-icon icon="fa-brands fa-x-twitter" class="icon" /> -->
         </a>
         <a href="https://youtube.com/@ForexTerminators?si=8vRpGCe38W4NjsBj" target="_blank">
           <fa-icon :icon="['fab', 'youtube']" class="icon" />
