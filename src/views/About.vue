@@ -14,7 +14,7 @@
       <div class="our-goals">
         <h2>Our Goals</h2>
         <div class="goals-card">
-          <div class="one card">
+          <div class="one card" v-motion-roll-bottom >
             <h3>empowerment</h3>
             <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
           </div>

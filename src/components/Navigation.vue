@@ -3,44 +3,28 @@
     <header>
       <nav class="nav-wrap">
         <div class="branding"  @click="reload">
-          <router-link @click="scrollToSection('home')" class="" :to="{name: 'home'}">
+          <a @click="scrollToSection('home')">
             <img src="../assets/logo/FXT LOGO 1.png" alt="fxt logo">
-          </router-link>
+          </a>
         </div>
         <div class="nav-links">
           <ul v-show="!mobile">
-                  
-            <!-- <li @click="scrollToSection('about')">
-              <router-link class="link" :to="{name: 'about'}">Who we are</router-link>
-            </li> -->
 
-            <li @click="scrollToSection('about')">
+            <li @click.prevent="handleAnchorClick('about')">
               <a href="#about" class="link"> Who we are</a>
             </li>
-
-            <li @click="scrollToSection('pricing')">
-              <p class="link"> Pricing</p>
+            <li @click.prevent="handleAnchorClick('pricing')">
+              <a href="#pricing" class="link"> Pricing</a>
             </li>
-
-            <!-- <li @click="scrollToSection('pricing')">
-              <router-link class="link" :to="{name: 'pricing'}">Pricing</router-link>
-            </li> -->
-
-            <li @click="scrollToSection('fxt-store')">
-              <router-link class="link" :to="{ name: 'fxt-store' }">FXT Store</router-link>
+            <li @click.prevent="handleAnchorClick('fxt-store')">
+              <a href="#fxt-store" class="link"> FXT Store</a>
             </li>
-
-            <li @click="scrollToSection('blog')">
-              <router-link class="link" :to="{ name: 'blog' }">Blog</router-link>
+            <li @click.prevent="handleAnchorClick('blog')">
+              <a href="#abo" class="link"> Blog</a>
             </li>
-
-            <li @click="scrollToSection('faq')">
-              <router-link class="link" :to="{ name: 'faq' }">Faqs</router-link>
+            <li @click.prevent="handleAnchorClick('faq')">
+              <a href="#about" class="link"> Faqs</a>
             </li>
-          
-            <!-- <a href="mailto:praiseadebayo218@yahoo.com">
-              <base-button title="contact"/>
-            </a> -->
             
           </ul>
         </div>
@@ -66,24 +50,25 @@
                 </router-link>
               </div>
 
-              <li @click="mobileScrollToSection('home')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('home')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'house']" />
-                <router-link class="link-text" :to="{ name: 'home' }">Home</router-link>
+
+                <a class="link-text" href="#home">Home</a>
               </li>
 
-              <li @click="mobileScrollToSection('about')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('about')"  class="mobile-link">
                 <fa-icon :icon="['far', 'address-card']" />
-                <router-link class="link-text" :to="{ name: 'about' }">Who we are</router-link>
+                <a class="link-text" href="#about">Who we are</a>
               </li>
 
-              <li @click="mobileScrollToSection('blog')"  class="mobile-link">
+              <li @click.prevent="handleAnchorClick('blog')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'newspaper']" />
-                <router-link class="link-text" :to="{ name: 'blog' }">Blog</router-link>
+                <a class="link-text" href="#blog">Blog</a>
               </li>
 
-              <li @click="mobileScrollToSection('faq')"  class="mobile-link">
+              <li @click.prevent="mobileScrollToSection('faq')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'circle-question']" />
-                <router-link class="link-text" :to="{ name: 'faq' }">FAQs</router-link>
+                <a class="link-text" href="#faq">Faq</a>
               </li>
             
             
@@ -155,6 +140,11 @@ export default {
     window.removeEventListener('scroll', this.bottomScroll);
   },
 
+  mounted() {
+    // Scroll to the last section upon page reload
+    this.scrollToStoredSection();
+},
+
   methods: {
     reload (){
       window.location.reload();
@@ -186,10 +176,30 @@ export default {
     scrollToSection(sectionId) {
       this.$root.scrollToSection(sectionId);
     },
+
+    handleAnchorClick(sectionId) {
+      this.scrollToSection(sectionId);
+
+      window.history.pushState({}, '', '#' + sectionId);
+      localStorage.setItem('currentSection', sectionId);
+    },
+
+    scrollToStoredSection() {
+        // Retrieve the last section from localStorage
+        const sectionId = localStorage.getItem('currentSection');
+        if (sectionId) {
+            // Scroll to the last section
+            this.scrollToSection(sectionId);
+        }
+    },
     
     mobileScrollToSection(sectionId) {
       this.$root.scrollToSection(sectionId);
       this.toggleNav();
+    },
+
+    handleMobileClick (sectionId){
+      this.mobileScrollToSection(sectionId);
     },
 
     checkClick(e) {

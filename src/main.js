@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import { MotionPlugin } from '@vueuse/motion'
+
 import store from './store'
 
 import VueLazyLoad from 'vue3-lazyload'
@@ -33,6 +35,7 @@ vueApp.use(VueLazyLoad, {
   error: '',
 })
 
+vueApp.use(MotionPlugin)
 vueApp.use(store);
 vueApp.use(router);
 vueApp.mount('#app');
