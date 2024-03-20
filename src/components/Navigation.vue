@@ -3,7 +3,7 @@
     <header>
       <nav class="nav-wrap">
         <div class="branding"  @click="reload">
-          <a @click="scrollToSection('home')">
+          <a @click.prevent="handleAnchorClick('home')" href="#home">
             <img src="../assets/logo/FXT LOGO 1.png" alt="fxt logo">
           </a>
         </div>
