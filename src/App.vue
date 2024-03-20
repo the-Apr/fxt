@@ -32,8 +32,6 @@
           <foot-note/>
         </div>
       </transition>
-  
-      <cookie></cookie>
     </div>
   </div>
 </template>
@@ -43,7 +41,6 @@ import { defineAsyncComponent } from 'vue';
 
 import Navigation from '@/components/Navigation.vue';
 import FootNote from '@/components/FootNote.vue';
-import Cookie from './components/Cookie.vue';
 
 const About = defineAsyncComponent(() => import('@/views/About.vue'));
 const HomeView = defineAsyncComponent(() => import('@/views/HomeView.vue'));
@@ -65,13 +62,11 @@ export default {
     FxtStore,
     Pricing,
     FootNote,
-    Cookie
   },
 
   data() {
     return {
       showContent: false,
-      currentSection: null,
       observer: null
     }
   },
@@ -79,16 +74,12 @@ export default {
   mounted() {
     setTimeout(() => {
       this.showContent = true;
+      
     }, 1000);
 
-    // Initialize IntersectionObserver
-    this.observer = new IntersectionObserver(this.handleIntersection, { threshold: 0.5 });
-    
-    // Observe each section
-    Object.values(this.$refs).forEach(ref => {
-      this.observer.observe(ref);
-    });
   },
+
+  
 
 
 
@@ -99,17 +90,6 @@ export default {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     },
-
-    handleIntersection(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Set the current section based on the intersection
-          this.currentSection = entry.target.id;
-          console.log(entry.target.id)
-        }
-      });
-    },
-
   },
 }
 </script>
@@ -133,6 +113,10 @@ $green: #5AEEB9;
   min-height: 100vh;
   background-color: inherit;
   overflow-x: hidden;
+}
+
+.show {
+  @apply hidden;
 }
 
 

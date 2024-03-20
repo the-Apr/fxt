@@ -110,7 +110,7 @@
         }
 
         &:hover {
-          @apply transform translate-y-3;
+          @apply translate-y-3;
         }
       }
     }

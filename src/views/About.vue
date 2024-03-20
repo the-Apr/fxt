@@ -14,7 +14,7 @@
       <div class="our-goals">
         <h2>Our Goals</h2>
         <div class="goals-card">
-          <div class="one card" v-motion-roll-bottom >
+          <div class="one card">
             <h3>empowerment</h3>
             <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
           </div>
@@ -202,6 +202,11 @@ $fxt-red-2: #8C0100;
 
         .card{
           @apply px-6 py-10 space-y-3 rounded-xl;
+
+          &:hover {
+            transform: rotateZ(-2deg) scale(1.02);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          }
         }
 
         h3{
@@ -210,7 +215,7 @@ $fxt-red-2: #8C0100;
           @screen lg {
             @apply text-[19px];
           }
-          @screen xl {
+          @screen xll {
             @apply text-[25px];
           }
         }
@@ -235,10 +240,6 @@ $fxt-red-2: #8C0100;
             @apply mb-16;
 
           }
-          &:hover {
-            transform: rotateZ(-1deg) scale(1.02);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          }
 
           h3{
             @apply text-[#0F9464];
@@ -250,11 +251,6 @@ $fxt-red-2: #8C0100;
 
           @screen lg {
             @apply my-8;
-          }
-
-          &:hover {
-            transform: rotateZ(1deg) scale(1.02);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           }
 
           h3{
@@ -272,11 +268,6 @@ $fxt-red-2: #8C0100;
 
           @screen lg {
             @apply mt-16 col-span-1;
-          }
-
-          &:hover {
-            transform: rotateZ(-1deg) scale(1.02);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           }
 
           h3{
@@ -337,9 +328,6 @@ $fxt-red-2: #8C0100;
       @screen xl{
         @apply mx-40;
       }
-      // @screen 2xl {
-      //   @apply max-h-[590px]
-      // }
 
       .founder-img {
         @apply w-full;
@@ -352,7 +340,11 @@ $fxt-red-2: #8C0100;
           @apply object-cover  w-full h-full  rounded-t-3xl;
 
           @screen md {
-            @apply rounded-l-3xl rounded-tr-none;
+            @apply rounded-l-3xl rounded-tr-none transition;
+
+            &:hover {
+              @apply scale-95 ease-in-out;
+            }
           }
         }
       }

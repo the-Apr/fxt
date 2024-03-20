@@ -123,8 +123,13 @@ export default {
           box-shadow: 8px 9px 25px 2px rgba(0, 0, 0, 0.15);
 
           @screen md{
-            @apply py-16 px-10 gap-10
+            @apply py-16 px-10 gap-10 transition-transform duration-500;
+
+            &:hover {
+              @apply translate-y-4 ease-in-out;
+            }
           }
+
 
           h3{
             @apply text-[18px] font-semibold uppercase text-center leading-normal;

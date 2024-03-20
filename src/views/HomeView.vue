@@ -19,7 +19,7 @@
     </div>
     
 
-    <div class="dollar">
+    <div class="dollar" v-motion-roll-top>
       <img src="../assets/display/dollar.webp" alt="">
     </div>
  </div>
@@ -132,7 +132,11 @@ export default {
       }
 
       img{
-        @apply object-cover
+        @apply object-cover transition;
+
+        &:hover {
+          @apply scale-125 ease-in-out;
+        }
       }
     }
   }
