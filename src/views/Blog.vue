@@ -20,7 +20,7 @@
         <div class="mail-box">
           <input v-model="email" type="email" name="" id="newEmail" placeholder="yourmail@abc.com">
 
-          <button class="btn" @click="subscribe">
+          <button class="btn1" @click="subscribe">
             <span v-if="loading">
               <fa-icon :icon="['fas', 'spinner']" class="animate-spin" />
             </span>
@@ -184,7 +184,9 @@ export default {
         };
 
       }
-    }
+    },
+
+    
   }
 
 }
@@ -283,7 +285,7 @@ export default {
           font-weight: 500;
         }
 
-       .btn{
+       .btn1{
           @apply  text-white bg-[#8C0100] py-3  px-4 transition-colors duration-500 ease-in-out text-lg font-medium tracking-wide rounded-r-3xl;
 
           @screen sm {

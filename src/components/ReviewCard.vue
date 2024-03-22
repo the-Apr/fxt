@@ -1,16 +1,19 @@
 <template>
   <div class="review">
-    <div class="review-card">
-      <div class="text">
-        <p>”{{ review.story }}”</p>
-      </div>
-      <div class="details-wrap">
-        <img :src="review.pic" alt="" />
-        <div class="details">
-          <p class="name">{{ review.name }}</p>
-          <p class="status">{{review.status}}</p>
+    <div v-motion-pop-visible>
+      <div class="review-card">
+        <div class="text">
+          <p>”{{ review.story }}”</p>
+        </div>
+        <div class="details-wrap">
+          <img :src="review.pic" alt="" />
+          <div class="details">
+            <p class="name">{{ review.name }}</p>
+            <p class="status">{{review.status}}</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>

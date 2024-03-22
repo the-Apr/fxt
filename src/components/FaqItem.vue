@@ -1,19 +1,21 @@
 <template>
   <li class="faq-item">
     <div class="item-wrap" 
-    :class="{ 'bg-bkup-blue': isActive }">
+    :class="{ 'bg-bkup-blue': isActive }"
+    @click="toggleDropdown"
+    v-motion-slide-left
+    >
 
       <!-- drop down -->
       <div class="drop-down">
         <router-link :to="faqLink"> 
           <fa-icon icon="sort-desc" 
-          :class="{ 'transition duration-700 transform rotate-180': isActive, 'rotate-0': !isActive }" 
-          @click="toggleDropdown"/>
+          :class="{ 'transition duration-700 transform rotate-180': isActive, 'rotate-0': !isActive }"/>
         </router-link>
       </div>
 
       <!-- faq title -->
-      <div class="title-wrap" @click="toggleDropdown">
+      <div class="title-wrap" >
         <router-link :to="faqLink"> 
           <h1>{{title}}</h1>
         </router-link>
@@ -98,7 +100,7 @@ export default {
         @apply font-medium leading-6 tracking-wide text-sm  text-left;
 
         @screen md {
-          @apply text-lg tracking-wider;
+          @apply text-lg tracking-wider font-semibold;
         }
         @screen xl {
           @apply text-xl;

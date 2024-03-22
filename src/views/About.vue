@@ -14,23 +14,31 @@
       <div class="our-goals">
         <h2>Our Goals</h2>
         <div class="goals-card">
-          <div class="one card">
-            <h3>empowerment</h3>
-            <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
+          <div  v-motion-pop-visible>
+            <div class="one card">
+              <h3>empowerment</h3>
+              <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
+            </div>
           </div>
-          <div class="two card">
-            <h3>Education for all</h3>
-            <p>We aim to make quality trading education accessible to everyone. Whether you're a beginner or an experienced trader, our diverse range of courses ensures that there's something for every level of expertise </p>
+
+          <div v-motion-pop-visible>
+            <div class="two card">
+              <h3>Education for all</h3>
+              <p>We aim to make quality trading education accessible to everyone. Whether you're a beginner or an experienced trader, our diverse range of courses ensures that there's something for every level of expertise </p>
+            </div>
           </div>
-          <div class="three card">
-            <h3>community growth</h3>
-            <p>Foster a community where traders support and uplift each other. We strive to create an environment where shared knowledge and experiences contribute to the collective growth of our community members</p>
+
+          <div class="three card" >
+            <div  v-motion-pop-visible >
+              <h3>community growth</h3>
+              <p>Foster a community where traders support and uplift each other. We strive to create an environment where shared knowledge and experiences contribute to the collective growth of our community members</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- our-founder-->
-      <div class="our-founder">
+      <div class="our-founder" v-motion-fade-visible >
         <div class="founder-img">
           <img v-lazy="{ src: ourFounder.srcPath, loading: ourFounder.loadingPath, error: ourFounder.errorPath }">
         </div>
@@ -194,10 +202,10 @@ $fxt-red-2: #8C0100;
         @apply grid grid-flow-row-dense grid-cols-1 gap-4 justify-items-center mx-1;
 
         @screen md {
-          @apply grid-cols-2;
+          @apply grid grid-cols-2;
         }
         @screen lg {
-          @apply grid-cols-3;
+          @apply grid grid-cols-3;
         }
 
         .card{
@@ -263,7 +271,7 @@ $fxt-red-2: #8C0100;
           @apply  bg-[#191919];
 
           @screen md {
-            @apply col-span-2
+            @apply col-span-2;
           }
 
           @screen lg {

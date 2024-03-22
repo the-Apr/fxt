@@ -1,6 +1,6 @@
 <template>
   <div class="drives-card">
-    <div class="card" v-for="(card,index) in cardDetails" :key="index">
+    <div class="card" v-for="(card,index) in cardDetails" :key="index" v-motion-slide-visible-top>
       <div class="left md:block hidden">
         <img :src= "card.pic" alt="">
       </div>

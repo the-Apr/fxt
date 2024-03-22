@@ -7,10 +7,10 @@
       </div>
 
       <div class="store-card">
-        <div class="card">
+        <div class="card" v-motion-slide-visible-bottom>
           <img src="../assets/display/coming soon.webp" alt="coming soon">
         </div>
-        <div class="card hidden md:block">
+        <div class="card hidden md:block" v-motion-slide-visible-bottom>
           <img src="../assets/display/coming soon.webp" alt="coming soon">
         </div>
        

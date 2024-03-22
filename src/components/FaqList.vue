@@ -19,10 +19,10 @@
   </div>
 
   <!-- contact us -->
-  <div class="contact-us">
+  <div class="contact-us" v-motion-fade-visible>
     <h2>Still have Questions?</h2>
     <p>Need assistance or have questions? Our support team is here to help.  Contact us today, and let's navigate the markets together.</p>
-    <a href="mailto:support@forexterminators.com " target="_blank">
+    <a href="mailto:support@forexterminators.com" target="_blank">
       <button class="btn">Contact us</button>
     </a>
   </div>

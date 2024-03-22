@@ -3,14 +3,14 @@
     <header>
       <nav class="nav-wrap">
         <div class="branding"  @click="reload">
-          <a @click.prevent="handleAnchorClick('home')" href="#home">
+          <a @click.prevent="handleAnchorClick('home')" href="#">
             <img src="../assets/logo/FXT LOGO 1.png" alt="fxt logo">
           </a>
         </div>
         <div class="nav-links">
           <ul v-show="!mobile">
 
-            <li @click.prevent="handleAnchorClick('about')">
+            <li @click.prevent="handleAnchorClick('home')">
               <a href="#about" class="link"> Who we are</a>
             </li>
             <li @click.prevent="handleAnchorClick('pricing')">
@@ -45,12 +45,12 @@
 
             <ul>
               <div class="branding">
-                <router-link @click="mobileScrollToSection('home')" class="" :to="{name: 'home'}">
+                <a @click="handleMobileClick('nav')">
                   <img src="../assets/logo/fxt_logo.png" alt="fxt logo">
-                </router-link>
+                </a>
               </div>
 
-              <li @click.prevent="handleMobileClick('home')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('nav')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'house']" />
 
                 <a class="link-text" href="#home">Home</a>
@@ -61,12 +61,12 @@
                 <a class="link-text" href="#about">Who we are</a>
               </li>
 
-              <li @click.prevent="handleAnchorClick('blog')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('blog')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'newspaper']" />
                 <a class="link-text" href="#blog">Blog</a>
               </li>
 
-              <li @click.prevent="mobileScrollToSection('faq')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('faq')"  class="mobile-link">
                 <fa-icon :icon="['fas', 'circle-question']" />
                 <a class="link-text" href="#faq">Faq</a>
               </li>
@@ -90,7 +90,7 @@
               <a href="https://wa.me/message/C2CB6JTTCQUNE1" target="_blank">
                 <fa-icon :icon="['fab', 'whatsapp']" class="icon" />
               </a>
-              <a href="mailto:support@forexterminators.com " target="_blank">
+              <a href="mailto:support@forexterminators.com" target="_blank">
                 <fa-icon :icon="['fas', 'envelope']" class="icon" />
               </a>
               <a href="tel:09019443735 " target="_blank">
@@ -148,7 +148,6 @@ export default {
   methods: {
     reload (){
       window.location.reload();
-      router.push({name: 'home'});
     },
 
     checkScreen() {
@@ -311,15 +310,13 @@ export default {
 
   .link{
     @apply  py-2 px-2 text-lg font-semibold tracking-wider;
-    // transition: .3s color ease-in;
-    // color: #2c3e50;
+  
 
     @screen xl{
       @apply text-xl;
     }
 
     &:hover {
-      // color: #8C0100;;
       @apply transform transition-transform duration-500;
       border-bottom: 1px solid #8C0100;
     }
@@ -413,9 +410,11 @@ export default {
     .socials {
       @apply justify-center flex gap-x-6 gap-y-3 px-6 flex-wrap;
 
-      &:hover {
-      color: #4238c9;
-    }
+      a{
+        &:hover {
+          @apply text-[#8C0100] transform transition-transform duration-500
+        }
+      }
     }
   }
  

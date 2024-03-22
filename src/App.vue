@@ -5,8 +5,9 @@
 
       <transition name="scale-fade" mode="out-in" >
         <div v-if="showContent">
-          <navigation />
-
+          <div id="nav" class="section" ref="nav">
+            <navigation />
+          </div>
           
           <div id="home" class="section" ref="home">
             <home-view/>
@@ -119,7 +120,21 @@ $green: #5AEEB9;
   @apply hidden;
 }
 
+.btn{
+  @apply  text-white bg-[#8C0100] py-3  px-4 transition-colors duration-500 ease-in-out text-base font-normal tracking-wide rounded-3xl;
 
+  @screen sm {
+    @apply px-6;
+  }
+
+  @screen md {
+    @apply max-w-[250px] text-xl font-semibold;
+  }
+
+  &:hover{
+    @apply bg-white text-black border border-[#8C0100];
+  }
+}
 
 .scale-fade-enter-active,
 .scale-fade-leave-active {

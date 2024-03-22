@@ -1,6 +1,6 @@
 <template>
   <div class="blog-video">
-    <div v-for="(video, index) in videos" :key="index" class="video-card">
+    <div v-for="(video, index) in videos" :key="index" class="video-card" v-motion-pop-visible>
      <vid-card :video= "video"></vid-card>
     </div>
   </div>

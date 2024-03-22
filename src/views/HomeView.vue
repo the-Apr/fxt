@@ -1,8 +1,8 @@
 <template>
  <div class="home">
     <div class="home-wrap">
-      <div class="landing-text" v-motion-slide-visible-once-left>
-        <h2>Master Forex with Ease: Your Gateway To Simplicity and Profitability at Forex Terminators</h2>
+      <div class="landing-text" v-motion-slide-visible-top>
+        <h2 >Master Forex with Ease: Your Gateway To Simplicity and Profitability at Forex Terminators</h2>
         <button class="btn1" @click="scrollToSection('pricing')">
           Become an FXT Trader
         </button>
