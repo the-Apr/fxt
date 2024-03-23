@@ -351,7 +351,7 @@ $fxt-red-2: #8C0100;
             @apply rounded-l-3xl rounded-tr-none transition;
 
             &:hover {
-              @apply scale-95 ease-in-out;
+              @apply scale-105 ease-in-out;
             }
           }
         }

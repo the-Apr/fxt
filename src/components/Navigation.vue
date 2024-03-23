@@ -7,6 +7,7 @@
             <img src="../assets/logo/FXT LOGO 1.png" alt="fxt logo">
           </a>
         </div>
+        
         <div class="nav-links">
           <ul v-show="!mobile">
 

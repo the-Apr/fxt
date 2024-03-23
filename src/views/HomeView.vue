@@ -9,7 +9,7 @@
        
       </div>
 
-      <div class="bulb" v-motion-slide-visible-once-right>
+      <div class="bulb" v-motion-slide-visible-right>
         <img src="../assets/display/bulb.webp" alt="">
       </div>
     </div>

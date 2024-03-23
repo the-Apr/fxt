@@ -7,25 +7,25 @@
       </div>
       
       <div class="socials">
-        <a href="https://www.instagram.com/i_am_ken_jay?igsh=OTZkMnl3ZGE2azhi&utm_source=qr" target="_blank">
+        <a href="https://www.instagram.com/i_am_ken_jay?igsh=OTZkMnl3ZGE2azhi&utm_source=qr" target="_blank" v-motion-fade-visible>
           <fa-icon :icon="['fab', 'instagram']" class="icon" />
         </a>
-        <a href="https://www.facebook.com/Ken.J1111?mibextid=LQQJ4d" target="_blank">
+        <a href="https://www.facebook.com/Ken.J1111?mibextid=LQQJ4d" target="_blank" v-motion-roll-bottom>
           <fa-icon :icon="['fab', 'facebook']" class="icon" />
         </a>
-        <a href="https://x.com/fxterminators?s=21&t=-50ebEruvZMKl8etFJINrA" target="_blank">
+        <a href="https://x.com/fxterminators?s=21&t=-50ebEruvZMKl8etFJINrA" target="_blank" v-motion-fade-visible>
           <fa-icon :icon="['fab', 'x-twitter']" class="icon" />
         </a>
-        <a href="https://youtube.com/@ForexTerminators?si=8vRpGCe38W4NjsBj" target="_blank">
+        <a href="https://youtube.com/@ForexTerminators?si=8vRpGCe38W4NjsBj" target="_blank" v-motion-roll-bottom>
           <fa-icon :icon="['fab', 'youtube']" class="icon" />
         </a>
-        <a href="https://wa.me/message/C2CB6JTTCQUNE1" target="_blank">
+        <a href="https://wa.me/message/C2CB6JTTCQUNE1" target="_blank" v-motion-fade-visible>
           <fa-icon :icon="['fab', 'whatsapp']" class="icon" />
         </a>
-        <a href="mailto:support@forexterminators.com " target="_blank">
+        <a href="mailto:support@forexterminators.com " target="_blank" v-motion-roll-bottom>
           <fa-icon :icon="['fas', 'envelope']" class="icon" />
         </a>
-        <a href="tel:09019443735 " target="_blank">
+        <a href="tel:09019443735 " target="_blank" v-motion-fade-visible>
           <fa-icon :icon="['fas', 'phone']" class="icon" />
         </a>
       </div>
