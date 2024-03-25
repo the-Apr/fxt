@@ -2,7 +2,7 @@
   <div class="loading">
     <div class="outer-circle">
       <span class="load">
-        <img class="" src="../../assets/logo/X.png" alt="" srcset="">
+        <img class="" src="../../assets/logo/x_spin.png" alt="" srcset="">
       </span>
     </div>
   </div>
@@ -47,10 +47,10 @@ export default {
     @apply absolute;
 
     img{
-      @apply h-20 w-20 object-cover;
+      @apply h-32 w-32 object-cover;
 
       @screen md {
-        @apply h-32 w-32;
+        @apply h-36 w-36;
       }
     }
   }
@@ -58,16 +58,16 @@ export default {
 
 .outer-circle::before {
   content: "";
-  width: 100px;
-  height: 100px;
-  border: 3px solid transparent;
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
   animation: spin ease 1000ms infinite;
 
   @screen md {
-    @apply w-[150px] h-[150px];
+    @apply w-[100px] h-[100px];
   }
 }
 
