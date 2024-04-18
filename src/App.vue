@@ -80,9 +80,6 @@ export default {
 
   },
 
-  
-
-
 
   methods: {
     scrollToSection(sectionId) {

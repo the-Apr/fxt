@@ -42,6 +42,7 @@
         <div class="founder-img">
           <img v-lazy="{ src: ourFounder.srcPath, loading: ourFounder.loadingPath, error: ourFounder.errorPath }">
         </div>
+
         <div class="founder-bio">
           <h2>meet our founder</h2>
 
@@ -51,7 +52,11 @@
             <p>{{ourFounder.paraTwo}}</p>
             <p v-if="showParaThree">{{ ourFounder.paraThree }}</p>
           </div>
-          <button @click="toggleParaThree" class="btn" v-if="!showParaThree">{{ buttonText }}</button>
+
+          <button @click="toggleParaThree" class="btn" >
+            <span v-if="!showParaThree">{{ buttonText }}</span>
+            <span v-else>{{ buttonText }}</span>
+          </button>
         </div>
       </div>
 
@@ -121,7 +126,6 @@ export default {
     },
 
     updateShowParaThree() {
-
       this.showParaThree = window.innerWidth >= 1390; // Adjust the value as per your xl breakpoint
     },
   }
