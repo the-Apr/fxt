@@ -53,9 +53,8 @@
             <p v-if="showParaThree">{{ ourFounder.paraThree }}</p>
           </div>
 
-          <button @click="toggleParaThree" class="btn" >
-            <span v-if="!showParaThree">{{ buttonText }}</span>
-            <span v-else>{{ buttonText }}</span>
+          <button @click="toggleParaThree" v-show="showBtn" class="btn" >
+            Read more
           </button>
         </div>
       </div>
@@ -89,6 +88,7 @@ export default {
 
   data () {
     return {
+      showBtn: true,
       showParaThree: false,
       buttonText: 'Read More',
 
@@ -122,11 +122,19 @@ export default {
   methods: {
     toggleParaThree() {
       this.showParaThree = !this.showParaThree;
-      this.buttonText = this.showParaThree ? 'Hide' : 'Read More';
+      this.showBtn = false;
     },
 
     updateShowParaThree() {
-      this.showParaThree = window.innerWidth >= 1390; // Adjust the value as per your xl breakpoint
+      if (window.innerWidth >= 1300) {
+        this.showBtn = false;
+        this.showParaThree = true;
+        return;
+      }
+      else {
+        this.showBtn = true;
+        this.showParaThree = false;
+      }
     },
   }
 }
