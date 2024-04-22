@@ -115,9 +115,7 @@ export default {
     this.updateShowParaThree();
     window.addEventListener('resize', this.updateShowParaThree); // Listen for window resize events
   },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.updateShowParaThree); // Remove event listener to prevent memory leaks
-  },
+ 
 
   methods: {
     toggleParaThree() {
