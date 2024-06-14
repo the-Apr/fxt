@@ -24,6 +24,7 @@
     "tailwindcss": "^3",
     "uid": "^2.0.2",
     "vue": "^3.2.13",
+    "vue-animated-counter": "^0.3.0",
     "vue-router": "^4.0.3",
     "vue-screen": "^2.3.2",
     "vue3-lazyload": "^0.3.8",

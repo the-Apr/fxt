@@ -2,43 +2,48 @@
   <div class="about">
     <div class="about-wrap">
 
-      <!-- who we are -->
-      <div class="about-us">
-        <div class="cards">
-          <service-card> </service-card>
-        </div>
-       
-      </div>
 
       <!-- our goals -->
       <div class="our-goals">
         <h2>Our Goals</h2>
         <div class="goals-card">
-          <div  v-motion-pop-visible>
+          <div v-motion-pop-visible>
             <div class="one card">
               <h3>empowerment</h3>
-              <p>Our primary goal is to empower individuals to take control of their financial future through informed and strategic trading decisions. We believe that financial empowerment leads to greater personal freedom.</p>
+              <p class="relative">Our primary goal is to empower individuals to take control of their financial future
+                through informed and strategic trading decisions. We believe that financial empowerment leads to greater
+                personal freedom.
+                <img src="../assets/icon/bottom-r-gradient.png" alt="gradient"
+                  class="absolute left-[-24px] bottom-[-40px] rounded-xl h-[200px]">
+              </p>
             </div>
           </div>
 
           <div v-motion-pop-visible>
             <div class="two card">
               <h3>Education for all</h3>
-              <p>We aim to make quality trading education accessible to everyone. Whether you're a beginner or an experienced trader, our diverse range of courses ensures that there's something for every level of expertise </p>
+              <p>We aim to make quality trading education accessible to everyone. Whether you're a beginner or an
+                experienced trader, our diverse range of courses ensures that there's something for every level of
+                expertise
+              </p>
             </div>
           </div>
 
-          <div class="three card" >
-            <div  v-motion-pop-visible >
+          <div class="three card">
+            <div v-motion-pop-visible>
               <h3>community growth</h3>
-              <p>Foster a community where traders support and uplift each other. We strive to create an environment where shared knowledge and experiences contribute to the collective growth of our community members</p>
+              <p>Foster a community where traders support and uplift each other. We strive to create an environment
+                where shared knowledge and experiences contribute to the collective growth of our community members
+                <img src="../assets/icon/bottom-rw-gradient.png" alt="gradient"
+                  class="absolute top-0 left-[-170px] rounded-xl">
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- our-founder-->
-      <div class="our-founder" v-motion-fade-visible >
+      <div class="our-founder" v-motion-fade-visible>
         <div class="founder-img">
           <img v-lazy="{ src: ourFounder.srcPath, loading: ourFounder.loadingPath, error: ourFounder.errorPath }">
         </div>
@@ -47,24 +52,27 @@
           <h2>meet our founder</h2>
 
           <div class="bio">
-            <p>{{ourFounder.paraOne}}</p>
+            <p>{{ ourFounder.paraOne }}</p>
 
-            <p>{{ourFounder.paraTwo}}</p>
+            <p>{{ ourFounder.paraTwo }}</p>
             <p v-if="showParaThree">{{ ourFounder.paraThree }}</p>
           </div>
 
-          <button @click="toggleParaThree" v-show="showBtn" class="btn" >
+          <button @click="toggleParaThree" v-show="showBtn" class="btn">
             Read more
           </button>
         </div>
       </div>
 
+
       <!-- fxt quotes -->
       <div class="fxt-quotes">
+        <p class="gradient-line"></p>
         <div class="quote-wrap">
           <h2>Fxt quotes</h2>
-          <fxt-quotes/>
+          <fxt-quotes />
         </div>
+        <p class="gradient-line"></p>
       </div>
     </div>
   </div>
@@ -73,8 +81,6 @@
 <script>
 import { defineAsyncComponent } from 'vue';
 
-const ServiceCard = defineAsyncComponent(() => import('@/components/ServiceCard.vue'));
-
 const FxtQuotes = defineAsyncComponent(() => import('@/components/FxtQuotes.vue'));
 
 
@@ -82,17 +88,16 @@ export default {
   name: 'about',
 
   components: {
-    ServiceCard,
     FxtQuotes
   },
 
-  data () {
+  data() {
     return {
       showBtn: true,
       showParaThree: false,
       buttonText: 'Read More',
 
-      welcomeNote:{
+      welcomeNote: {
         paraOne: 'Welcome to Forex Terminators, where education meets empowerment in the dynamic realm of forex trading.',
         paraTwo: 'At Forex Terminators, we believe that anyone can master the art of trading with the right guidance and resources. Our academy is not just about teaching; it\'s about transforming aspiring traders into confident, informed, and successful market participants.'
       },
@@ -115,7 +120,7 @@ export default {
     this.updateShowParaThree();
     window.addEventListener('resize', this.updateShowParaThree); // Listen for window resize events
   },
- 
+
 
   methods: {
     toggleParaThree() {
@@ -145,46 +150,23 @@ $fxt-red-2: #8C0100;
 
 
 .about {
-  @apply  h-full my-6;
+  @apply h-full mb-6;
 
-  @screen md {
-    @apply mt-20;
-  }
+
 
   .about-wrap {
-    @apply flex flex-col gap-y-8 items-center justify-center;
-
-    @screen md {
-      @apply gap-y-14
-    }
+    @apply flex flex-col items-center justify-center;
 
 
-    .about-us {
-      @apply flex flex-col gap-4 mx-2 px-2 ;
 
-      @screen md {
-        @apply flex-row gap-2 px-6;;
-      }
-      @screen lg {
-        @apply gap-12 mx-16;
-      }
 
-      @screen xl {
-        @apply mx-44
-      }
 
-    
-      .cards {
-        @apply px-1 py-4
-      }
-     
-    }
 
     .our-goals {
-      @apply flex flex-col gap-8 px-2 py-12 bg-[#fafafa] justify-center items-center w-full; 
+      @apply flex flex-col gap-8 px-2 py-12 bg-[#fafafa] justify-center items-center w-full;
 
       @screen md {
-        @apply  gap-14 px-16 py-20;
+        @apply gap-14 px-16 py-20;
       }
 
       @screen lg {
@@ -194,17 +176,17 @@ $fxt-red-2: #8C0100;
       @screen xl {
         @apply px-44
       }
-     
 
-      h2{
+
+      h2 {
         @apply text-xl text-black font-semibold leading-[normal] uppercase;
 
         @screen md {
           @apply text-2xl;
         }
 
-        @screen lg{
-          @apply  text-[35px];
+        @screen lg {
+          @apply text-[35px];
         }
       }
 
@@ -214,71 +196,73 @@ $fxt-red-2: #8C0100;
         @screen md {
           @apply grid grid-cols-2;
         }
+
         @screen lg {
           @apply grid grid-cols-3;
         }
 
-        .card{
+        .card {
           @apply px-6 py-10 space-y-3 rounded-xl;
 
           &:hover {
-            transform: rotateZ(-2deg) scale(1.02);
+            @apply translate-y-4 ease-in-out;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           }
         }
 
-        h3{
+        h3 {
           @apply text-base font-semibold uppercase leading-normal;
 
           @screen lg {
             @apply text-[19px];
           }
+
           @screen xll {
             @apply text-[25px];
           }
         }
 
-        p{
-          @apply text-left text-[#333333] text-base font-normal leading-[25px] mb-2 ;
+        p {
+          @apply text-left text-[#333333] text-base font-normal leading-[25px] mb-2;
 
           @screen md {
             @apply leading-[30px] text-xl tracking-normal;
           }
 
           @screen xl {
-            @apply  text-2xl;
+            @apply text-2xl;
           }
         }
 
         .one {
           @apply bg-white border;
-         
+
 
           @screen lg {
             @apply mb-16;
 
           }
 
-          h3{
-            @apply text-[#0F9464];
+          h3 {
+            @apply text-black;
           }
         }
 
         .two {
-          @apply  bg-[#e5e5e5] border;
+          @apply bg-[#e5e5e5] border;
 
           @screen lg {
             @apply my-8;
           }
 
-          h3{
+          h3 {
             @apply text-[#a33333];
           }
 
         }
 
         .three {
-          @apply  bg-[#191919];
+          @apply bg-[black];
 
           @screen md {
             @apply col-span-2;
@@ -288,10 +272,11 @@ $fxt-red-2: #8C0100;
             @apply mt-16 col-span-1;
           }
 
-          h3{
+          h3 {
             @apply text-white;
           }
-          p{
+
+          p {
             @apply text-[#f2f2f2]
           }
 
@@ -299,35 +284,44 @@ $fxt-red-2: #8C0100;
       }
     }
 
+
     .fxt-quotes {
-      @apply px-12 py-8  w-full;
+      @apply px-12 py-8 w-full;
 
       @screen md {
         @apply py-10;
       }
+
       @screen lg {
         @apply px-32;
       }
+
       @screen xl {
         @apply px-52
       }
 
-      .quote-wrap{
-        @apply flex flex-col gap-2 justify-center items-center px-1  border-y-[1px] border-black py-8 h-[280px];
+      .gradient-line {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1), gray 25%, gray 50%, gray 75%, rgba(255, 255, 255, 1) 100%);
+      }
+
+      .quote-wrap {
+        @apply flex flex-col gap-2 justify-center items-center px-1 py-8 h-[280px];
 
         @screen md {
-         @apply px-8 py-12 gap-8 h-[350px];
+          @apply px-8 py-12 gap-8 h-[350px];
         }
 
-        h2{
-          @apply text-xl font-semibold leading-[normal] uppercase ;
+        h2 {
+          @apply text-xl font-semibold leading-[normal] uppercase;
 
           @screen md {
             @apply text-2xl;
           }
 
           @screen lg {
-            @apply  text-[35px];
+            @apply text-[35px];
           }
         }
       }
@@ -338,12 +332,15 @@ $fxt-red-2: #8C0100;
       @apply flex flex-col mx-2 px-2;
 
       @screen md {
-        @apply flex-row px-6;;
+        @apply flex-row px-6;
+        ;
       }
+
       @screen lg {
         @apply mx-12;
       }
-      @screen xl{
+
+      @screen xl {
         @apply mx-40;
       }
 
@@ -354,8 +351,8 @@ $fxt-red-2: #8C0100;
           @apply w-2/5
         }
 
-         img{
-          @apply object-cover  w-full h-full  rounded-t-3xl;
+        img {
+          @apply object-cover w-full h-full rounded-t-3xl;
 
           @screen md {
             @apply rounded-l-3xl rounded-tr-none transition;
@@ -368,15 +365,15 @@ $fxt-red-2: #8C0100;
       }
 
       .founder-bio {
-        @apply w-full px-8 py-10 bg-[#191919] text-white flex flex-col gap-4 rounded-b-3xl;
+        @apply w-full px-8 py-10 bg-[black] text-white flex flex-col gap-4 rounded-b-3xl;
         // bg-[#DEFCF1]
-       
+
 
         @screen md {
           @apply px-14 py-20 w-3/5 rounded-r-3xl rounded-bl-none gap-8;
         }
 
-        h2{
+        h2 {
           @apply text-xl font-semibold leading-[normal] uppercase;
 
           @screen md {
@@ -384,10 +381,11 @@ $fxt-red-2: #8C0100;
           }
 
           @screen lg {
-            @apply  text-[25px];
+            @apply text-[25px];
           }
+
           @screen xl {
-            @apply  text-[30px];
+            @apply text-[30px];
           }
         }
 
@@ -395,27 +393,27 @@ $fxt-red-2: #8C0100;
           @apply space-y-4;
         }
 
-        p{
-          @apply text-left text-base font-normal leading-[28px] mb-2 ;
+        p {
+          @apply text-left text-base font-normal leading-[28px] mb-2;
 
           @screen md {
             @apply leading-[34px] text-xl tracking-wider;
           }
 
           @screen xl {
-            @apply  text-2xl font-normal
+            @apply text-2xl font-normal
           }
         }
 
-        .btn{
-          @apply max-w-full bg-white text-black  px-4 py-1 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium;
+        .btn {
+          @apply max-w-full bg-white text-black px-4 py-1 rounded-2xl transition-colors duration-500 ease-in-out text-lg font-medium;
 
           @screen md {
             @apply max-w-[250px] text-lg font-medium;
           }
 
-          &:hover{
-            @apply  text-white bg-[#8C0100];
+          &:hover {
+            @apply text-white bg-[#8C0100];
           }
         }
       }

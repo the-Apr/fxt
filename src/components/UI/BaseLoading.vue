@@ -2,8 +2,8 @@
   <div class="loading">
     <div class="outer-circle">
       <span class="load">
-        <img class="" src="../../assets/logo/x_spin.png" alt="" srcset="">
-      </span>
+<!--         <img class="" src="../../assets/logo/x_spin.png" alt="" srcset="">
+ -->      </span>
     </div>
   </div>
 </template>
@@ -61,7 +61,7 @@ export default {
   width: 40px;
   height: 40px;
   border: 2px solid transparent;
-  border-top-color: #fff;
+  border-top-color: #8C0100;
   border-bottom-color: #fff;
   border-radius: 50%;
   animation: spin ease 1000ms infinite;

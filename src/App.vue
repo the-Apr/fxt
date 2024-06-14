@@ -26,6 +26,9 @@
           <div id="blog" class="section" ref="blog">
             <blog/>
           </div>
+          <div id="partnership" class="section" ref="partnership">
+            <partnership/>
+          </div>
           <div id="faq" class="section" ref="faq">
             <faq/>
           </div>
@@ -46,6 +49,7 @@ import FootNote from '@/components/FootNote.vue';
 const About = defineAsyncComponent(() => import('@/views/About.vue'));
 const HomeView = defineAsyncComponent(() => import('@/views/HomeView.vue'));
 const Blog = defineAsyncComponent(() => import('@/views/Blog.vue'));
+const Partnership = defineAsyncComponent(() => import('@/views/Partnership.vue'));
 const Faq = defineAsyncComponent(() => import('@/views/Faq.vue'));
 const FxtStore = defineAsyncComponent(() => import('@/views/FxtStore.vue'));
 const Pricing = defineAsyncComponent(() => import('@/views/Pricing.vue'));
@@ -63,6 +67,7 @@ export default {
     FxtStore,
     Pricing,
     FootNote,
+    Partnership
   },
 
   data() {
@@ -94,6 +99,8 @@ export default {
 
 <style lang= "scss">
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+@import url('https://fonts.cdnfonts.com/css/goudy-old-style');
+@import url('https://fonts.cdnfonts.com/css/rockwell-nova');
 
 $green: #5AEEB9;
 

@@ -2,12 +2,12 @@
   <div class="top-most">
     <header>
       <nav class="nav-wrap">
-        <div class="branding"  @click="reload">
-          <a @click.prevent="handleAnchorClick('home')" href="#">
-            <img src="../assets/logo/FXT LOGO 1.png" alt="fxt logo">
+        <div class="branding" @click="reload">
+          <a href="#">
+            <img src="../assets/logo/FXT LOGO 4.png" alt="fxt logo">
           </a>
         </div>
-        
+
         <div class="nav-links">
           <ul v-show="!mobile">
 
@@ -23,24 +23,22 @@
             <li @click.prevent="handleAnchorClick('blog')">
               <a href="#abo" class="link"> Blog</a>
             </li>
+            <li @click.prevent="handleAnchorClick('partnership')">
+              <a href="#partnership" class="link"> Partnership</a>
+            </li>
             <li @click.prevent="handleAnchorClick('faq')">
               <a href="#about" class="link"> Faqs</a>
             </li>
-            
+
           </ul>
         </div>
       </nav>
 
       <!-- mobile navigation -->
-      <fa-icon 
-        :icon="['fas', 'bars-staggered']" 
-        class="menu-icon" 
-        @click="toggleNav" 
-        v-show="mobile"
-      />
+      <fa-icon :icon="['fas', 'bars-staggered']" class="menu-icon" @click="toggleNav" v-show="mobile" />
 
       <!-- transition for mobile nav -->
-      <transition name="mobile-nav" >
+      <transition name="mobile-nav">
         <div v-show="mobileNav" ref="mobileWrap" @click="checkClick" class="mobile-wrap">
           <div class="mobile-nav">
 
@@ -51,28 +49,33 @@
                 </a>
               </div>
 
-              <li @click.prevent="handleMobileClick('nav')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('nav')" class="mobile-link">
                 <fa-icon :icon="['fas', 'house']" />
 
                 <a class="link-text" href="#home">Home</a>
               </li>
 
-              <li @click.prevent="handleMobileClick('about')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('about')" class="mobile-link">
                 <fa-icon :icon="['far', 'address-card']" />
                 <a class="link-text" href="#about">Who we are</a>
               </li>
 
-              <li @click.prevent="handleMobileClick('blog')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('blog')" class="mobile-link">
                 <fa-icon :icon="['fas', 'newspaper']" />
                 <a class="link-text" href="#blog">Blog</a>
               </li>
 
-              <li @click.prevent="handleMobileClick('faq')"  class="mobile-link">
+              <li @click.prevent="handleMobileClick('partnership')" class="mobile-link">
+                <fa-icon :icon="['fas', 'newspaper']" />
+                <a class="link-text" href="#partnership">Partnership</a>
+              </li>
+
+              <li @click.prevent="handleMobileClick('faq')" class="mobile-link">
                 <fa-icon :icon="['fas', 'circle-question']" />
                 <a class="link-text" href="#faq">Faq</a>
               </li>
-            
-            
+
+
             </ul>
 
             <div class="socials">
@@ -101,11 +104,15 @@
           </div>
         </div>
       </transition>
-    </header> 
+    </header>
+    <div class="gradient1"></div>
   </div>
- 
-  <div v-show="showBottomScroll" class="bottom-scroll"  @click="scrollToSection('home')"> 
-    <fa-icon :icon="['fas', 'caret-up']" class="icon" />
+
+  <div v-show="showBottomScroll" class="bottom-scroll" @click="scrollToSection('home')">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon">
+      <path
+        d="M246.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L224 109.3 361.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160zm160 352l-160-160c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L224 301.3 361.4 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3z" />
+    </svg>
   </div>
 </template>
 
@@ -144,10 +151,10 @@ export default {
   mounted() {
     // Scroll to the last section upon page reload
     this.scrollToStoredSection();
-},
+  },
 
   methods: {
-    reload (){
+    reload() {
       window.location.reload();
     },
 
@@ -185,25 +192,25 @@ export default {
     },
 
     scrollToStoredSection() {
-        // Retrieve the last section from localStorage
-        const sectionId = localStorage.getItem('currentSection');
-        if (sectionId) {
-            // Scroll to the last section
-            this.scrollToSection(sectionId);
-        }
+      // Retrieve the last section from localStorage
+      const sectionId = localStorage.getItem('currentSection');
+      if (sectionId) {
+        // Scroll to the last section
+        this.scrollToSection(sectionId);
+      }
     },
-    
+
     mobileScrollToSection(sectionId) {
       this.$root.scrollToSection(sectionId);
       this.toggleNav();
     },
 
-    handleMobileClick (sectionId){
+    handleMobileClick(sectionId) {
       this.mobileScrollToSection(sectionId);
     },
 
     checkClick(e) {
-      if(e.target === this.$refs.mobileWrap) {
+      if (e.target === this.$refs.mobileWrap) {
         this.toggleNav();
       }
     },
@@ -251,187 +258,220 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .bottom-scroll {
-    @apply bg-[#a33333] rounded-full fixed flex justify-center items-center px-1 py-3 right-10 bottom-10 text-center z-50;
+.bottom-scroll {
+  @apply bg-[#8C0100] fixed flex justify-center items-center p-3 right-10 bottom-10 text-center z-50;
+
+  @screen sm {
+    @apply p-2 right-20 bottom-16;
+  }
+
+  .icon {
+    @apply text-white w-5 m-1;
+    // bg-[#5AEEB9]
+
+  }
+}
+
+.bottom-scroll:hover .icon {
+  fill: white;
+  transition: all 500ms ease-in-out;
+}
+
+.active {
+  border-bottom: 1px solid #8C0100;
+}
+
+.top-most {
+  @apply sticky top-0 left-0 w-full bg-black;
+  z-index: 999;
+}
+
+header {
+  @apply py-3 px-3 text-black;
+  // border-bottom: 1px solid #4238c9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  @screen md {
+    @apply py-1
+  }
+
+  @screen lg {
+    @apply px-14
+  }
+
+  .nav-wrap {
+    @apply px-1 mx-4;
 
     @screen sm {
-      @apply px-2 py-4 right-20 bottom-16;
+      @apply px-4
     }
 
-    .icon {
-      @apply text-white  w-9 m-1;
-      // bg-[#5AEEB9]
-      
+    @screen xl {
+      @apply mr-20;
+    }
+
+    @screen xll {
+      @apply mx-20;
     }
   }
 
-  .active {
+  .gradient-container {
+    @apply relative
+  }
+
+  /* .gradient {
+    @apply absolute top-[-15px];
+    width: 230px;
+    height: 90px;
+    background: linear-gradient(to right, transparent 10%, rgba(217, 217, 217, 0.144) 20%, rgba(217, 217, 217, 0.144) 50%, rgba(217, 217, 217, 0.144) 90%, transparent 100%);
+  } */
+}
+
+ul {
+  @apply list-none cursor-pointer;
+}
+
+a {
+  @apply no-underline;
+}
+
+.link {
+  @apply py-2 px-2 text-lg font-semibold tracking-wider;
+
+
+  @screen xl {
+    @apply text-xl;
+  }
+
+  &:hover {
+    @apply transform transition-transform duration-500;
     border-bottom: 1px solid #8C0100;
   }
 
-  .top-most {
-    @apply sticky top-0 left-0 w-full opacity-90;
-    z-index: 999;
+  &.router-link-exact-active {
+
+    border-bottom: 1px solid #8C0100;
+  }
+}
+
+nav {
+  @apply flex py-3 h-14;
+
+  @screen md {
+    @apply py-3 h-20;
   }
 
-  header {
-    @apply py-3 px-3 text-black ;
-    // border-bottom: 1px solid #4238c9;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) ;
+  .nav-links {
+    @apply relative flex items-center justify-end flex-1 text-white;
 
-    @screen md {
-      @apply py-1
-    }
-    @screen lg {
-      @apply px-14
-    }
-
-    .nav-wrap {
-      @apply px-1 mx-4;
-
-      @screen sm {
-        @apply px-4
-      }
-      @screen xl{
-        @apply mr-20;
-      }
-      @screen xll{
-        @apply mx-20;
-      }
-    }
-  }
-  
-  ul{
-    @apply list-none cursor-pointer;
-  }
-
-  a{
-    @apply no-underline;
-  }
-
-  .link{
-    @apply  py-2 px-2 text-lg font-semibold tracking-wider;
-  
-
-    @screen xl{
-      @apply text-xl;
-    }
-
-    &:hover {
-      @apply transform transition-transform duration-500;
-      border-bottom: 1px solid #8C0100;
-    }
-
-    &.router-link-exact-active {
-      
-      border-bottom: 1px solid #8C0100;
-    }
-  }
-
-  nav {
-    @apply flex py-3 h-14;
-
-    @screen md{
-      @apply py-3 h-20;
-    }
-
-    .nav-links {
-      @apply relative flex items-center justify-end flex-1;
-
-      ul {
+    ul {
       @apply flex gap-6 items-center;
 
-        // .link {
-        //   font-weight: bold;
-        //   color: #2c3e50;
-        // }
+      // .link {
+      //   font-weight: bold;
+      //   color: #2c3e50;
+      // }
 
-        // a.router-link-exact-active {
-        //   color: #42b983;
-        // }
+      // a.router-link-exact-active {
+      //   color: #42b983;
+      // }
+    }
+  }
+}
+
+.gradient1 {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.9721) 50%, rgba(0, 0, 0, 0.97) 75%, rgba(140, 1, 0, 0.7) 100%);
+}
+
+.branding {
+  @apply flex items-center;
+
+  img {
+    @apply object-cover;
+    width: 200px;
+    height: 60px;
+
+    @screen md {
+      width: 300px;
+    }
+  }
+}
+
+::v-deep .menu-icon {
+  fill: white;
+  color: white;
+  /* Ensure compatibility with FontAwesome */
+}
+
+.menu-icon {
+  @apply cursor-pointer absolute top-6 right-10 h-6 w-auto;
+
+  @screen sm {
+    @apply h-8;
+    
+    
+    }
+
+  @media (min-width: 768px) {
+    top: 35px;
+    right: 54px;
+
+  }
+}
+
+.mobile-wrap {
+  @apply fixed top-0 left-0 w-full bg-transparent;
+  height: 100%;
+  z-index: 3;
+}
+
+.mobile-nav {
+  @apply p-6 w-4/6 flex flex-col justify-between h-full text-white;
+  max-width: 250px;
+  // background-color: #4b4b4f;
+  background-color: #1f1f23;
+  box-shadow: 7px 0px 11px 5px rgba(0, 0, 0, 0.1);
+
+  ul {
+    @apply flex flex-col gap-y-2
+  }
+
+  .link-text {
+    @apply text-base font-medium;
+  }
+
+  .mobile-link {
+    @apply flex gap-4 items-center;
+  }
+
+  .socials {
+    @apply justify-center flex gap-x-6 gap-y-3 px-6 flex-wrap;
+
+    a {
+      &:hover {
+        @apply text-[#8C0100] transform transition-transform duration-500
       }
     }
   }
+}
 
+// animation
+.mobile-nav-enter-active,
+.mobile-nav-leave-active {
+  transition: all 1s ease;
+}
 
-  .branding {
-    @apply flex items-center;
+.mobile-nav-enter-from {
+  transform: translateX(-250px);
+}
 
-    img {
-      @apply object-cover;
-      width: 200px;
-      height: 60px;
+.mobile-nav-enter-to {
+  transform: translateX(0);
+}
 
-      @screen md {
-        width: 250px;
-      }
-    }
-  }
-
-
-  .menu-icon {
-    @apply cursor-pointer absolute top-6 right-10 h-6 w-auto;
-
-    @screen sm {
-      @apply h-8
-    }
-
-    @media (min-width: 768px) {
-      top: 35px;
-      right: 54px;
-
-    }
-  }
-
-  .mobile-wrap {
-    @apply fixed top-0 left-0 w-full bg-transparent;
-    height: 100%;
-    z-index: 3;
-  }
-
-  .mobile-nav {
-    @apply p-6 w-4/6 flex flex-col justify-between h-full text-white;
-    max-width: 250px;
-    // background-color: #4b4b4f;
-    background-color: #1f1f23;
-    box-shadow: 7px 0px 11px 5px rgba(0, 0, 0, 0.1);
-
-    ul{
-      @apply flex flex-col gap-y-2
-    }
-
-    .link-text {
-      @apply text-base font-medium;
-    }
-
-    .mobile-link {
-      @apply flex gap-4 items-center;
-    }
-
-    .socials {
-      @apply justify-center flex gap-x-6 gap-y-3 px-6 flex-wrap;
-
-      a{
-        &:hover {
-          @apply text-[#8C0100] transform transition-transform duration-500
-        }
-      }
-    }
-  }
- 
-  // animation
-  .mobile-nav-enter-active,
-  .mobile-nav-leave-active {
-    transition: all 1s ease;
-  }
-
-  .mobile-nav-enter-from {
-    transform: translateX(-250px);
-  }
-  .mobile-nav-enter-to {
-    transform: translateX(0);
-  }
-  .mobile-nav-leave-to {
-    transform: translateX(-250px);
-  }
+.mobile-nav-leave-to {
+  transform: translateX(-250px);
+}
 </style>

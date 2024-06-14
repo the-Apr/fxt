@@ -1,7 +1,7 @@
 <template>
   <div class="review">
     <div v-motion-pop-visible>
-      <div class="review-card">
+      <divv class="review-card">
         <div class="text">
           <p>”{{ review.story }}”</p>
         </div>
@@ -9,10 +9,10 @@
           <img :src="review.pic" alt="" />
           <div class="details">
             <p class="name">{{ review.name }}</p>
-            <p class="status">{{review.status}}</p>
+            <p class="status">{{ review.status }}</p>
           </div>
         </div>
-      </div>
+      </divv>
 
     </div>
   </div>
@@ -24,21 +24,24 @@ export default {
   name: "review-card",
 
   props: ["review"],
+
 };
 </script>
 
 <style lang="scss" scoped>
 .review-card {
   @apply px-4 py-8 flex flex-col gap-y-6 bg-[#191919] justify-between rounded-2xl min-h-[200px] text-white;
-  
+
+
+
+
 
   @screen md {
     @apply px-8 py-12;
   }
 
   &:hover {
-    transform: rotateZ(-1deg) scale(1.02);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    @apply translate-x-4 ease-in-out;
   }
 
   p {
@@ -59,7 +62,7 @@ export default {
     img {
       @apply rounded-full h-10 w-10;
 
-      @screen md{
+      @screen md {
         @apply rounded-full h-14 w-14
       }
     }

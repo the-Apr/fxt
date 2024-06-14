@@ -13,7 +13,7 @@ import { faEnvelope, faPhone, faBarsStaggered, faArrowRight, faCaretUp, faSortDe
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { faXTwitter, faFacebook, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import './assets/tailwind.css'
-
+import AnimatedCounter from "vue-animated-counter"
 //global component
 
 import BaseLoading from './components/UI/BaseLoading.vue';
@@ -29,6 +29,7 @@ const vueApp = createApp(App);
 vueApp.component('fa-icon', FontAwesomeIcon);
 vueApp.component('loading', BaseLoading);
 vueApp.component('base-button', BaseButton);
+vueApp.component("AnimatedCounter", AnimatedCounter);
 
 vueApp.use(VueLazyLoad, {
   loading: '',
