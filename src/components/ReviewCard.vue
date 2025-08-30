@@ -7,6 +7,7 @@
         </div>
         <div class="details-wrap">
           <img :src="review.pic" alt="" />
+          
           <div class="details">
             <p class="name">{{ review.name }}</p>
             <p class="status">{{review.status}}</p>

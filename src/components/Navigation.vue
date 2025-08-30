@@ -260,8 +260,6 @@ export default {
 
     .icon {
       @apply text-white  w-9 m-1;
-      // bg-[#5AEEB9]
-      
     }
   }
 
